@@ -15,6 +15,10 @@ const App = () => {
 
   React.useEffect(() => {
     register('custom');
+    register('custom1');
+    register('custom2');
+    register('custom3');
+    register('custom4');
   }, [register]);
 
   console.log('app', formState.touched)

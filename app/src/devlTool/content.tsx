@@ -5,6 +5,15 @@ import { Control } from 'react-hook-form';
 import { useEffect } from 'react';
 import colors from './colors';
 
+const styles = {
+  button: {
+    background: colors.blue,
+    border: 0,
+    color: 'white',
+    padding: 5,
+  },
+};
+
 export default ({
   control: { fieldsRef, getValues, formState, errorsRef, readFormStateRef },
 }: {
@@ -13,7 +22,7 @@ export default ({
   const [, setData] = React.useState({});
   const result = getValues();
   useEffect(() => {
-    setData(true);
+    setData({});
   }, []);
 
   console.log(formState.touched);
@@ -24,30 +33,59 @@ export default ({
         overflow: 'auto',
       }}
     >
-      <input
+      <div
         style={{
-          display: 'block',
-          borderRadius: 0,
-          width: '100%',
-          padding: '5px 10px',
-          WebkitAppearance: 'none',
-          appearance: 'none',
-          fontSize: 14,
-          border: 0,
-          // background: colors.lightBlue,
+          display: 'grid',
+          gridTemplateColumns: `1fr 1fr 1fr`,
         }}
-        placeholder="Filter name..."
-        type="search"
-      />
+      >
+        <button
+          style={{
+            ...styles.button,
+            borderRight: `1px solid ${colors.primary}`,
+          }}
+          onClick={() => setData({})}
+        >
+          UPDATE
+        </button>
+        <button
+          style={{
+            ...styles.button,
+            borderRight: `1px solid ${colors.primary}`,
+          }}
+          onClick={() => setData({})}
+        >
+          COLLAPSE
+        </button>
+        <button style={styles.button} onClick={() => setData({})}>
+          FILTER
+        </button>
+
+        {/*<input*/}
+        {/*  style={{*/}
+        {/*    display: 'inline-block',*/}
+        {/*    borderRadius: 0,*/}
+        {/*    width: '100%',*/}
+        {/*    padding: '5px 10px',*/}
+        {/*    WebkitAppearance: 'none',*/}
+        {/*    appearance: 'none',*/}
+        {/*    fontSize: 14,*/}
+        {/*    border: 0,*/}
+        {/*    // maxHeight: 0,*/}
+        {/*    // background: colors.lightBlue,*/}
+        {/*  }}*/}
+        {/*  placeholder="Filter name..."*/}
+        {/*  type="search"*/}
+        {/*/>*/}
+      </div>
       {Object.entries(fieldsRef.current).map(([name, value]) => {
-        const error = get(errorsRef.current, name, {});
+        const error = get(errorsRef.current, name, true);
         const errorMessage = get(error, 'message', undefined);
         const errorType = get(error, 'type', undefined);
         const type = get(value, 'ref.type', undefined);
         const isTouched = get(formState.touched, name);
+        const isNative = (value as any).ref.type;
 
-        // console.log('for', formState);
-        console.log(errorMessage);
         return (
           <section
             key={name}
@@ -62,20 +100,37 @@ export default ({
               <thead>
                 <tr>
                   <td style={{ width: 90 }}>
-                    <header>
-                      <code
-                        style={{
-                          border: '1px solid white',
-                          borderRadius: 2,
-                          padding: '3px 10px',
-                          display: 'inline-block',
-                          fontSize: 10,
-                          textAlign: 'center',
-                        }}
-                      >
-                        {(value as any).ref.type ? 'Native' : 'Custom'}
-                      </code>
-                    </header>
+                    <button
+                      style={{
+                        border: `1px solid ${colors.blue}`,
+                        borderRadius: 2,
+                        padding: '3px 5px',
+                        display: 'inline-block',
+                        fontSize: 14,
+                        lineHeight: '12px',
+                        textAlign: 'center',
+                        marginRight: 10,
+                        background: colors.blue,
+                        color: 'white',
+                      }}
+                    >
+                      -
+                    </button>
+                    <span
+                      style={{
+                        border: '1px solid white',
+                        borderRadius: 2,
+                        padding: '3px 10px',
+                        display: 'inline-block',
+                        fontSize: 10,
+                        textAlign: 'center',
+                        ...(isNative
+                          ? {}
+                          : { background: '#fff', color: '#000' }),
+                      }}
+                    >
+                      {isNative ? 'Native' : 'Custom'}
+                    </span>
                   </td>
                   <td>
                     <p>{name}</p>
@@ -83,36 +138,64 @@ export default ({
                 </tr>
               </thead>
               <tbody>
+                {error && (
+                  <tr>
+                    <td align="right" style={{ paddingRight: 5 }}>
+                      VALID:
+                    </td>
+                    <td>
+                      <code
+                        style={{
+                          fontSize: 12,
+                          color: error ? colors.lightPink : colors.green,
+                        }}
+                      >
+                        {error ? 'false' : 'true'}
+                      </code>
+                    </td>
+                  </tr>
+                )}
                 {type && (
                   <tr>
-                    <td align="right">Type:</td>
+                    <td align="right" style={{ paddingRight: 5 }}>
+                      Type:
+                    </td>
                     <td>{type}</td>
                   </tr>
                 )}
                 {errorType && (
                   <tr>
-                    <td align="right">ERROR Type:</td>
+                    <td align="right" style={{ paddingRight: 5 }}>
+                      ERROR Type:
+                    </td>
                     <td>{errorType}</td>
                   </tr>
                 )}
                 {errorMessage && (
                   <tr>
-                    <td align="right">MESSAGE:</td>
+                    <td align="right" style={{ paddingRight: 5 }}>
+                      MESSAGE:
+                    </td>
                     <td>{errorMessage.trim()}</td>
                   </tr>
                 )}
                 {!isUndefined(result[name]) && (
                   <tr>
-                    <td align="right">VALUE:</td>
+                    <td align="right" style={{ paddingRight: 5 }}>
+                      VALUE:
+                    </td>
                     <td>{result[name]}</td>
                   </tr>
                 )}
                 {readFormStateRef.current.touched && (
                   <tr>
-                    <td align="right">TOUCHED:</td>
+                    <td align="right" style={{ paddingRight: 5 }}>
+                      TOUCHED:
+                    </td>
                     <td>
                       <code
                         style={{
+                          fontSize: 12,
                           color: isTouched ? colors.green : colors.lightPink,
                         }}
                       >
@@ -123,11 +206,16 @@ export default ({
                 )}
                 {(readFormStateRef.current as any).dirtyFields && (
                   <tr>
-                    <td align="right">DIRTY:</td>
+                    <td align="right" style={{ paddingRight: 5 }}>
+                      DIRTY:
+                    </td>
                     <td>
                       <code
                         style={{
-                          color: isTouched ? colors.green : colors.lightPink,
+                          fontSize: 12,
+                          color: formState.dirtyFields.has(name)
+                            ? colors.green
+                            : colors.lightPink,
                         }}
                       >
                         {formState.dirtyFields.has(name) ? 'true' : 'false'}

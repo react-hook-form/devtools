@@ -4,7 +4,6 @@ import * as React from 'react';
 export default () => (
   <header
     style={{
-      borderBottom: `1px solid ${colors.secondary}`,
       display: 'flex',
       alignItems: 'center',
       paddingLeft: 10,
@@ -14,9 +13,9 @@ export default () => (
       fill="white"
       viewBox="0 0 100 100"
       style={{
-        height: 18,
+        height: 12,
         padding: 3,
-        borderRadius: 3,
+        borderRadius: 2,
         marginRight: 10,
         background: colors.lightPink,
       }}
