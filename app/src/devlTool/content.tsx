@@ -30,7 +30,9 @@ export default ({
   return (
     <div
       style={{
-        overflow: 'auto',
+        display: 'grid',
+        gridTemplateRows: '23px auto',
+        height: 'calc(100vh - 40px)',
       }}
     >
       <div
@@ -78,156 +80,152 @@ export default ({
         {/*  type="search"*/}
         {/*/>*/}
       </div>
-      {Object.entries(fieldsRef.current).map(([name, value]) => {
-        const error = get(errorsRef.current, name, true);
-        const errorMessage = get(error, 'message', undefined);
-        const errorType = get(error, 'type', undefined);
-        const type = get(value, 'ref.type', undefined);
-        const isTouched = get(formState.touched, name);
-        const isNative = (value as any).ref.type;
 
-        return (
-          <section
-            key={name}
-            style={{ borderBottom: `1px dashed ${colors.secondary}` }}
-          >
-            <table
-              style={{
-                padding: '5px 10px 10px',
-                width: '100%',
-              }}
+      <div
+        style={{
+          overflow: 'auto',
+        }}
+      >
+        {Object.entries(fieldsRef.current).map(([name, value]) => {
+          const error = get(errorsRef.current, name);
+          const errorMessage = get(error, 'message', undefined);
+          const errorType = get(error, 'type', undefined);
+          const type = get(value, 'ref.type', undefined);
+          const isTouched = get(formState.touched, name);
+          const isNative = (value as any).ref.type;
+
+          console.log(error)
+
+          return (
+            <section
+              key={name}
+              style={{ borderBottom: `1px dashed ${colors.secondary}` }}
             >
-              <thead>
-                <tr>
-                  <td style={{ width: 90 }}>
-                    <button
-                      style={{
-                        border: `1px solid ${colors.blue}`,
-                        borderRadius: 2,
-                        padding: '3px 5px',
-                        display: 'inline-block',
-                        fontSize: 14,
-                        lineHeight: '12px',
-                        textAlign: 'center',
-                        marginRight: 10,
-                        background: colors.blue,
-                        color: 'white',
-                      }}
-                    >
-                      -
-                    </button>
-                    <span
-                      style={{
-                        border: '1px solid white',
-                        borderRadius: 2,
-                        padding: '3px 10px',
-                        display: 'inline-block',
-                        fontSize: 10,
-                        textAlign: 'center',
-                        ...(isNative
-                          ? {}
-                          : { background: '#fff', color: '#000' }),
-                      }}
-                    >
-                      {isNative ? 'Native' : 'Custom'}
-                    </span>
-                  </td>
-                  <td>
-                    <p>{name}</p>
-                  </td>
-                </tr>
-              </thead>
-              <tbody>
-                {error && (
+              <table
+                style={{
+                  padding: '5px 10px 10px',
+                  width: '100%',
+                  transition: '.3s all',
+                  borderLeft: `2px solid ${
+                    error ? colors.secondary : colors.primary
+                  }`,
+                }}
+              >
+                <thead>
                   <tr>
-                    <td align="right" style={{ paddingRight: 5 }}>
-                      VALID:
-                    </td>
-                    <td>
-                      <code
+                    <td style={{ width: 90 }}>
+                      <button
                         style={{
-                          fontSize: 12,
-                          color: error ? colors.lightPink : colors.green,
+                          border: `1px solid ${colors.blue}`,
+                          borderRadius: 2,
+                          padding: '3px 5px',
+                          display: 'inline-block',
+                          fontSize: 14,
+                          lineHeight: '12px',
+                          textAlign: 'center',
+                          marginRight: 10,
+                          background: colors.blue,
+                          color: 'white',
                         }}
                       >
-                        {error ? 'false' : 'true'}
-                      </code>
-                    </td>
-                  </tr>
-                )}
-                {type && (
-                  <tr>
-                    <td align="right" style={{ paddingRight: 5 }}>
-                      Type:
-                    </td>
-                    <td>{type}</td>
-                  </tr>
-                )}
-                {errorType && (
-                  <tr>
-                    <td align="right" style={{ paddingRight: 5 }}>
-                      ERROR Type:
-                    </td>
-                    <td>{errorType}</td>
-                  </tr>
-                )}
-                {errorMessage && (
-                  <tr>
-                    <td align="right" style={{ paddingRight: 5 }}>
-                      MESSAGE:
-                    </td>
-                    <td>{errorMessage.trim()}</td>
-                  </tr>
-                )}
-                {!isUndefined(result[name]) && (
-                  <tr>
-                    <td align="right" style={{ paddingRight: 5 }}>
-                      VALUE:
-                    </td>
-                    <td>{result[name]}</td>
-                  </tr>
-                )}
-                {readFormStateRef.current.touched && (
-                  <tr>
-                    <td align="right" style={{ paddingRight: 5 }}>
-                      TOUCHED:
-                    </td>
-                    <td>
-                      <code
+                        -
+                      </button>
+                      <span
                         style={{
-                          fontSize: 12,
-                          color: isTouched ? colors.green : colors.lightPink,
+                          border: `1px solid ${colors.lightBlue}`,
+                          borderRadius: 2,
+                          padding: '3px 10px',
+                          display: 'inline-block',
+                          fontSize: 10,
+                          textAlign: 'center',
+                          ...(isNative
+                            ? {}
+                            : { background: colors.lightBlue, color: 'white' }),
                         }}
                       >
-                        {isTouched ? 'true' : 'false'}
-                      </code>
-                    </td>
-                  </tr>
-                )}
-                {(readFormStateRef.current as any).dirtyFields && (
-                  <tr>
-                    <td align="right" style={{ paddingRight: 5 }}>
-                      DIRTY:
+                        {isNative ? 'Native' : 'Custom'}
+                      </span>
                     </td>
                     <td>
-                      <code
-                        style={{
-                          fontSize: 12,
-                          color: formState.dirtyFields.has(name)
-                            ? colors.green
-                            : colors.lightPink,
-                        }}
-                      >
-                        {formState.dirtyFields.has(name) ? 'true' : 'false'}
-                      </code>
+                      <p>{name}</p>
                     </td>
                   </tr>
-                )}
-              </tbody>
-            </table>
-          </section>
-        );
-      })}
+                </thead>
+                <tbody>
+                  {type && (
+                    <tr>
+                      <td align="right" style={{ paddingRight: 5 }}>
+                        Type:
+                      </td>
+                      <td>{type}</td>
+                    </tr>
+                  )}
+                  {errorType && (
+                    <tr>
+                      <td align="right" style={{ paddingRight: 5 }}>
+                        ERROR Type:
+                      </td>
+                      <td>{errorType}</td>
+                    </tr>
+                  )}
+                  {errorMessage && (
+                    <tr>
+                      <td align="right" style={{ paddingRight: 5 }}>
+                        MESSAGE:
+                      </td>
+                      <td>{errorMessage.trim()}</td>
+                    </tr>
+                  )}
+                  {!isUndefined(result[name]) && (
+                    <tr>
+                      <td align="right" style={{ paddingRight: 5 }}>
+                        VALUE:
+                      </td>
+                      <td>{result[name]}</td>
+                    </tr>
+                  )}
+                  {readFormStateRef.current.touched && (
+                    <tr>
+                      <td align="right" style={{ paddingRight: 5 }}>
+                        TOUCHED:
+                      </td>
+                      <td>
+                        <code
+                          style={{
+                            fontSize: 12,
+                            color: isTouched ? colors.green : colors.lightPink,
+                          }}
+                        >
+                          {isTouched ? 'true' : 'false'}
+                        </code>
+                      </td>
+                    </tr>
+                  )}
+                  {(readFormStateRef.current as any).dirtyFields && (
+                    <tr>
+                      <td align="right" style={{ paddingRight: 5 }}>
+                        DIRTY:
+                      </td>
+                      <td>
+                        <code
+                          style={{
+                            fontSize: 12,
+                            color: formState.dirtyFields.has(name)
+                              ? colors.green
+                              : colors.lightPink,
+                          }}
+                        >
+                          {formState.dirtyFields.has(name) ? 'true' : 'false'}
+                        </code>
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </section>
+          );
+        })}
+      </div>
     </div>
   );
 };

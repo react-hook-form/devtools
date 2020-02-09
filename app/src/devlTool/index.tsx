@@ -32,9 +32,9 @@ export default ({ control }: { control: Control }) => {
           height: '100vh',
           width: 250,
           zIndex: 99998,
-          background: colors.secondary,
-          top: 3,
-          right: 4,
+          background: 'black',
+          top: 7,
+          right: 7,
           boxShadow: 'rgba(15, 15, 29, 0.4) -3px 3px 6px 0px',
         }}
       />
@@ -46,9 +46,9 @@ export default ({ control }: { control: Control }) => {
           zIndex: 99998,
           borderTop: '10px solid transparent',
           borderBottom: '10px solid transparent',
-          borderRight: `10px solid ${colors.secondary}`,
-          right: 244,
-          top: -7,
+          borderRight: `10px solid black`,
+          right: 247,
+          top: -3,
         }}
       />
     </>
