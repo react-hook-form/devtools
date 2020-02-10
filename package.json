@@ -1,0 +1,9 @@
+{
+  "name": "react-hook-form-devtools",
+  "version": "1.0.0",
+  "description": "React Hook Form dev tool to help debugging forms",
+  "main": "src/index.tsx",
+  "repository": "git@github.com:react-hook-form/react-hook-form-devtools.git",
+  "author": "bluebill1049 <bluebill1049@hotmail.com>",
+  "license": "MIT"
+}

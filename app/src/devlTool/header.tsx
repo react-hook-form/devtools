@@ -34,6 +34,9 @@ export default () => (
     </svg>
     <p>Developer Tool</p>
     <button
+      onClick={() => {
+
+      }}
       style={{
         appearance: 'none',
         background: 'none',

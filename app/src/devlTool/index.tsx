@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Control } from 'react-hook-form';
 import Header from './header';
-import Content from './content';
+import Content from './panel';
 import colors from './colors';
 
 export default ({ control }: { control: Control }) => {
