@@ -18,9 +18,11 @@ type Props = {
   fieldsValues: any;
   name: string;
   collapseAll: boolean;
+  refObject: any;
 };
 
 const PanelTable = ({
+  refObject,
   hasError,
   isDirty,
   fieldsValues,
@@ -57,10 +59,15 @@ const PanelTable = ({
             hasError ? colors.secondary : colors.primary
           }`,
         }}
+        onClick={() => {
+          if (refObject.scrollIntoView) {
+            refObject.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
       >
         <thead>
           <tr>
-            <td style={{ width: 90, display: 'flex' }}>
+            <td style={{ width: 90 }}>
               <button
                 onClick={() => setCollapse(!collapse)}
                 style={{
@@ -112,7 +119,7 @@ const PanelTable = ({
           <tbody>
             {type && (
               <tr>
-                <td align="right" style={{ paddingRight: 5 }}>
+                <td align="right" style={{ paddingRight: 5, fontWeight: 500 }}>
                   Type:
                 </td>
                 <td>{type}</td>
@@ -120,7 +127,7 @@ const PanelTable = ({
             )}
             {errorType && (
               <tr>
-                <td align="right" style={{ paddingRight: 5 }}>
+                <td align="right" style={{ paddingRight: 5, fontWeight: 500 }}>
                   ERROR Type:
                 </td>
                 <td>{errorType}</td>
@@ -128,7 +135,7 @@ const PanelTable = ({
             )}
             {errorMessage && (
               <tr>
-                <td align="right" style={{ paddingRight: 5 }}>
+                <td align="right" style={{ paddingRight: 5, fontWeight: 500 }}>
                   MESSAGE:
                 </td>
                 <td>{errorMessage.trim()}</td>
@@ -136,16 +143,16 @@ const PanelTable = ({
             )}
             {!isUndefined(fieldsValues[name]) && (
               <tr>
-                <td align="right" style={{ paddingRight: 5 }}>
-                  VALUE:
+                <td align="right" style={{ paddingRight: 5, fontWeight: 500 }}>
+                  Value:
                 </td>
                 <td>{fieldsValues[name]}</td>
               </tr>
             )}
             {readFormStateRef.current.touched && (
               <tr>
-                <td align="right" style={{ paddingRight: 5 }}>
-                  TOUCHED:
+                <td align="right" style={{ paddingRight: 5, fontWeight: 500 }}>
+                  Touched:
                 </td>
                 <td>
                   <code
@@ -161,8 +168,8 @@ const PanelTable = ({
             )}
             {(readFormStateRef.current as any).dirtyFields && (
               <tr>
-                <td align="right" style={{ paddingRight: 5 }}>
-                  DIRTY:
+                <td align="right" style={{ paddingRight: 5, fontWeight: 500 }}>
+                  Dirty:
                 </td>
                 <td>
                   <code

@@ -23,6 +23,7 @@ const App = () => {
 
   console.log('app', formState.touched);
   console.log('app', formState.dirtyFields);
+  console.log('app', formState.isValid);
 
   return (
     <div className="App">
@@ -32,6 +33,20 @@ const App = () => {
         <input name="test" ref={register} />
         <label>Test1</label>
         <input name="test1" ref={register({ required: true })} />
+        <label>Test2</label>
+        <input name="test2" ref={register({ required: true })} />
+        <label>Test3</label>
+        <input name="test3" ref={register({ required: true })} />
+        <label>Test4</label>
+        <input name="test4" ref={register({ required: true })} />
+        <label>Test5</label>
+        <input name="test5" ref={register({ required: true })} />
+        <label>Test6</label>
+        <input name="test6" ref={register({ required: true })} />
+        <label>Test7</label>
+        <input name="test7" ref={register({ required: true })} />
+        <label>Test8</label>
+        <input name="test8" ref={register({ required: true })} />
         <input type="submit" />
       </form>
 

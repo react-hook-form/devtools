@@ -43,7 +43,7 @@ export default ({ control }: { control: Control }) => {
             gridTemplateRows: '40px auto',
           }}
         >
-          <Header setVisible={setVisible} />
+          <Header setVisible={setVisible} control={control} />
           <Panel control={control} />
         </div>
         <Animate

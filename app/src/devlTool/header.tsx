@@ -1,11 +1,13 @@
 import colors from './colors';
 import * as React from 'react';
+import { Control } from 'react-hook-form';
 
 type Props = {
   setVisible: (visible: boolean) => void;
+  control: Control;
 };
 
-export default ({ setVisible }: Props) => (
+export default ({ setVisible, control }: Props) => (
   <header
     style={{
       display: 'flex',
@@ -22,12 +24,12 @@ export default ({ setVisible }: Props) => (
     >
       <span
         style={{
-          color: colors.lightPink,
+          color: control.formState.isValid ? colors.green : colors.lightPink,
         }}
       >
         ■
       </span>{' '}
-      Form Fields
+      RHF DevTools
     </p>
     <button
       onClick={() => setVisible(false)}

@@ -144,19 +144,6 @@ ul {
   padding: 0;
 }
 
-section,
-li {
-  display: grid;
-  grid-template-columns: 1fr 120px;
-  grid-gap: 20px;
-  margin-bottom: 20px;
-  /* height: 30px; */
-}
-
-section {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
 section > button {
   margin: 0;
   padding: 10px;

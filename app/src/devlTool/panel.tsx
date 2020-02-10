@@ -4,6 +4,7 @@ import { Control } from 'react-hook-form';
 import { useEffect } from 'react';
 import colors from './colors';
 import PanelTable from './panelTable';
+import FormStateTable from './formStateTable';
 
 const styles = {
   button: {
@@ -22,6 +23,7 @@ export default ({
 }) => {
   const [, setData] = React.useState({});
   const [collapseAll, setCollapseAll] = React.useState(true);
+  const [showFormState, setShowFormState] = React.useState(false);
   const fieldsValues = getValues();
 
   useEffect(() => {
@@ -47,6 +49,7 @@ export default ({
           style={{
             ...styles.button,
             borderRight: `1px solid ${colors.primary}`,
+            textTransform: 'none',
           }}
           onClick={() => setData({})}
         >
@@ -56,6 +59,7 @@ export default ({
           style={{
             ...styles.button,
             borderRight: `1px solid ${colors.primary}`,
+            textTransform: 'none',
           }}
           onClick={() => setCollapseAll(!collapseAll)}
         >
@@ -97,6 +101,7 @@ export default ({
           const isNative = (value as any).ref.type;
           const isDirty = formState.dirtyFields.has(name);
           const hasError = !!error;
+          const ref = get(value, 'ref');
 
           return (
             <section
@@ -107,6 +112,7 @@ export default ({
               }}
             >
               <PanelTable
+                refObject={ref}
                 index={index}
                 collapseAll={collapseAll}
                 name={name}
@@ -124,6 +130,12 @@ export default ({
           );
         })}
       </div>
+
+      <FormStateTable
+        formState={formState}
+        showFormState={showFormState}
+        setShowFormState={setShowFormState}
+      />
     </div>
   );
 };
