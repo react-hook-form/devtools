@@ -1,5 +1,5 @@
 <h1 align="center">React Hook Form Dev Tools</h1>
-🤹‍♀️ Under development
+<p align="center"><b>🤹‍♀️ Under development</b></p>
 
 <div align="center">
     <p align="center">
