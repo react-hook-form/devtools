@@ -13,7 +13,7 @@ const Logo = ({
       fill="white"
       viewBox="0 0 100 100"
       style={{
-        height: 12,
+        height: 14,
         padding: 3,
         borderRadius: 2,
         background: colors.lightPink,

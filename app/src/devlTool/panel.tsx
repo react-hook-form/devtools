@@ -86,7 +86,7 @@ export default ({
           overflow: 'auto',
         }}
       >
-        {Object.entries(fieldsRef.current).map(([name, value]) => {
+        {Object.entries(fieldsRef.current).map(([name, value], index) => {
           const error = get(errorsRef.current, name);
           const errorMessage = get(error, 'message', undefined);
           const errorType = get(error, 'type', undefined);
@@ -96,14 +96,13 @@ export default ({
           const isDirty = formState.dirtyFields.has(name);
           const hasError = !!error;
 
-          console.log(error);
-
           return (
             <section
-              key={name}
+              key={`${name}${index}`}
               style={{ borderBottom: `1px dashed ${colors.secondary}` }}
             >
               <PanelTable
+              index={index}
                 collapseAll={collapseAll}
                 name={name}
                 isTouched={isTouched}
