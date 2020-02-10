@@ -6,7 +6,7 @@ import Panel from './panel';
 import colors from './colors';
 import Logo from './logo';
 
-const DevTool = ({ control }: { control: Control }) => {
+export const DevTool = ({ control }: { control: Control }) => {
   const [visible, setVisible] = React.useState(true);
 
   return (
@@ -144,5 +144,3 @@ const DevTool = ({ control }: { control: Control }) => {
     </>
   );
 };
-
-export default DevTool;

@@ -10,6 +10,7 @@
     "build": "rollup -c"
   },
   "peerDependencies": {
+    "react-dom": "^16.12.0",
     "react-hook-form": "^4.9.2"
   },
   "dependencies": {
