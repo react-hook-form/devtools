@@ -33,7 +33,7 @@ export default ({ control }: { control: Control }) => {
             height: '100vh',
             width: 250,
             zIndex: 99999,
-            background: colors.primary,
+            background: colors.buttonBlue,
             top: 0,
             right: 0,
             display: 'grid',
@@ -57,7 +57,11 @@ export default ({ control }: { control: Control }) => {
           }}
           delay={0.3}
         >
-          <div>
+          <div
+            style={{
+              position: 'relative',
+            }}
+          >
             <div
               style={{
                 position: 'fixed',
@@ -94,7 +98,7 @@ export default ({ control }: { control: Control }) => {
                 borderBottom: '10px solid transparent',
                 borderRight: `10px solid ${colors.buttonBlue}`,
                 right: 247,
-                top: 36,
+                top: 37,
               }}
             />
             <span
@@ -104,7 +108,7 @@ export default ({ control }: { control: Control }) => {
                 position: 'fixed',
                 zIndex: 99998,
                 right: 247,
-                top: 48,
+                top: 47,
                 background: colors.buttonBlue,
               }}
             />
@@ -118,7 +122,7 @@ export default ({ control }: { control: Control }) => {
                 borderBottom: '10px solid transparent',
                 borderLeft: `10px solid ${colors.buttonBlue}`,
                 right: 247,
-                top: 54,
+                top: 53,
               }}
             />
           </div>

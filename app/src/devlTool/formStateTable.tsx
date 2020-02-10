@@ -77,11 +77,12 @@ const FormStateTable = ({
       style={{
         margin: 0,
         width: '100%',
-        background: colors.buttonBlue,
+        background: colors.blue,
         border: 0,
         color: 'white',
         padding: '8px 10px',
         textTransform: 'none',
+        borderRadius: 0
       }}
       onClick={() => {
         setShowFormState(!showFormState);

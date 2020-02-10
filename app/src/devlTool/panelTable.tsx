@@ -48,7 +48,7 @@ const PanelTable = ({
       start={{ opacity: 0, transform: 'translateY(10px)' }}
       end={{ opacity: 1 }}
       easeType="ease-in"
-      delay={index * 0.05}
+      delay={index * 0.1}
     >
       <table
         style={{
@@ -56,22 +56,17 @@ const PanelTable = ({
           width: '100%',
           transition: '.3s all',
           borderLeft: `2px solid ${
-            hasError ? colors.secondary : colors.primary
+            hasError ? colors.secondary : colors.buttonBlue
           }`,
-        }}
-        onClick={() => {
-          if (refObject.scrollIntoView) {
-            refObject.scrollIntoView({ behavior: 'smooth' });
-          }
         }}
       >
         <thead>
           <tr>
-            <td style={{ width: 90 }}>
+            <td style={{ width: 100 }}>
               <button
                 onClick={() => setCollapse(!collapse)}
                 style={{
-                  border: `1px solid ${colors.blue}`,
+                  border: `1px solid ${colors.lightBlue}`,
                   borderRadius: 2,
                   padding: '3px 5px',
                   display: 'inline-block',
@@ -87,21 +82,28 @@ const PanelTable = ({
               >
                 {collapse ? '+' : '-'}
               </button>
-              <span
+              <button
+                onClick={() => {
+                  if (refObject.scrollIntoView) {
+                    refObject.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                title="Scroll into view"
                 style={{
                   border: `1px solid ${colors.lightBlue}`,
                   borderRadius: 2,
                   padding: '3px 10px',
                   display: 'inline-block',
                   fontSize: 10,
+                  margin: 0,
                   textAlign: 'center',
                   ...(isNative
-                    ? {}
-                    : { background: colors.lightBlue, color: 'white' }),
+                    ? { background: colors.lightBlue, color: 'white' }
+                    : { cursor: 'not-allowed'}),
                 }}
               >
                 {isNative ? 'Native' : 'Custom'}
-              </span>
+              </button>
             </td>
             <td>
               <p
