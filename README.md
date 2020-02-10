@@ -1,3 +1,5 @@
+<h1 align="center">React Hook Form Dev Tools</h1>
+
 <div align="center">
     <p align="center">
         <a href="https://react-hook-form.com" title="React Hook Form - Simple React forms validation">
@@ -19,8 +21,6 @@
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=React+hooks+for+form+validation+without+the+hassle&url=https://github.com/bluebill1049/react-hook-form)&nbsp;[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/react-hook-form)
 
 </div>
-
-<h2 align="center">React Hook Form Dev Tools</h2>
 
 This React Component will help you to debug when you are working React Hook Form, and give you more insight about your form detail.
 
