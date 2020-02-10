@@ -15,6 +15,8 @@ export default ({ setVisible }: Props) => (
   >
     <p
       style={{
+        margin: 0,
+        padding: 0,
         fontWeight: 600,
       }}
     >
@@ -36,6 +38,8 @@ export default ({ setVisible }: Props) => (
         color: 'white',
         fontSize: 14,
         fontWeight: 'bold',
+        margin: 0,
+        padding: '0 10px',
         marginRight: 4,
         marginLeft: 'auto',
       }}

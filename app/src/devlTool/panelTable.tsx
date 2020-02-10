@@ -60,7 +60,7 @@ const PanelTable = ({
       >
         <thead>
           <tr>
-            <td style={{ width: 90 }}>
+            <td style={{ width: 90, display: 'flex' }}>
               <button
                 onClick={() => setCollapse(!collapse)}
                 style={{
@@ -72,6 +72,7 @@ const PanelTable = ({
                   lineHeight: '12px',
                   width: 20,
                   textAlign: 'center',
+                  margin: 0,
                   marginRight: 10,
                   background: colors.blue,
                   color: 'white',

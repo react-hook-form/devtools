@@ -7,6 +7,7 @@ import PanelTable from './panelTable';
 
 const styles = {
   button: {
+    margin: 0,
     background: colors.blue,
     border: 0,
     color: 'white',
@@ -66,6 +67,7 @@ export default ({
             display: 'inline-block',
             borderRadius: 0,
             width: '100%',
+            margin: 0,
             padding: '5px 10px',
             WebkitAppearance: 'none',
             appearance: 'none',
@@ -99,10 +101,13 @@ export default ({
           return (
             <section
               key={`${name}${index}`}
-              style={{ borderBottom: `1px dashed ${colors.secondary}` }}
+              style={{
+                borderBottom: `1px dashed ${colors.secondary}`,
+                margin: 0,
+              }}
             >
               <PanelTable
-              index={index}
+                index={index}
                 collapseAll={collapseAll}
                 name={name}
                 isTouched={isTouched}

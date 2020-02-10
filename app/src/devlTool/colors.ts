@@ -7,6 +7,5 @@ export default {
   errorPink: '#fbecf2',
   buttonBlue: '#191d3a',
   link: '#ff7aa8',
-  black: '#000',
   green: '#1bda2b',
 };

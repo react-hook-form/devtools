@@ -135,6 +135,7 @@ export default ({ control }: { control: Control }) => {
             padding: 3,
             background: 'none',
             border: 'none',
+            margin: 0,
           }}
         >
           <Logo setVisible={setVisible} />
