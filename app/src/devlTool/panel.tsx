@@ -49,7 +49,7 @@ export default ({
           }}
           onClick={() => setData({})}
         >
-          UPDATE
+          ♺ UPDATE
         </button>
         <button
           style={{
