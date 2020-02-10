@@ -22,6 +22,8 @@
 
 </div>
 
+<img src="https://raw.githubusercontent.com/react-hook-form/react-hook-form-devtools/master/app/screen.png" />
+
 This React Component will help you to debug when you are working React Hook Form, and give you more insight about your form detail.
 
 ## Install
