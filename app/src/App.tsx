@@ -13,7 +13,7 @@ const App = () => {
   });
 
   React.useEffect(() => {
-    register('custom');
+    register('customInput');
   }, [register]);
 
   console.log('app', formState.touched);
@@ -24,9 +24,9 @@ const App = () => {
     <div className="App">
       <form onSubmit={handleSubmit(d => console.log(d))}>
         <label>First Name</label>
-        <input name="test1" ref={register({ required: true })} />
+        <input name="firstName" ref={register({ required: true })} />
         <label>Last Name</label>
-        <input name="test2" ref={register({ required: true })} />
+        <input name="lastName" ref={register({ required: true })} />
         <input style={{ fontWeight: 400 }} type="submit" />
       </form>
 
