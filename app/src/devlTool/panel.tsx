@@ -50,6 +50,7 @@ export default ({
             ...styles.button,
             borderRight: `1px solid ${colors.primary}`,
             textTransform: 'none',
+            borderRadius: 0,
           }}
           onClick={() => setData({})}
         >
@@ -60,6 +61,7 @@ export default ({
             ...styles.button,
             borderRight: `1px solid ${colors.primary}`,
             textTransform: 'none',
+            borderRadius: 0,
           }}
           onClick={() => setCollapseAll(!collapseAll)}
         >
