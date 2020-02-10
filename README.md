@@ -20,5 +20,40 @@
 
 </div>
 
-<h1>React Hook Form Dev Tools</h1>
+<h2 align="center">React Hook Form Dev Tools</h2>
 
+This React Component will help you to debug when you are working React Hook Form, and give you more insight about your form detail.
+
+## Install
+
+    $ npm install react-hook-form-devtools
+
+## Quickstart
+
+```typescript jsx
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import DevTool from './devlTool';
+import './App.css';
+
+const App = () => {
+  const { register, control, handleSubmit } = useForm({
+    mode: 'onChange',
+  });
+
+  return (
+    <>
+      <DevTool control={control} />
+
+      <form onSubmit={handleSubmit(d => console.log(d))}>
+        <h1>React Hook Form DevTools</h1>
+        <label>Test</label>
+        <input name="test" ref={register} />
+        <input type="submit" />
+      </form>
+    </>
+  );
+};
+
+export default App;
+```
