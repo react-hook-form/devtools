@@ -23,12 +23,11 @@ const App = () => {
   return (
     <div className="App">
       <form onSubmit={handleSubmit(d => console.log(d))}>
-        <h1>React Hook Form DevTools</h1>
         <label>First Name</label>
         <input name="test1" ref={register({ required: true })} />
         <label>Last Name</label>
         <input name="test2" ref={register({ required: true })} />
-        <input type="submit" />
+        <input style={{ fontWeight: 400 }} type="submit" />
       </form>
 
       <DevTool control={control} />

@@ -11,7 +11,7 @@ form {
 }
 
 h1 {
-  font-weight: 100;
+  font-weight: 400;
   color: white;
   margin-top: 50px;
   text-align: center;
@@ -47,6 +47,7 @@ input {
 }
 
 label {
+  text-shadow: 1px 1px #0e101c;
   line-height: 2;
   text-align: left;
   display: block;
