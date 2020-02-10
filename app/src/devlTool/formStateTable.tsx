@@ -1,6 +1,7 @@
 import colors from './colors';
 import * as React from 'react';
 import { FormStateProxy } from 'react-hook-form';
+import defaultStyles from './defaultStyles';
 
 type Props = {
   formState: FormStateProxy<Record<string, any>>;
@@ -75,14 +76,11 @@ const FormStateTable = ({
     )}
     <button
       style={{
+        ...defaultStyles.button,
         margin: 0,
         width: '100%',
-        background: colors.blue,
-        border: 0,
-        color: 'white',
         padding: '8px 10px',
         textTransform: 'none',
-        borderRadius: 0
       }}
       onClick={() => {
         setShowFormState(!showFormState);

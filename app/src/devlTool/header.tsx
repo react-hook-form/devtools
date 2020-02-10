@@ -1,6 +1,7 @@
 import colors from './colors';
 import * as React from 'react';
 import { Control } from 'react-hook-form';
+import defaultStyles from './defaultStyles';
 
 type Props = {
   setVisible: (visible: boolean) => void;
@@ -34,10 +35,7 @@ export default ({ setVisible, control }: Props) => (
     <button
       onClick={() => setVisible(false)}
       style={{
-        appearance: 'none',
-        background: 'none',
-        border: 'none',
-        color: 'white',
+        ...defaultStyles.button,
         fontSize: 14,
         fontWeight: 'bold',
         margin: 0,

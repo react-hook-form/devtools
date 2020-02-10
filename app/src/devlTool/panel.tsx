@@ -5,16 +5,7 @@ import { useEffect } from 'react';
 import colors from './colors';
 import PanelTable from './panelTable';
 import FormStateTable from './formStateTable';
-
-const styles = {
-  button: {
-    margin: 0,
-    background: colors.blue,
-    border: 0,
-    color: 'white',
-    padding: 5,
-  },
-};
+import defaultStyles from './defaultStyles';
 
 export default ({
   control: { fieldsRef, getValues, formState, errorsRef, readFormStateRef },
@@ -47,10 +38,9 @@ export default ({
       >
         <button
           style={{
-            ...styles.button,
+            ...defaultStyles.button,
             borderRight: `1px solid ${colors.primary}`,
             textTransform: 'none',
-            borderRadius: 0,
           }}
           onClick={() => setData({})}
         >
@@ -58,10 +48,9 @@ export default ({
         </button>
         <button
           style={{
-            ...styles.button,
+            ...defaultStyles.button,
             borderRight: `1px solid ${colors.primary}`,
             textTransform: 'none',
-            borderRadius: 0,
           }}
           onClick={() => setCollapseAll(!collapseAll)}
         >

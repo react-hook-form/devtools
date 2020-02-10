@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Animate } from 'react-simple-animate';
 import isUndefined from 'lodash/isUndefined';
 import colors from './colors';
+import defaultStyles from './defaultStyles';
 
 type Props = {
   isNative: boolean;
@@ -66,6 +67,7 @@ const PanelTable = ({
               <button
                 onClick={() => setCollapse(!collapse)}
                 style={{
+                  ...defaultStyles.button,
                   border: `1px solid ${colors.lightBlue}`,
                   borderRadius: 2,
                   padding: '3px 5px',
@@ -74,10 +76,8 @@ const PanelTable = ({
                   lineHeight: '12px',
                   width: 20,
                   textAlign: 'center',
-                  margin: 0,
                   marginRight: 10,
                   background: colors.blue,
-                  color: 'white',
                 }}
               >
                 {collapse ? '+' : '-'}
@@ -90,6 +90,7 @@ const PanelTable = ({
                 }}
                 title="Scroll into view"
                 style={{
+                  ...defaultStyles.button,
                   border: `1px solid ${colors.lightBlue}`,
                   borderRadius: 2,
                   padding: '3px 10px',
