@@ -5,5 +5,24 @@
   "main": "src/index.tsx",
   "repository": "git@github.com:react-hook-form/react-hook-form-devtools.git",
   "author": "bluebill1049 <bluebill1049@hotmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "peerDependencies": {
+    "react-hook-form": "^4.9.2"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.149",
+    "lodash": "^4.17.15",
+    "react": "^16.12.0",
+    "react-simple-animate": "^3.3.6"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.19",
+    "react-hook-form": "^4.9.2",
+    "rollup": "^1.31.0",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "typescript": "^3.7.5"
+  }
 }
