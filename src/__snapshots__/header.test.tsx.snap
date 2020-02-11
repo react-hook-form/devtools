@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`header should render correct color when form pass 1`] = `
+<DocumentFragment>
+  <header
+    style="display: flex; align-items: center; padding-left: 10px;"
+  >
+    <p
+      style="margin: 0px; padding: 0px; font-weight: 600;"
+    >
+      <span
+        style="transition: 0.5s all; color: rgb(27, 218, 43);"
+      >
+        ■
+      </span>
+       RHF DevTools
+    </p>
+    <button
+      class="css-7zizgu"
+      title="Close dev panel"
+    >
+      ✕
+    </button>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`header should render correct when form failed 1`] = `
+<DocumentFragment>
+  <header
+    style="display: flex; align-items: center; padding-left: 10px;"
+  >
+    <p
+      style="margin: 0px; padding: 0px; font-weight: 600;"
+    >
+      <span
+        style="transition: 0.5s all; color: rgb(236, 89, 144);"
+      >
+        ■
+      </span>
+       RHF DevTools
+    </p>
+    <button
+      class="css-7zizgu"
+      title="Close dev panel"
+    >
+      ✕
+    </button>
+  </header>
+</DocumentFragment>
+`;
