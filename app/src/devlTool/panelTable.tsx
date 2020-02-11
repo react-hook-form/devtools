@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Animate } from 'react-simple-animate';
 import isUndefined from 'lodash/isUndefined';
 import colors from './colors';
+import { Button, Table } from './styled';
 
 type Props = {
   isNative: boolean;
@@ -48,30 +49,26 @@ const PanelTable = ({
       start={{ opacity: 0, transform: 'translateY(10px)' }}
       end={{ opacity: 1 }}
       easeType="ease-in"
-      delay={index * 0.05}
+      delay={index * 0.1}
     >
-      <table
+      <Table
         style={{
           padding: '10px 10px 10px',
           width: '100%',
           transition: '.3s all',
           borderLeft: `2px solid ${
-            hasError ? colors.secondary : colors.primary
+            hasError ? colors.secondary : colors.buttonBlue
           }`,
-        }}
-        onClick={() => {
-          if (refObject.scrollIntoView) {
-            refObject.scrollIntoView({ behavior: 'smooth' });
-          }
         }}
       >
         <thead>
           <tr>
-            <td style={{ width: 90 }}>
-              <button
+            <td style={{ width: 100 }}>
+              <Button
                 onClick={() => setCollapse(!collapse)}
+                title="Toggle field table"
                 style={{
-                  border: `1px solid ${colors.blue}`,
+                  border: `1px solid ${colors.lightBlue}`,
                   borderRadius: 2,
                   padding: '3px 5px',
                   display: 'inline-block',
@@ -79,29 +76,33 @@ const PanelTable = ({
                   lineHeight: '12px',
                   width: 20,
                   textAlign: 'center',
-                  margin: 0,
                   marginRight: 10,
-                  background: colors.blue,
-                  color: 'white',
                 }}
               >
                 {collapse ? '+' : '-'}
-              </button>
-              <span
+              </Button>
+              <Button
+                onClick={() => {
+                  if (refObject.scrollIntoView) {
+                    refObject.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                title="Scroll into view"
                 style={{
                   border: `1px solid ${colors.lightBlue}`,
                   borderRadius: 2,
                   padding: '3px 10px',
                   display: 'inline-block',
                   fontSize: 10,
+                  margin: 0,
                   textAlign: 'center',
                   ...(isNative
                     ? {}
-                    : { background: colors.lightBlue, color: 'white' }),
+                    : { cursor: 'not-allowed', background: colors.lightBlue }),
                 }}
               >
                 {isNative ? 'Native' : 'Custom'}
-              </span>
+              </Button>
             </td>
             <td>
               <p
@@ -185,7 +186,7 @@ const PanelTable = ({
             )}
           </tbody>
         )}
-      </table>
+      </Table>
     </Animate>
   );
 };
