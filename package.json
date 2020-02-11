@@ -12,7 +12,7 @@
     "lint": "yarn lint:check --fix && yarn prettier",
     "prettier": "prettier --write './src/**/*.ts' './src/**/*.tsx' --config ./.prettierrc",
     "lint:check": "eslint ./src --ext .jsx,.ts --ignore-pattern *.test.ts --report-unused-disable-directives",
-    "test:watch": "yarn test:coverage -- --watchAll"
+    "test:watch": "yarn test -- --watchAll --coverage"
   },
   "peerDependencies": {
     "react-dom": "^16.12.0",
@@ -37,6 +37,7 @@
     "@types/react": "^16.9.19",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
+    "react-dom": "^16.12.0",
     "react-hook-form": "^4.9.2",
     "rollup": "^1.31.0",
     "rollup-plugin-typescript2": "^0.25.3",
