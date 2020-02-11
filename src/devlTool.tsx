@@ -5,6 +5,7 @@ import Header from './header';
 import Panel from './panel';
 import colors from './colors';
 import Logo from './logo';
+import { Button } from '../app/src/devlTool/styled';
 
 export const DevTool = ({ control }: { control: Control }) => {
   const [visible, setVisible] = React.useState(true);
@@ -126,20 +127,20 @@ export const DevTool = ({ control }: { control: Control }) => {
       </Animate>
 
       {!visible && (
-        <button
+        <Button
+          title="Show dev panel"
           style={{
             position: 'fixed',
             zIndex: 99999,
             top: 3,
             right: 3,
             padding: 3,
-            background: 'none',
-            border: 'none',
             margin: 0,
+            background: 'none',
           }}
         >
           <Logo setVisible={setVisible} />
-        </button>
+        </Button>
       )}
     </>
   );
