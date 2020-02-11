@@ -66,6 +66,7 @@ const PanelTable = ({
             <td style={{ width: 100 }}>
               <Button
                 onClick={() => setCollapse(!collapse)}
+                title="Toggle field table"
                 style={{
                   border: `1px solid ${colors.lightBlue}`,
                   borderRadius: 2,

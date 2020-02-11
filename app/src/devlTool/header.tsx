@@ -33,6 +33,8 @@ export default ({ setVisible, control }: Props) => (
       </span>{' '}
       RHF DevTools
     </p>
-    <CircleButton onClick={() => setVisible(false)}>✕</CircleButton>
+    <CircleButton title="Close dev panel" onClick={() => setVisible(false)}>
+      ✕
+    </CircleButton>
   </header>
 );

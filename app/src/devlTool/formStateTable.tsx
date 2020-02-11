@@ -81,6 +81,7 @@ const FormStateTable = ({
         padding: '8px 10px',
         textTransform: 'none',
       }}
+      title="Toggle form state panel"
       onClick={() => {
         setShowFormState(!showFormState);
       }}

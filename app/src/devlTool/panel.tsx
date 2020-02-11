@@ -41,6 +41,7 @@ export default ({
             borderRight: `1px solid ${colors.primary}`,
             textTransform: 'none',
           }}
+          title="Update values and state the form"
           onClick={() => setData({})}
         >
           ♺ UPDATE
@@ -50,6 +51,7 @@ export default ({
             borderRight: `1px solid ${colors.primary}`,
             textTransform: 'none',
           }}
+          title="Toggle entire fields"
           onClick={() => setCollapseAll(!collapseAll)}
         >
           {collapseAll ? '[-] COLLAPSE' : '[+] EXPAND'}

@@ -53,6 +53,7 @@ export default ({ control }: { control: Control }) => {
 
       {!visible && (
         <button
+          title="Show dev panel"
           style={{
             ...defaultStyles.button,
             position: 'fixed',
