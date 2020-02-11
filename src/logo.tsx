@@ -10,7 +10,6 @@ const Logo = ({
 }) => {
   return (
     <svg
-      aria-label="React Hook Form Logo"
       fill="white"
       viewBox="0 0 100 100"
       style={{

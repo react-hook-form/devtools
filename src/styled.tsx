@@ -32,7 +32,7 @@ const CircleButton = styled(Button)`
   &:hover {
     background: ${colors.lightBlue};
   }
-
+  
   &:active {
     background: black;
   }
@@ -50,7 +50,7 @@ const Input = styled.input`
 
 const Table = styled.table`
   transition: 0.3s all;
-
+  
   &:hover {
     background: ${colors.primary};
   }
