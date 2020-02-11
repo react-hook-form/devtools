@@ -1,6 +1,7 @@
 import colors from './colors';
 import * as React from 'react';
 import { FormStateProxy } from 'react-hook-form';
+import { Button } from './styled';
 
 type Props = {
   formState: FormStateProxy<Record<string, any>>;
@@ -73,29 +74,28 @@ const FormStateTable = ({
         </tbody>
       </table>
     )}
-    <button
+    <Button
       style={{
         margin: 0,
         width: '100%',
-        background: colors.buttonBlue,
-        border: 0,
-        color: 'white',
         padding: '8px 10px',
         textTransform: 'none',
       }}
+      title="Toggle form state panel"
       onClick={() => {
         setShowFormState(!showFormState);
       }}
     >
       <span
         style={{
+          transition: '0.5s all',
           color: formState.isValid ? colors.green : colors.lightPink,
         }}
       >
         ■
       </span>{' '}
       Form State: {showFormState ? 'OFF' : 'ON'}
-    </button>
+    </Button>
   </div>
 );
 

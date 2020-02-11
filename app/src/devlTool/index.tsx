@@ -5,8 +5,8 @@ import Header from './header';
 import Panel from './panel';
 import colors from './colors';
 import Logo from './logo';
-import defaultStyles from './defaultStyles';
 import { PanelShadow } from './panelShadow';
+import { Button } from './styled';
 
 export default ({ control }: { control: Control }) => {
   const [visible, setVisible] = React.useState(true);
@@ -52,10 +52,9 @@ export default ({ control }: { control: Control }) => {
       </Animate>
 
       {!visible && (
-        <button
+        <Button
           title="Show dev panel"
           style={{
-            ...defaultStyles.button,
             position: 'fixed',
             zIndex: 99999,
             top: 3,
@@ -66,7 +65,7 @@ export default ({ control }: { control: Control }) => {
           }}
         >
           <Logo setVisible={setVisible} />
-        </button>
+        </Button>
       )}
     </>
   );

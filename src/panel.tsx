@@ -5,16 +5,7 @@ import { useEffect } from 'react';
 import colors from './colors';
 import PanelTable from './panelTable';
 import FormStateTable from './formStateTable';
-
-const styles = {
-  button: {
-    margin: 0,
-    background: colors.blue,
-    border: 0,
-    color: 'white',
-    padding: 5,
-  },
-};
+import { Button, Input } from './styled';
 
 export default ({
   control: { fieldsRef, getValues, formState, errorsRef, readFormStateRef },
@@ -45,30 +36,28 @@ export default ({
           gridTemplateRows: '28px 28px',
         }}
       >
-        <button
+        <Button
           style={{
-            ...styles.button,
             borderRight: `1px solid ${colors.primary}`,
             textTransform: 'none',
-            borderRadius: 0,
           }}
+          title="Update values and state the form"
           onClick={() => setData({})}
         >
           ♺ UPDATE
-        </button>
-        <button
+        </Button>
+        <Button
           style={{
-            ...styles.button,
             borderRight: `1px solid ${colors.primary}`,
             textTransform: 'none',
-            borderRadius: 0,
           }}
+          title="Toggle entire fields"
           onClick={() => setCollapseAll(!collapseAll)}
         >
           {collapseAll ? '[-] COLLAPSE' : '[+] EXPAND'}
-        </button>
+        </Button>
 
-        <input
+        <Input
           style={{
             display: 'inline-block',
             borderRadius: 0,
