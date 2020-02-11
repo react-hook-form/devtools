@@ -36,7 +36,7 @@ This React Component will help you to debug when you are working React Hook Form
 ```typescript jsx
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import DevTool from './devlTool';
+import DevTool from 'react-hook-form-devtools';
 import './App.css';
 
 const App = () => {
