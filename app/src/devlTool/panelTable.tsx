@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Animate } from 'react-simple-animate';
 import isUndefined from 'lodash/isUndefined';
 import colors from './colors';
-import defaultStyles from './defaultStyles';
+import { Button, Table } from './styled';
 
 type Props = {
   isNative: boolean;
@@ -51,7 +51,7 @@ const PanelTable = ({
       easeType="ease-in"
       delay={index * 0.1}
     >
-      <table
+      <Table
         style={{
           padding: '10px 10px 10px',
           width: '100%',
@@ -64,10 +64,9 @@ const PanelTable = ({
         <thead>
           <tr>
             <td style={{ width: 100 }}>
-              <button
+              <Button
                 onClick={() => setCollapse(!collapse)}
                 style={{
-                  ...defaultStyles.button,
                   border: `1px solid ${colors.lightBlue}`,
                   borderRadius: 2,
                   padding: '3px 5px',
@@ -77,12 +76,11 @@ const PanelTable = ({
                   width: 20,
                   textAlign: 'center',
                   marginRight: 10,
-                  background: colors.blue,
                 }}
               >
                 {collapse ? '+' : '-'}
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={() => {
                   if (refObject.scrollIntoView) {
                     refObject.scrollIntoView({ behavior: 'smooth' });
@@ -90,7 +88,6 @@ const PanelTable = ({
                 }}
                 title="Scroll into view"
                 style={{
-                  ...defaultStyles.button,
                   border: `1px solid ${colors.lightBlue}`,
                   borderRadius: 2,
                   padding: '3px 10px',
@@ -99,12 +96,12 @@ const PanelTable = ({
                   margin: 0,
                   textAlign: 'center',
                   ...(isNative
-                    ? { background: colors.lightBlue, color: 'white' }
-                    : { cursor: 'not-allowed'}),
+                    ? {}
+                    : { cursor: 'not-allowed', background: colors.lightBlue }),
                 }}
               >
                 {isNative ? 'Native' : 'Custom'}
-              </button>
+              </Button>
             </td>
             <td>
               <p
@@ -188,7 +185,7 @@ const PanelTable = ({
             )}
           </tbody>
         )}
-      </table>
+      </Table>
     </Animate>
   );
 };

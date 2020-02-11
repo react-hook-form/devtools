@@ -1,7 +1,7 @@
 import colors from './colors';
 import * as React from 'react';
 import { FormStateProxy } from 'react-hook-form';
-import defaultStyles from './defaultStyles';
+import { Button } from './styled';
 
 type Props = {
   formState: FormStateProxy<Record<string, any>>;
@@ -74,9 +74,8 @@ const FormStateTable = ({
         </tbody>
       </table>
     )}
-    <button
+    <Button
       style={{
-        ...defaultStyles.button,
         margin: 0,
         width: '100%',
         padding: '8px 10px',
@@ -88,13 +87,14 @@ const FormStateTable = ({
     >
       <span
         style={{
+          transition: '0.5s all',
           color: formState.isValid ? colors.green : colors.lightPink,
         }}
       >
         ■
       </span>{' '}
       Form State: {showFormState ? 'OFF' : 'ON'}
-    </button>
+    </Button>
   </div>
 );
 

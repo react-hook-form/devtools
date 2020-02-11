@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import colors from './colors';
 import PanelTable from './panelTable';
 import FormStateTable from './formStateTable';
-import defaultStyles from './defaultStyles';
+import { Button, Input } from './styled';
 
 export default ({
   control: { fieldsRef, getValues, formState, errorsRef, readFormStateRef },
@@ -36,28 +36,26 @@ export default ({
           gridTemplateRows: '28px 28px',
         }}
       >
-        <button
+        <Button
           style={{
-            ...defaultStyles.button,
             borderRight: `1px solid ${colors.primary}`,
             textTransform: 'none',
           }}
           onClick={() => setData({})}
         >
           ♺ UPDATE
-        </button>
-        <button
+        </Button>
+        <Button
           style={{
-            ...defaultStyles.button,
             borderRight: `1px solid ${colors.primary}`,
             textTransform: 'none',
           }}
           onClick={() => setCollapseAll(!collapseAll)}
         >
           {collapseAll ? '[-] COLLAPSE' : '[+] EXPAND'}
-        </button>
+        </Button>
 
-        <input
+        <Input
           style={{
             display: 'inline-block',
             borderRadius: 0,

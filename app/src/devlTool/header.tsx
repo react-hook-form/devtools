@@ -1,7 +1,7 @@
 import colors from './colors';
 import * as React from 'react';
 import { Control } from 'react-hook-form';
-import defaultStyles from './defaultStyles';
+import { CircleButton } from './styled';
 
 type Props = {
   setVisible: (visible: boolean) => void;
@@ -25,6 +25,7 @@ export default ({ setVisible, control }: Props) => (
     >
       <span
         style={{
+          transition: '0.5s all',
           color: control.formState.isValid ? colors.green : colors.lightPink,
         }}
       >
@@ -32,19 +33,6 @@ export default ({ setVisible, control }: Props) => (
       </span>{' '}
       RHF DevTools
     </p>
-    <button
-      onClick={() => setVisible(false)}
-      style={{
-        ...defaultStyles.button,
-        fontSize: 14,
-        fontWeight: 'bold',
-        margin: 0,
-        padding: '0 10px',
-        marginRight: 4,
-        marginLeft: 'auto',
-      }}
-    >
-      ✕
-    </button>
+    <CircleButton onClick={() => setVisible(false)}>✕</CircleButton>
   </header>
 );
