@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import PanelTable from './panelTable';
 
 jest.mock('lodash/isUndefined', () => ({ default: () => {} }));
+jest.mock('lodash/isObject', () => ({ default: () => {} }));
 
 describe('PanelTable', () => {
   it('should render correctly', () => {

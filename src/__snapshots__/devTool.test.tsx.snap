@@ -6,7 +6,7 @@ exports[`DevTool render correctly  1`] = `
     style="position: fixed; top: 0px; right: 0px; transform: translateX(0); transition: all 0.2s linear 0s;"
   >
     <div
-      style="position: fixed; height: 100vh; width: 250px; z-index: 99999; background: rgb(25, 29, 58); top: 0px; right: 0px; display: grid; text-align: left; color: white; font-size: 14px; grid-template-rows: 40px auto;"
+      style="position: fixed; height: 100vh; width: 250px; z-index: 99999; background: rgb(25, 29, 58); top: 0px; right: 0px; display: grid; text-align: left; color: white; font-size: 14px; grid-template-rows: 40px auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;"
     >
       <header
         style="display: flex; align-items: center; padding-left: 10px;"
@@ -89,7 +89,9 @@ exports[`DevTool render correctly  1`] = `
                         Native
                       </button>
                     </td>
-                    <td>
+                    <td
+                      style="display: block; max-width: 100px;"
+                    >
                       <p
                         style="margin: 0px; padding: 0px;"
                       >
@@ -132,7 +134,9 @@ exports[`DevTool render correctly  1`] = `
                         Native
                       </button>
                     </td>
-                    <td>
+                    <td
+                      style="display: block; max-width: 100px;"
+                    >
                       <p
                         style="margin: 0px; padding: 0px;"
                       >

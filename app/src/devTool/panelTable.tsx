@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Animate } from 'react-simple-animate';
 import isUndefined from 'lodash/isUndefined';
+import isObject from 'lodash/isObject';
 import colors from './colors';
 import { Button, Table } from './styled';
 
@@ -42,6 +43,22 @@ const PanelTable = ({
   React.useEffect(() => {
     setCollapse(!collapseAll);
   }, [collapseAll]);
+
+  let value = fieldsValues ? fieldsValues[name] : '';
+
+  if (fieldsValues && isObject(fieldsValues[name])) {
+    try {
+      value = (
+        <pre style={{ margin: 0 }}>
+          <code style={{ fontSize: 12 }}>
+            {JSON.stringify(fieldsValues[name], null, 2)}
+          </code>
+        </pre>
+      );
+    } catch {
+      value = <span>[Nested Object]</span>;
+    }
+  }
 
   return (
     <Animate
@@ -104,7 +121,12 @@ const PanelTable = ({
                 {isNative ? 'Native' : 'Custom'}
               </Button>
             </td>
-            <td>
+            <td
+              style={{
+                display: 'block',
+                maxWidth: 100,
+              }}
+            >
               <p
                 style={{
                   margin: 0,
@@ -120,7 +142,14 @@ const PanelTable = ({
           <tbody>
             {type && (
               <tr>
-                <td align="right" style={{ paddingRight: 5, fontWeight: 500 }}>
+                <td
+                  align="right"
+                  style={{
+                    paddingRight: 5,
+                    fontWeight: 500,
+                    verticalAlign: 'top',
+                  }}
+                >
                   Type:
                 </td>
                 <td>{type}</td>
@@ -128,31 +157,80 @@ const PanelTable = ({
             )}
             {errorType && (
               <tr>
-                <td align="right" style={{ paddingRight: 5, fontWeight: 500 }}>
+                <td
+                  align="right"
+                  style={{
+                    paddingRight: 5,
+                    fontWeight: 500,
+                    verticalAlign: 'top',
+                  }}
+                >
                   ERROR Type:
                 </td>
-                <td>{errorType}</td>
+                <td
+                  style={{
+                    display: 'block',
+                    maxWidth: 100,
+                  }}
+                >
+                  {errorType}
+                </td>
               </tr>
             )}
             {errorMessage && (
               <tr>
-                <td align="right" style={{ paddingRight: 5, fontWeight: 500 }}>
+                <td
+                  align="right"
+                  style={{
+                    paddingRight: 5,
+                    fontWeight: 500,
+                    verticalAlign: 'top',
+                  }}
+                >
                   MESSAGE:
                 </td>
-                <td>{errorMessage.trim()}</td>
+                <td
+                  style={{
+                    display: 'block',
+                    maxWidth: 100,
+                  }}
+                >
+                  {errorMessage.trim()}
+                </td>
               </tr>
             )}
             {fieldsValues && !isUndefined(fieldsValues[name]) && (
               <tr>
-                <td align="right" style={{ paddingRight: 5, fontWeight: 500 }}>
+                <td
+                  align="right"
+                  style={{
+                    paddingRight: 5,
+                    fontWeight: 500,
+                    verticalAlign: 'top',
+                  }}
+                >
                   Value:
                 </td>
-                <td>{fieldsValues[name]}</td>
+                <td
+                  style={{
+                    display: 'block',
+                    maxWidth: 100,
+                  }}
+                >
+                  {value}
+                </td>
               </tr>
             )}
             {readFormStateRef.current.touched && (
               <tr>
-                <td align="right" style={{ paddingRight: 5, fontWeight: 500 }}>
+                <td
+                  align="right"
+                  style={{
+                    paddingRight: 5,
+                    fontWeight: 500,
+                    verticalAlign: 'top',
+                  }}
+                >
                   Touched:
                 </td>
                 <td>
@@ -169,7 +247,14 @@ const PanelTable = ({
             )}
             {(readFormStateRef.current as any).dirtyFields && (
               <tr>
-                <td align="right" style={{ paddingRight: 5, fontWeight: 500 }}>
+                <td
+                  align="right"
+                  style={{
+                    paddingRight: 5,
+                    fontWeight: 500,
+                    verticalAlign: 'top',
+                  }}
+                >
                   Dirty:
                 </td>
                 <td>

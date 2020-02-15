@@ -43,6 +43,8 @@ export const DevTool = ({ control }: { control: Control }) => {
             color: 'white',
             fontSize: 14,
             gridTemplateRows: '40px auto',
+            fontFamily:
+              "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
           }}
         >
           <Header setVisible={setVisible} control={control} />

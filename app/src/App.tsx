@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { DevTool } from 'react-hook-form-devtools';
+import { DevTool } from './devTool';
 import './App.css';
 
 const App = () => {
@@ -24,7 +24,10 @@ const App = () => {
     <div className="App">
       <form onSubmit={handleSubmit(d => console.log(d))}>
         <h1>
-          <span role="img" aria-label="devTool">🔧</span> DevTools
+          <span role="img" aria-label="devTool">
+            🔧
+          </span>{' '}
+          DevTools
         </h1>
         <p style={{ textAlign: 'center' }}>
           React Hook Form DevTools to help debug forms.

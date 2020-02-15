@@ -29,7 +29,9 @@ exports[`PanelTable should render correctly 1`] = `
               Custom
             </button>
           </td>
-          <td>
+          <td
+            style="display: block; max-width: 100px;"
+          >
             <p
               style="margin: 0px; padding: 0px;"
             >
