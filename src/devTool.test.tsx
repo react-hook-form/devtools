@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DevTool } from './devlTool';
+import DevTool from './devTool';
 import { render, fireEvent } from '@testing-library/react';
 
 describe('DevTool', () => {
