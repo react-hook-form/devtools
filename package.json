@@ -1,6 +1,6 @@
 {
   "name": "react-hook-form-devtools",
-  "version": "1.0.1-rc.1",
+  "version": "1.0.1-next.0",
   "description": "React Hook Form dev tool to help debugging forms",
   "main": "dist/react-hook-form-devtools.js",
   "module": "dist/react-hook-form-devtools.es.js",
