@@ -28,42 +28,4 @@ describe('Panel', () => {
 
     getByText('[+] EXPAND');
   });
-
-  it('should map fields correctly', () => {
-    const { asFragment } = render(
-      <Panel
-        control={
-          {
-            getValues: () => {},
-            fieldsRef: {
-              current: {
-                test: {
-                  ref: {
-                    name: '1',
-                    type: 'test',
-                  },
-                },
-                test2: {
-                  ref: {
-                    name: '2',
-                    type: 'test1',
-                  },
-                },
-              },
-            },
-            fieldsValues: {},
-            errorsRef: {
-              current: {},
-            },
-            formState: {
-              dirtyFields: new Set(),
-            },
-            readFormStateRef: { current: {} },
-          } as any
-        }
-      />,
-    );
-
-    expect(asFragment()).toMatchSnapshot();
-  });
 });

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PanelTable should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    style="opacity: 1; transition: all 0.3s ease-in 0s;"
+  >
+    <table
+      class="css-vv52sx"
+      style="padding: 10px 10px 10px; width: 100%; transition: .3s all; border-left: 2px solid #bf1650;"
+    >
+      <thead>
+        <tr>
+          <td
+            style="width: 100px;"
+          >
+            <button
+              class="css-4vv12s"
+              style="border: 1px solid #516391; border-radius: 2px; padding: 3px 5px; display: inline-block; font-size: 14px; line-height: 12px; width: 20px; text-align: center; margin-right: 10px;"
+              title="Toggle field table"
+            >
+              +
+            </button>
+            <button
+              class="css-4vv12s"
+              style="border: 1px solid #516391; border-radius: 2px; padding: 3px 10px; display: inline-block; font-size: 10px; margin: 0px; text-align: center; cursor: not-allowed; background: rgb(81, 99, 145);"
+              title="Scroll into view"
+            >
+              Custom
+            </button>
+          </td>
+          <td>
+            <p
+              style="margin: 0px; padding: 0px;"
+            >
+              test
+            </p>
+          </td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</DocumentFragment>
+`;

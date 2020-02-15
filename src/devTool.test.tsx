@@ -1,13 +1,48 @@
 import * as React from 'react';
-import DevTool from './devTool';
-import { render, fireEvent } from '@testing-library/react';
+import { DevTool } from './devTool';
+import { render } from '@testing-library/react';
+
+jest.mock('lodash/get', () => ({
+  default: () => {},
+}));
 
 describe('DevTool', () => {
   it('render correctly ', () => {
     // @ts-ignore
-    const { getByTitle } = render(<DevTool control={{}} />);
-    const button = getByTitle('Close dev panel');
+    const { asFragment } = render(
+      <DevTool
+        control={
+          {
+            getValues: () => {},
+            fieldsRef: {
+              current: {
+                test: {
+                  ref: {
+                    name: '1',
+                    type: 'test',
+                  },
+                },
+                test2: {
+                  ref: {
+                    name: '2',
+                    type: 'test1',
+                  },
+                },
+              },
+            },
+            fieldsValues: {},
+            errorsRef: {
+              current: {},
+            },
+            formState: {
+              dirtyFields: new Set(),
+            },
+            readFormStateRef: { current: {} },
+          } as any
+        }
+      />,
+    );
 
-    fireEvent.click(button);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

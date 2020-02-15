@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DevTool render correctly  1`] = `
+<DocumentFragment>
+  <div
+    style="position: fixed; top: 0px; right: 0px; transform: translateX(0); transition: all 0.2s linear 0s;"
+  >
+    <div
+      style="position: fixed; height: 100vh; width: 250px; z-index: 99999; background: rgb(25, 29, 58); top: 0px; right: 0px; display: grid; text-align: left; color: white; font-size: 14px; grid-template-rows: 40px auto;"
+    >
+      <header
+        style="display: flex; align-items: center; padding-left: 10px;"
+      >
+        <p
+          style="margin: 0px; padding: 0px; font-weight: 600;"
+        >
+          <span
+            style="transition: 0.5s all; color: rgb(236, 89, 144);"
+          >
+            ■
+          </span>
+           RHF DevTools
+        </p>
+        <button
+          class="css-7zizgu"
+          title="Close dev panel"
+        >
+          ✕
+        </button>
+      </header>
+      <div
+        style="display: grid; grid-template-rows: 56px auto;"
+      >
+        <div
+          style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 28px 28px;"
+        >
+          <button
+            class="css-4vv12s"
+            style="border-right: 1px solid #0e101c; text-transform: none;"
+            title="Update values and state the form"
+          >
+            ♺ UPDATE
+          </button>
+          <button
+            class="css-4vv12s"
+            style="border-right: 1px solid #0e101c; text-transform: none;"
+            title="Toggle entire fields"
+          >
+            [-] COLLAPSE
+          </button>
+          <input
+            class="css-1cgmc6n"
+            placeholder="Filter name..."
+            style="display: inline-block; border-radius: 0; width: 100%; margin: 0px; padding: 5px 10px; appearance: none; font-size: 14px; border: 0px; color: white; grid-column-start: 1; grid-column-end: 4; background: black;"
+            type="search"
+          />
+        </div>
+        <div
+          style="overflow: auto;"
+        >
+          <section
+            style="border-bottom: 1px dashed #bf1650; margin: 0px;"
+          >
+            <div
+              style="opacity: 1; transition: all 0.3s ease-in 0s;"
+            >
+              <table
+                class="css-vv52sx"
+                style="padding: 10px 10px 10px; width: 100%; transition: .3s all; border-left: 2px solid #191d3a;"
+              >
+                <thead>
+                  <tr>
+                    <td
+                      style="width: 100px;"
+                    >
+                      <button
+                        class="css-4vv12s"
+                        style="border: 1px solid #516391; border-radius: 2px; padding: 3px 5px; display: inline-block; font-size: 14px; line-height: 12px; width: 20px; text-align: center; margin-right: 10px;"
+                        title="Toggle field table"
+                      >
+                        -
+                      </button>
+                      <button
+                        class="css-4vv12s"
+                        style="border: 1px solid #516391; border-radius: 2px; padding: 3px 10px; display: inline-block; font-size: 10px; margin: 0px; text-align: center;"
+                        title="Scroll into view"
+                      >
+                        Native
+                      </button>
+                    </td>
+                    <td>
+                      <p
+                        style="margin: 0px; padding: 0px;"
+                      >
+                        test
+                      </p>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody />
+              </table>
+            </div>
+          </section>
+          <section
+            style="border-bottom: 1px dashed #bf1650; margin: 0px;"
+          >
+            <div
+              style="opacity: 1; transition: all 0.3s ease-in 0.1s;"
+            >
+              <table
+                class="css-vv52sx"
+                style="padding: 10px 10px 10px; width: 100%; transition: .3s all; border-left: 2px solid #191d3a;"
+              >
+                <thead>
+                  <tr>
+                    <td
+                      style="width: 100px;"
+                    >
+                      <button
+                        class="css-4vv12s"
+                        style="border: 1px solid #516391; border-radius: 2px; padding: 3px 5px; display: inline-block; font-size: 14px; line-height: 12px; width: 20px; text-align: center; margin-right: 10px;"
+                        title="Toggle field table"
+                      >
+                        -
+                      </button>
+                      <button
+                        class="css-4vv12s"
+                        style="border: 1px solid #516391; border-radius: 2px; padding: 3px 10px; display: inline-block; font-size: 10px; margin: 0px; text-align: center;"
+                        title="Scroll into view"
+                      >
+                        Native
+                      </button>
+                    </td>
+                    <td>
+                      <p
+                        style="margin: 0px; padding: 0px;"
+                      >
+                        test2
+                      </p>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody />
+              </table>
+            </div>
+          </section>
+        </div>
+        <div
+          style="align-self: end;"
+        >
+          <button
+            class="css-4vv12s"
+            style="margin: 0px; width: 100%; padding: 8px 10px; text-transform: none;"
+            title="Toggle form state panel"
+          >
+            <span
+              style="transition: 0.5s all; color: rgb(236, 89, 144);"
+            >
+              ■
+            </span>
+             Form State: ON
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      style="transform: translateX(0); transition: all 0.1s linear 0.3s;"
+    >
+      <div
+        style="position: relative;"
+      >
+        <div
+          style="position: fixed; height: 100vh; width: 250px; z-index: 99998; background: black; top: 7px; right: 7px; box-shadow: rgba(15, 15, 29, 0.4) -3px 3px 6px 0px;"
+        />
+        <span
+          style="width: 0px; height: 0px; position: fixed; z-index: 99998; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-right: 10px solid black; right: 247px; top: -3px;"
+        />
+        <span
+          style="width: 0px; height: 0px; position: fixed; z-index: 99998; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-right: 10px solid #191d3a; right: 247px; top: 37px;"
+        />
+        <span
+          style="width: 10px; height: 21px; position: fixed; z-index: 99998; right: 247px; top: 47px; background: rgb(25, 29, 58);"
+        />
+        <span
+          style="width: 0px; height: 0px; position: fixed; z-index: 99998; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 10px solid #191d3a; right: 247px; top: 53px;"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
