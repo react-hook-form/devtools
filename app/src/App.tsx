@@ -27,7 +27,7 @@ const App = () => {
           <span role="img" aria-label="devTool">🔧</span> DevTools
         </h1>
         <p style={{ textAlign: 'center' }}>
-          React Hook Form DevTools to help to debug forms.
+          React Hook Form DevTools to help debug forms.
         </p>
         <label>First Name</label>
         <input name="firstName" ref={register({ required: true })} />

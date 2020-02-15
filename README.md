@@ -22,7 +22,7 @@
 
 ## Goal
 
-This React Component will help you to debug form when working React Hook Form, and give you more insight about your form's detail.
+This React Component will help you to debug forms when working React Hook Form, and give you more insight about your form's detail.
 
 ## Install
 
