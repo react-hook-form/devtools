@@ -50,6 +50,7 @@ exports[`DevTool render correctly  1`] = `
           </button>
           <input
             class="css-1cgmc6n"
+            name="search"
             placeholder="Filter name..."
             style="display: inline-block; border-radius: 0; width: 100%; margin: 0px; padding: 5px 10px; appearance: none; font-size: 14px; border: 0px; color: white; grid-column-start: 1; grid-column-end: 4; background: black;"
             type="search"
