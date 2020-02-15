@@ -142,7 +142,7 @@ const PanelTable = ({
                 <td>{errorMessage.trim()}</td>
               </tr>
             )}
-            {!isUndefined(fieldsValues[name]) && (
+            {fieldsValues && !isUndefined(fieldsValues[name]) && (
               <tr>
                 <td align="right" style={{ paddingRight: 5, fontWeight: 500 }}>
                   Value:

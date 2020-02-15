@@ -1,6 +1,6 @@
 import * as React from 'react';
 import get from 'lodash/get';
-import { Control } from 'react-hook-form';
+import { Control, useForm } from 'react-hook-form';
 import { useEffect } from 'react';
 import colors from './colors';
 import PanelTable from './panelTable';
@@ -16,6 +16,8 @@ export default ({
   const [collapseAll, setCollapseAll] = React.useState(true);
   const [showFormState, setShowFormState] = React.useState(false);
   const fieldsValues = getValues();
+  const { register, watch } = useForm();
+  const searchTerm = watch('search', '');
 
   useEffect(() => {
     setData({});
@@ -73,6 +75,8 @@ export default ({
             gridColumnEnd: 4,
             background: 'black',
           }}
+          name="search"
+          ref={register}
           placeholder="Filter name..."
           type="search"
         />
@@ -83,43 +87,53 @@ export default ({
           overflow: 'auto',
         }}
       >
-        {Object.entries(fieldsRef.current).map(([name, value], index) => {
-          const error = get(errorsRef.current, name);
-          const errorMessage = get(error, 'message', undefined);
-          const errorType = get(error, 'type', undefined);
-          const type = get(value, 'ref.type', undefined);
-          const isTouched = !!get(formState.touched, name);
-          const isNative = (value as any).ref.type;
-          const isDirty = formState.dirtyFields.has(name);
-          const hasError = !!error;
-          const ref = get(value, 'ref');
+        {Object.entries(fieldsRef.current)
+          .filter(
+            ([name]) =>
+              ((name &&
+                name.toLowerCase &&
+                name.toLowerCase().includes(searchTerm)) ||
+                (!name && !searchTerm) ||
+                searchTerm === '') &&
+              name,
+          )
+          .map(([name, value], index) => {
+            const error = get(errorsRef.current, name);
+            const errorMessage = get(error, 'message', undefined);
+            const errorType = get(error, 'type', undefined);
+            const type = get(value, 'ref.type', undefined);
+            const isTouched = !!get(formState.touched, name);
+            const isNative = (value as any).ref.type;
+            const isDirty = formState.dirtyFields.has(name);
+            const hasError = !!error;
+            const ref = get(value, 'ref');
 
-          return (
-            <section
-              key={`${name}${index}`}
-              style={{
-                borderBottom: `1px dashed ${colors.secondary}`,
-                margin: 0,
-              }}
-            >
-              <PanelTable
-                refObject={ref}
-                index={index}
-                collapseAll={collapseAll}
-                name={name}
-                isTouched={isTouched}
-                type={type}
-                hasError={hasError}
-                isNative={isNative}
-                errorMessage={errorMessage}
-                errorType={errorType}
-                readFormStateRef={readFormStateRef}
-                isDirty={isDirty}
-                fieldsValues={fieldsValues}
-              />
-            </section>
-          );
-        })}
+            return (
+              <section
+                key={`${name}${index}`}
+                style={{
+                  borderBottom: `1px dashed ${colors.secondary}`,
+                  margin: 0,
+                }}
+              >
+                <PanelTable
+                  refObject={ref}
+                  index={index}
+                  collapseAll={collapseAll}
+                  name={name}
+                  isTouched={isTouched}
+                  type={type}
+                  hasError={hasError}
+                  isNative={isNative}
+                  errorMessage={errorMessage}
+                  errorType={errorType}
+                  readFormStateRef={readFormStateRef}
+                  isDirty={isDirty}
+                  fieldsValues={fieldsValues}
+                />
+              </section>
+            );
+          })}
       </div>
 
       <FormStateTable

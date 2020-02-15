@@ -8,7 +8,7 @@ import Logo from './logo';
 import { PanelShadow } from './panelShadow';
 import { Button } from './styled';
 
-export default ({ control }: { control: Control }) => {
+export const DevTool = ({ control }: { control: Control }) => {
   const [visible, setVisible] = React.useState(true);
 
   return (

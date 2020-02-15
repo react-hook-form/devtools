@@ -20,7 +20,7 @@ export function getConfig({
     external: [
       'react',
       'react-dom',
-      'react-simple-animate',
+      'react-hook-form',
       'lodash/get',
       'lodash/isUndefined',
     ],

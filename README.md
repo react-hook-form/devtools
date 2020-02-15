@@ -1,5 +1,3 @@
-<p align="center"><b>🤹‍♀️ Under development</b></p>
-
 <div align="center">
     <p align="center">
         <a href="https://react-hook-form.com" title="React Hook Form - Simple React forms validation">
@@ -26,7 +24,7 @@ This React Component will help you to debug when you are working React Hook Form
 
 ## Install
 
-    $ npm install react-hook-form-devtools
+    $ npm install react-hook-form-devtools -D
 
 ## Quickstart
 
