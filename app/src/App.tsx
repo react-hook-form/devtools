@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { DevTool } from './devTool/index';
+import { DevTool } from 'react-hook-form-devtools';
 import './App.css';
 
 const App = () => {

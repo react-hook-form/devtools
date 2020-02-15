@@ -21,8 +21,6 @@ export function getConfig({
       'react',
       'react-dom',
       'react-hook-form',
-      '@emotion/styled',
-      'react-simple-animate',
       'lodash/get',
       'lodash/isUndefined',
     ],
