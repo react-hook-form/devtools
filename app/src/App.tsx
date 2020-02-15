@@ -23,7 +23,9 @@ const App = () => {
   return (
     <div className="App">
       <form onSubmit={handleSubmit(d => console.log(d))}>
-        <h1>🔧 DevTools</h1>
+        <h1>
+          <span role="img" aria-label="devTool">🔧</span> DevTools
+        </h1>
         <p style={{ textAlign: 'center' }}>
           React Hook Form DevTools to help to debug forms.
         </p>

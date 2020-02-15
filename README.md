@@ -24,7 +24,7 @@ This React Component will help you to debug when you are working React Hook Form
 
 ## Install
 
-    $ npm install react-hook-form-devtools
+    $ npm install react-hook-form-devtools -D
 
 ## Quickstart
 
