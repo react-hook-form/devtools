@@ -1,6 +1,11 @@
 import styled from '@emotion/styled';
 import colors from './colors';
 
+export const paraGraphDefaultStyle = {
+  fontSize: 14,
+  lineHeight: '22px',
+};
+
 const Button = styled.button`
   appearance: none;
   margin: 0;

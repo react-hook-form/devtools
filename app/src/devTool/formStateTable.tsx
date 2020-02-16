@@ -1,7 +1,7 @@
 import colors from './colors';
 import * as React from 'react';
 import { FormStateProxy } from 'react-hook-form';
-import { Button } from './styled';
+import { Button, paraGraphDefaultStyle } from './styled';
 
 type Props = {
   formState: FormStateProxy<Record<string, any>>;
@@ -30,42 +30,57 @@ const FormStateTable = ({
       >
         <tbody>
           <tr>
-            <td align="right" style={{ width: 90 }}>
+            <td align="right" style={{ width: 90, ...paraGraphDefaultStyle }}>
               Valid:
             </td>
             <td
               style={{
                 color: formState.isValid ? colors.green : colors.lightPink,
+                ...paraGraphDefaultStyle,
               }}
             >
               {formState.isValid ? 'true' : 'false'}
             </td>
           </tr>
           <tr>
-            <td align="right">Submitted:</td>
+            <td align="right" style={{ ...paraGraphDefaultStyle }}>
+              Submitted:
+            </td>
             <td
               style={{
                 color: formState.isSubmitted ? colors.green : colors.lightPink,
+                ...paraGraphDefaultStyle,
               }}
             >
               {formState.isSubmitted ? 'true' : 'false'}
             </td>
           </tr>
           <tr>
-            <td align="right">Count:</td>
+            <td align="right" style={{ ...paraGraphDefaultStyle }}>
+              Count:
+            </td>
             <td
               style={{
                 color: formState.submitCount ? colors.green : colors.lightPink,
+                ...paraGraphDefaultStyle,
               }}
             >
               {formState.submitCount}
             </td>
           </tr>
           <tr>
-            <td align="right">Submitting:</td>
+            <td
+              align="right"
+              style={{
+                ...paraGraphDefaultStyle,
+              }}
+            >
+              Submitting:
+            </td>
             <td
               style={{
                 color: formState.isSubmitting ? colors.green : colors.lightPink,
+                ...paraGraphDefaultStyle,
               }}
             >
               {formState.isSubmitting ? 'true' : 'false'}
@@ -80,6 +95,8 @@ const FormStateTable = ({
         width: '100%',
         padding: '8px 10px',
         textTransform: 'none',
+        fontSize: 12,
+        lineHeight: '14px',
       }}
       title="Toggle form state panel"
       onClick={() => {

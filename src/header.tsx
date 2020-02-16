@@ -1,7 +1,7 @@
 import colors from './colors';
 import * as React from 'react';
 import { Control } from 'react-hook-form';
-import { CircleButton } from './styled';
+import { CircleButton, paraGraphDefaultStyle } from './styled';
 
 type Props = {
   setVisible: (visible: boolean) => void;
@@ -21,6 +21,7 @@ export default ({ setVisible, control }: Props) => (
         margin: 0,
         padding: 0,
         fontWeight: 600,
+        ...paraGraphDefaultStyle,
       }}
     >
       <span

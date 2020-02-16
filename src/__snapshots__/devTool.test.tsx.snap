@@ -3,7 +3,7 @@
 exports[`DevTool render correctly  1`] = `
 <DocumentFragment>
   <div
-    style="position: fixed; top: 0px; right: 0px; transform: translateX(0); transition: all 0.2s linear 0s;"
+    style="position: fixed; top: 0px; right: 0px; transform: translateX(0); z-index: 99999; transition: all 0.2s linear 0s;"
   >
     <div
       style="position: fixed; height: 100vh; width: 250px; z-index: 99999; background: rgb(25, 29, 58); top: 0px; right: 0px; display: grid; text-align: left; color: white; font-size: 14px; grid-template-rows: 40px auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;"
@@ -12,7 +12,7 @@ exports[`DevTool render correctly  1`] = `
         style="display: flex; align-items: center; padding-left: 10px;"
       >
         <p
-          style="margin: 0px; padding: 0px; font-weight: 600;"
+          style="margin: 0px; padding: 0px; font-weight: 600; font-size: 14px; line-height: 22px;"
         >
           <span
             style="transition: 0.5s all; color: rgb(236, 89, 144);"
@@ -36,14 +36,14 @@ exports[`DevTool render correctly  1`] = `
         >
           <button
             class="css-4vv12s"
-            style="border-right: 1px solid #0e101c; text-transform: none;"
+            style="border-right: 1px solid #0e101c; text-transform: none; font-size: 11px; line-height: 1;"
             title="Update values and state the form"
           >
             ♺ UPDATE
           </button>
           <button
             class="css-4vv12s"
-            style="border-right: 1px solid #0e101c; text-transform: none;"
+            style="border-right: 1px solid #0e101c; text-transform: none; font-size: 11px; line-height: 1;"
             title="Toggle entire fields"
           >
             [-] COLLAPSE
@@ -72,7 +72,7 @@ exports[`DevTool render correctly  1`] = `
                 <thead>
                   <tr>
                     <td
-                      style="width: 100px;"
+                      style="width: 100px; line-height: 22px;"
                     >
                       <button
                         class="css-4vv12s"
@@ -83,7 +83,7 @@ exports[`DevTool render correctly  1`] = `
                       </button>
                       <button
                         class="css-4vv12s"
-                        style="border: 1px solid #516391; border-radius: 2px; padding: 3px 10px; display: inline-block; font-size: 10px; margin: 0px; text-align: center;"
+                        style="border: 1px solid #516391; border-radius: 2px; padding: 3px 10px; display: inline-block; font-size: 10px; line-height: 12px; margin: 0px; text-align: center;"
                         title="Scroll into view"
                       >
                         Native
@@ -93,7 +93,7 @@ exports[`DevTool render correctly  1`] = `
                       style="display: block; max-width: 100px;"
                     >
                       <p
-                        style="margin: 0px; padding: 0px;"
+                        style="margin: 0px; padding: 0px; font-size: 14px; line-height: 22px;"
                       >
                         test
                       </p>
@@ -117,7 +117,7 @@ exports[`DevTool render correctly  1`] = `
                 <thead>
                   <tr>
                     <td
-                      style="width: 100px;"
+                      style="width: 100px; line-height: 22px;"
                     >
                       <button
                         class="css-4vv12s"
@@ -128,7 +128,7 @@ exports[`DevTool render correctly  1`] = `
                       </button>
                       <button
                         class="css-4vv12s"
-                        style="border: 1px solid #516391; border-radius: 2px; padding: 3px 10px; display: inline-block; font-size: 10px; margin: 0px; text-align: center;"
+                        style="border: 1px solid #516391; border-radius: 2px; padding: 3px 10px; display: inline-block; font-size: 10px; line-height: 12px; margin: 0px; text-align: center;"
                         title="Scroll into view"
                       >
                         Native
@@ -138,7 +138,7 @@ exports[`DevTool render correctly  1`] = `
                       style="display: block; max-width: 100px;"
                     >
                       <p
-                        style="margin: 0px; padding: 0px;"
+                        style="margin: 0px; padding: 0px; font-size: 14px; line-height: 22px;"
                       >
                         test2
                       </p>
@@ -155,7 +155,7 @@ exports[`DevTool render correctly  1`] = `
         >
           <button
             class="css-4vv12s"
-            style="margin: 0px; width: 100%; padding: 8px 10px; text-transform: none;"
+            style="margin: 0px; width: 100%; padding: 8px 10px; text-transform: none; font-size: 12px; line-height: 14px;"
             title="Toggle form state panel"
           >
             <span

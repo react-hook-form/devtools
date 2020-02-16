@@ -42,6 +42,8 @@ export default ({
           style={{
             borderRight: `1px solid ${colors.primary}`,
             textTransform: 'none',
+            fontSize: 11,
+            lineHeight: 1,
           }}
           title="Update values and state the form"
           onClick={() => setData({})}
@@ -52,6 +54,8 @@ export default ({
           style={{
             borderRight: `1px solid ${colors.primary}`,
             textTransform: 'none',
+            fontSize: 11,
+            lineHeight: 1,
           }}
           title="Toggle entire fields"
           onClick={() => setCollapseAll(!collapseAll)}

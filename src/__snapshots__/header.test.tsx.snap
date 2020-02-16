@@ -6,7 +6,7 @@ exports[`header should render correct color when form pass 1`] = `
     style="display: flex; align-items: center; padding-left: 10px;"
   >
     <p
-      style="margin: 0px; padding: 0px; font-weight: 600;"
+      style="margin: 0px; padding: 0px; font-weight: 600; font-size: 14px; line-height: 22px;"
     >
       <span
         style="transition: 0.5s all; color: rgb(27, 218, 43);"
@@ -31,7 +31,7 @@ exports[`header should render correct when form failed 1`] = `
     style="display: flex; align-items: center; padding-left: 10px;"
   >
     <p
-      style="margin: 0px; padding: 0px; font-weight: 600;"
+      style="margin: 0px; padding: 0px; font-weight: 600; font-size: 14px; line-height: 22px;"
     >
       <span
         style="transition: 0.5s all; color: rgb(236, 89, 144);"

@@ -21,12 +21,14 @@ export const DevTool = ({ control }: { control: Control }) => {
           top: 0,
           right: 0,
           transform: 'translateX(0)',
+          zIndex: 99999,
         }}
         end={{
           top: 0,
           right: 0,
           position: 'fixed',
           transform: 'translateX(280px)',
+          zIndex: 99999,
         }}
       >
         <div

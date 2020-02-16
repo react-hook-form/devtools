@@ -3,7 +3,7 @@ import { Animate } from 'react-simple-animate';
 import isUndefined from 'lodash/isUndefined';
 import isObject from 'lodash/isObject';
 import colors from './colors';
-import { Button, Table } from './styled';
+import { Button, Table, paraGraphDefaultStyle } from './styled';
 
 type Props = {
   isNative: boolean;
@@ -80,7 +80,7 @@ const PanelTable = ({
       >
         <thead>
           <tr>
-            <td style={{ width: 100 }}>
+            <td style={{ width: 100, lineHeight: '22px' }}>
               <Button
                 onClick={() => setCollapse(!collapse)}
                 title="Toggle field table"
@@ -111,6 +111,7 @@ const PanelTable = ({
                   padding: '3px 10px',
                   display: 'inline-block',
                   fontSize: 10,
+                  lineHeight: '12px',
                   margin: 0,
                   textAlign: 'center',
                   ...(isNative
@@ -131,6 +132,7 @@ const PanelTable = ({
                 style={{
                   margin: 0,
                   padding: 0,
+                  ...paraGraphDefaultStyle,
                 }}
               >
                 {name}
@@ -148,11 +150,20 @@ const PanelTable = ({
                     paddingRight: 5,
                     fontWeight: 500,
                     verticalAlign: 'top',
+                    ...paraGraphDefaultStyle,
                   }}
                 >
                   Type:
                 </td>
-                <td>{type}</td>
+                <td
+                  style={{
+                    display: 'block',
+                    maxWidth: 100,
+                    ...paraGraphDefaultStyle,
+                  }}
+                >
+                  {type}
+                </td>
               </tr>
             )}
             {errorType && (
@@ -163,6 +174,7 @@ const PanelTable = ({
                     paddingRight: 5,
                     fontWeight: 500,
                     verticalAlign: 'top',
+                    ...paraGraphDefaultStyle,
                   }}
                 >
                   ERROR Type:
@@ -171,6 +183,7 @@ const PanelTable = ({
                   style={{
                     display: 'block',
                     maxWidth: 100,
+                    ...paraGraphDefaultStyle,
                   }}
                 >
                   {errorType}
@@ -185,6 +198,7 @@ const PanelTable = ({
                     paddingRight: 5,
                     fontWeight: 500,
                     verticalAlign: 'top',
+                    ...paraGraphDefaultStyle,
                   }}
                 >
                   MESSAGE:
@@ -193,6 +207,7 @@ const PanelTable = ({
                   style={{
                     display: 'block',
                     maxWidth: 100,
+                    ...paraGraphDefaultStyle,
                   }}
                 >
                   {errorMessage.trim()}
@@ -207,6 +222,7 @@ const PanelTable = ({
                     paddingRight: 5,
                     fontWeight: 500,
                     verticalAlign: 'top',
+                    ...paraGraphDefaultStyle,
                   }}
                 >
                   Value:
@@ -215,6 +231,7 @@ const PanelTable = ({
                   style={{
                     display: 'block',
                     maxWidth: 100,
+                    ...paraGraphDefaultStyle,
                   }}
                 >
                   {value}
@@ -229,6 +246,7 @@ const PanelTable = ({
                     paddingRight: 5,
                     fontWeight: 500,
                     verticalAlign: 'top',
+                    ...paraGraphDefaultStyle,
                   }}
                 >
                   Touched:
@@ -238,6 +256,7 @@ const PanelTable = ({
                     style={{
                       fontSize: 12,
                       color: isTouched ? colors.green : colors.lightPink,
+                      ...paraGraphDefaultStyle,
                     }}
                   >
                     {isTouched ? 'true' : 'false'}
@@ -253,6 +272,7 @@ const PanelTable = ({
                     paddingRight: 5,
                     fontWeight: 500,
                     verticalAlign: 'top',
+                    ...paraGraphDefaultStyle,
                   }}
                 >
                   Dirty:
@@ -262,6 +282,7 @@ const PanelTable = ({
                     style={{
                       fontSize: 12,
                       color: isDirty ? colors.green : colors.lightPink,
+                      ...paraGraphDefaultStyle,
                     }}
                   >
                     {isDirty ? 'true' : 'false'}

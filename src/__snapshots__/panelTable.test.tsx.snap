@@ -12,7 +12,7 @@ exports[`PanelTable should render correctly 1`] = `
       <thead>
         <tr>
           <td
-            style="width: 100px;"
+            style="width: 100px; line-height: 22px;"
           >
             <button
               class="css-4vv12s"
@@ -23,7 +23,7 @@ exports[`PanelTable should render correctly 1`] = `
             </button>
             <button
               class="css-4vv12s"
-              style="border: 1px solid #516391; border-radius: 2px; padding: 3px 10px; display: inline-block; font-size: 10px; margin: 0px; text-align: center; cursor: not-allowed; background: rgb(81, 99, 145);"
+              style="border: 1px solid #516391; border-radius: 2px; padding: 3px 10px; display: inline-block; font-size: 10px; line-height: 12px; margin: 0px; text-align: center; cursor: not-allowed; background: rgb(81, 99, 145);"
               title="Scroll into view"
             >
               Custom
@@ -33,7 +33,7 @@ exports[`PanelTable should render correctly 1`] = `
             style="display: block; max-width: 100px;"
           >
             <p
-              style="margin: 0px; padding: 0px;"
+              style="margin: 0px; padding: 0px; font-size: 14px; line-height: 22px;"
             >
               test
             </p>
