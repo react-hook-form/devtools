@@ -24,11 +24,11 @@
     "react-hook-form": "^4.9.2"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
     "@types/lodash": "^4.14.149",
-    "@types/styled-components": "^4.4.3",
     "lodash": "^4.17.15",
-    "react-simple-animate": "^3.3.6",
-    "styled-components": "^5.0.1"
+    "react-simple-animate": "^3.3.6"
   },
   "devDependencies": {
     "@testing-library/react": "^9.4.0",
