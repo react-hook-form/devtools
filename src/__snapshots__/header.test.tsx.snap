@@ -16,7 +16,7 @@ exports[`header should render correct color when form pass 1`] = `
        RHF DevTools
     </p>
     <button
-      class="sc-AxjAm sc-AxirZ eMayaQ"
+      class="css-7zizgu"
       title="Close dev panel"
     >
       ✕
@@ -41,7 +41,7 @@ exports[`header should render correct when form failed 1`] = `
        RHF DevTools
     </p>
     <button
-      class="sc-AxjAm sc-AxirZ eMayaQ"
+      class="css-7zizgu"
       title="Close dev panel"
     >
       ✕

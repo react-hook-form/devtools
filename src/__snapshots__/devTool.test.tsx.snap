@@ -22,7 +22,7 @@ exports[`DevTool render correctly  1`] = `
            RHF DevTools
         </p>
         <button
-          class="sc-AxjAm sc-AxirZ eMayaQ"
+          class="css-7zizgu"
           title="Close dev panel"
         >
           ✕
@@ -35,21 +35,21 @@ exports[`DevTool render correctly  1`] = `
           style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 28px 28px;"
         >
           <button
-            class="sc-AxjAm kxnooF"
+            class="css-4vv12s"
             style="border-right: 1px solid #0e101c; text-transform: none; font-size: 11px; line-height: 1;"
             title="Update values and state the form"
           >
             ♺ UPDATE
           </button>
           <button
-            class="sc-AxjAm kxnooF"
+            class="css-4vv12s"
             style="border-right: 1px solid #0e101c; text-transform: none; font-size: 11px; line-height: 1;"
             title="Toggle entire fields"
           >
             [-] COLLAPSE
           </button>
           <input
-            class="sc-AxiKw jIazEF"
+            class="css-1cgmc6n"
             name="search"
             placeholder="Filter name..."
             style="display: inline-block; border-radius: 0; width: 100%; margin: 0px; padding: 5px 10px; appearance: none; font-size: 14px; border: 0px; color: white; grid-column-start: 1; grid-column-end: 4; background: black;"
@@ -66,7 +66,7 @@ exports[`DevTool render correctly  1`] = `
               style="opacity: 1; transition: all 0.3s ease-in 0s;"
             >
               <table
-                class="sc-AxhCb CLVtW"
+                class="css-vv52sx"
                 style="padding: 10px 10px 10px; width: 100%; transition: .3s all; border-left: 2px solid #191d3a;"
               >
                 <thead>
@@ -76,14 +76,14 @@ exports[`DevTool render correctly  1`] = `
                       valign="top"
                     >
                       <button
-                        class="sc-AxjAm kxnooF"
+                        class="css-4vv12s"
                         style="border: 1px solid #516391; border-radius: 2px; padding: 3px 5px; display: inline-block; font-size: 10px; line-height: 12px; width: 20px; text-align: center; margin-right: 10px;"
                         title="Toggle field table"
                       >
                         -
                       </button>
                       <button
-                        class="sc-AxjAm kxnooF"
+                        class="css-4vv12s"
                         style="border: 1px solid #516391; border-radius: 2px; padding: 3px 5px; display: inline-block; font-size: 10px; line-height: 12px; text-align: center; margin-right: 10px;"
                         title="Scroll into view"
                       >
@@ -112,7 +112,7 @@ exports[`DevTool render correctly  1`] = `
               style="opacity: 1; transition: all 0.3s ease-in 0.1s;"
             >
               <table
-                class="sc-AxhCb CLVtW"
+                class="css-vv52sx"
                 style="padding: 10px 10px 10px; width: 100%; transition: .3s all; border-left: 2px solid #191d3a;"
               >
                 <thead>
@@ -122,14 +122,14 @@ exports[`DevTool render correctly  1`] = `
                       valign="top"
                     >
                       <button
-                        class="sc-AxjAm kxnooF"
+                        class="css-4vv12s"
                         style="border: 1px solid #516391; border-radius: 2px; padding: 3px 5px; display: inline-block; font-size: 10px; line-height: 12px; width: 20px; text-align: center; margin-right: 10px;"
                         title="Toggle field table"
                       >
                         -
                       </button>
                       <button
-                        class="sc-AxjAm kxnooF"
+                        class="css-4vv12s"
                         style="border: 1px solid #516391; border-radius: 2px; padding: 3px 5px; display: inline-block; font-size: 10px; line-height: 12px; text-align: center; margin-right: 10px;"
                         title="Scroll into view"
                       >
@@ -156,7 +156,7 @@ exports[`DevTool render correctly  1`] = `
           style="align-self: end;"
         >
           <button
-            class="sc-AxjAm kxnooF"
+            class="css-4vv12s"
             style="margin: 0px; width: 100%; padding: 8px 10px; text-transform: none; font-size: 12px; line-height: 14px;"
             title="Toggle form state panel"
           >
