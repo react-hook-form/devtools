@@ -7,8 +7,12 @@ describe('header', () => {
     const methods = render(
       <Header
         setVisible={() => {}}
-        // @ts-ignore
-        control={{ formState: { isValid: true } }}
+        control={{
+          // @ts-ignore
+          formState: { isValid: true },
+          // @ts-ignore
+          readFormStateRef: { current: {} },
+        }}
       />,
     );
     expect(methods.asFragment()).toMatchSnapshot();
@@ -18,8 +22,12 @@ describe('header', () => {
     const methods = render(
       <Header
         setVisible={() => {}}
-        // @ts-ignore
-        control={{ formState: { isValid: false } }}
+        control={{
+          // @ts-ignore
+          formState: { isValid: false },
+          // @ts-ignore
+          readFormStateRef: { current: {} },
+        }}
       />,
     );
     expect(methods.asFragment()).toMatchSnapshot();

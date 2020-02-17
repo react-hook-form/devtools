@@ -29,8 +29,8 @@ export default ({ setVisible, control }: Props) => {
           style={{
             transition: '0.5s all',
             color:
-              // @ts-ignore
-              control.readFormStateRef.current.isValid && control.formState.isValid
+              control.readFormStateRef.current.isValid &&
+              control.formState.isValid
                 ? colors.green
                 : colors.lightPink,
           }}
