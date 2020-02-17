@@ -8,34 +8,40 @@ type Props = {
   control: Control;
 };
 
-export default ({ setVisible, control }: Props) => (
-  <header
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      paddingLeft: 10,
-    }}
-  >
-    <p
+export default ({ setVisible, control }: Props) => {
+  return (
+    <header
       style={{
-        margin: 0,
-        padding: 0,
-        fontWeight: 600,
-        ...paraGraphDefaultStyle,
+        display: 'flex',
+        alignItems: 'center',
+        paddingLeft: 10,
       }}
     >
-      <span
+      <p
         style={{
-          transition: '0.5s all',
-          color: control.formState.isValid ? colors.green : colors.lightPink,
+          margin: 0,
+          padding: 0,
+          fontWeight: 600,
+          ...paraGraphDefaultStyle,
         }}
       >
-        ■
-      </span>{' '}
-      RHF DevTools
-    </p>
-    <CircleButton title="Close dev panel" onClick={() => setVisible(false)}>
-      ✕
-    </CircleButton>
-  </header>
-);
+        <span
+          style={{
+            transition: '0.5s all',
+            color:
+              // @ts-ignore
+              control.readFormStateRef.current.isValid && control.formState.isValid
+                ? colors.green
+                : colors.lightPink,
+          }}
+        >
+          ■
+        </span>{' '}
+        RHF DevTools
+      </p>
+      <CircleButton title="Close dev panel" onClick={() => setVisible(false)}>
+        ✕
+      </CircleButton>
+    </header>
+  );
+};

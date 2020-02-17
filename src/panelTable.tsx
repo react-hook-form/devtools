@@ -80,7 +80,7 @@ const PanelTable = ({
       >
         <thead>
           <tr>
-            <td style={{ width: 100, lineHeight: '22px' }}>
+            <td valign="top" style={{ width: 100, lineHeight: '22px' }}>
               <Button
                 onClick={() => setCollapse(!collapse)}
                 title="Toggle field table"
@@ -89,7 +89,7 @@ const PanelTable = ({
                   borderRadius: 2,
                   padding: '3px 5px',
                   display: 'inline-block',
-                  fontSize: 14,
+                  fontSize: 10,
                   lineHeight: '12px',
                   width: 20,
                   textAlign: 'center',
@@ -108,12 +108,12 @@ const PanelTable = ({
                 style={{
                   border: `1px solid ${colors.lightBlue}`,
                   borderRadius: 2,
-                  padding: '3px 10px',
+                  padding: '3px 5px',
                   display: 'inline-block',
                   fontSize: 10,
                   lineHeight: '12px',
-                  margin: 0,
                   textAlign: 'center',
+                  marginRight: 10,
                   ...(isNative
                     ? {}
                     : { cursor: 'not-allowed', background: colors.lightBlue }),

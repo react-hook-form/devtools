@@ -84,7 +84,7 @@ export function PanelShadow({ visible }: Props) {
             borderBottom: '10px solid transparent',
             borderLeft: `10px solid ${colors.buttonBlue}`,
             right: 247,
-            top: 53,
+            top: 55,
           }}
         />
       </div>

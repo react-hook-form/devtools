@@ -21,8 +21,11 @@ export function getConfig({
       'react',
       'react-dom',
       'react-hook-form',
+      'react-simple-animate',
       'lodash/get',
+      'styled-components',
       'lodash/isUndefined',
+      'lodash/isObject',
     ],
     plugins: [
       typescript({
