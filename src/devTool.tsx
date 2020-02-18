@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Control } from 'react-hook-form';
+import { useFormContext, Control } from 'react-hook-form';
 import { Animate } from 'react-simple-animate';
 import Header from './header';
 import Panel from './panel';
@@ -8,7 +8,9 @@ import Logo from './logo';
 import { PanelShadow } from './panelShadow';
 import { Button } from './styled';
 
-export const DevTool = ({ control }: { control: Control }) => {
+export const DevTool = ({ control: controlFromProps }: { control?: Control }) => {
+  const methods = useFormContext();
+  const control = controlFromProps || methods.control;
   const [visible, setVisible] = React.useState(true);
 
   return (
