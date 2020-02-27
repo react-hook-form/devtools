@@ -1,23 +1,27 @@
 import * as React from 'react';
 import get from 'lodash/get';
 import { Control, useForm } from 'react-hook-form';
+import { useStateMachine } from 'little-state-machine';
 import { useEffect } from 'react';
 import colors from './colors';
 import PanelTable from './panelTable';
 import FormStateTable from './formStateTable';
 import { Button, Input } from './styled';
+import { setCollapse } from './settingAction';
 
 export default ({
   control: { fieldsRef, getValues, formState, errorsRef, readFormStateRef },
 }: {
   control: Control;
 }) => {
+  const { state, action } = useStateMachine(setCollapse);
   const [, setData] = React.useState({});
-  const [collapseAll, setCollapseAll] = React.useState(true);
   const [showFormState, setShowFormState] = React.useState(false);
   const fieldsValues = getValues();
   const { register, watch } = useForm();
   const searchTerm = watch('search', '');
+
+  console.log(state)
 
   useEffect(() => {
     setData({});
@@ -58,9 +62,12 @@ export default ({
             lineHeight: 1,
           }}
           title="Toggle entire fields"
-          onClick={() => setCollapseAll(!collapseAll)}
+          onClick={() => {
+            // @ts-ignore
+            action(!state.isCollapse);
+          }}
         >
-          {collapseAll ? '[-] COLLAPSE' : '[+] EXPAND'}
+          {state.isCollapse ? '[-] COLLAPSE' : '[+] EXPAND'}
         </Button>
 
         <Input
@@ -123,7 +130,7 @@ export default ({
                 <PanelTable
                   refObject={ref}
                   index={index}
-                  collapseAll={collapseAll}
+                  collapseAll={state.isCollapse}
                   name={name}
                   isTouched={isTouched}
                   type={type}

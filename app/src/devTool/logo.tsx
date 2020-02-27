@@ -6,7 +6,7 @@ const Logo = ({
   setVisible,
 }: {
   style?: Record<string, any>;
-  setVisible: (visible: boolean) => void;
+  setVisible: any;
 }) => {
   return (
     <svg
