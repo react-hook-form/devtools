@@ -4,7 +4,7 @@ import { Control } from 'react-hook-form';
 import { CircleButton, paraGraphDefaultStyle } from './styled';
 
 type Props = {
-  setVisible: (visible: boolean) => void;
+  setVisible: any;
   control: Control;
 };
 
