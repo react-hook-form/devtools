@@ -21,8 +21,6 @@ export default ({
   const { register, watch } = useForm();
   const searchTerm = watch('search', '');
 
-  console.log(state)
-
   useEffect(() => {
     setData({});
   }, []);
