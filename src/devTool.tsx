@@ -7,15 +7,20 @@ import {
 import { Control } from 'react-hook-form';
 import { DevToolUI } from './devToolUI';
 
-setStorageType(window.localStorage);
+if (typeof window !== 'undefined') {
+  setStorageType(window.localStorage);
+}
 
-createStore({
-  visible: true,
-  isCollapse: false,
-  filterName: '',
-}, {
-  name: "__REACT_HOOK_FORM_DEVTOOLS__"
-});
+createStore(
+  {
+    visible: true,
+    isCollapse: false,
+    filterName: '',
+  },
+  {
+    name: '__REACT_HOOK_FORM_DEVTOOLS__',
+  },
+);
 
 export const DevTool = ({ control }: { control: Control }) => {
   return (

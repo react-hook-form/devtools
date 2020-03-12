@@ -11,4 +11,3 @@ export function setCollapse(state: any, payload: any) {
     isCollapse: payload,
   };
 }
-
