@@ -1,12 +1,15 @@
+import * as React from 'react';
 import styled from '@emotion/styled';
 import colors from './colors';
 
 export const paraGraphDefaultStyle = {
-  fontSize: 14,
-  lineHeight: '22px',
+    fontSize: 14,
+    lineHeight: '22px',
 };
 
-const Button = styled.button`
+const Button = styled((props: any) => {
+    return <button {...props} type="button" />
+})`
   appearance: none;
   margin: 0;
   border: 0;
