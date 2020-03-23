@@ -19,6 +19,7 @@ exports[`PanelTable should render correctly 1`] = `
               class="css-4vv12s"
               style="border: 1px solid #516391; border-radius: 2px; padding: 3px 5px; display: inline-block; font-size: 10px; line-height: 12px; width: 20px; text-align: center; margin-right: 10px;"
               title="Toggle field table"
+              type="button"
             >
               +
             </button>
@@ -26,6 +27,7 @@ exports[`PanelTable should render correctly 1`] = `
               class="css-4vv12s"
               style="border: 1px solid #516391; border-radius: 2px; padding: 3px 5px; display: inline-block; font-size: 10px; line-height: 12px; text-align: center; margin-right: 10px; cursor: not-allowed; background: rgb(81, 99, 145);"
               title="Scroll into view"
+              type="button"
             >
               Custom
             </button>
