@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import colors from './colors';
 
 export const paraGraphDefaultStyle = {
-  fontSize: 14,
-  lineHeight: '22px',
+    fontSize: 14,
+    lineHeight: '22px',
 };
 
 const Button = styled.button`
@@ -20,6 +20,8 @@ const Button = styled.button`
     background: ${colors.lightBlue};
   }
 `;
+
+Button.defaultProps = { type: 'button' };
 
 const CircleButton = styled(Button)`
   font-size: 14px;

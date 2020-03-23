@@ -24,6 +24,7 @@ exports[`DevTool render correctly  1`] = `
         <button
           class="css-7zizgu"
           title="Close dev panel"
+          type="button"
         >
           ✕
         </button>
@@ -38,6 +39,7 @@ exports[`DevTool render correctly  1`] = `
             class="css-4vv12s"
             style="border-right: 1px solid #0e101c; text-transform: none; font-size: 11px; line-height: 1;"
             title="Update values and state the form"
+            type="button"
           >
             ♺ UPDATE
           </button>
@@ -45,6 +47,7 @@ exports[`DevTool render correctly  1`] = `
             class="css-4vv12s"
             style="border-right: 1px solid #0e101c; text-transform: none; font-size: 11px; line-height: 1;"
             title="Toggle entire fields"
+            type="button"
           >
             [+] EXPAND
           </button>
@@ -79,6 +82,7 @@ exports[`DevTool render correctly  1`] = `
                         class="css-4vv12s"
                         style="border: 1px solid #516391; border-radius: 2px; padding: 3px 5px; display: inline-block; font-size: 10px; line-height: 12px; width: 20px; text-align: center; margin-right: 10px;"
                         title="Toggle field table"
+                        type="button"
                       >
                         +
                       </button>
@@ -86,6 +90,7 @@ exports[`DevTool render correctly  1`] = `
                         class="css-4vv12s"
                         style="border: 1px solid #516391; border-radius: 2px; padding: 3px 5px; display: inline-block; font-size: 10px; line-height: 12px; text-align: center; margin-right: 10px;"
                         title="Scroll into view"
+                        type="button"
                       >
                         Native
                       </button>
@@ -124,6 +129,7 @@ exports[`DevTool render correctly  1`] = `
                         class="css-4vv12s"
                         style="border: 1px solid #516391; border-radius: 2px; padding: 3px 5px; display: inline-block; font-size: 10px; line-height: 12px; width: 20px; text-align: center; margin-right: 10px;"
                         title="Toggle field table"
+                        type="button"
                       >
                         +
                       </button>
@@ -131,6 +137,7 @@ exports[`DevTool render correctly  1`] = `
                         class="css-4vv12s"
                         style="border: 1px solid #516391; border-radius: 2px; padding: 3px 5px; display: inline-block; font-size: 10px; line-height: 12px; text-align: center; margin-right: 10px;"
                         title="Scroll into view"
+                        type="button"
                       >
                         Native
                       </button>
@@ -157,6 +164,7 @@ exports[`DevTool render correctly  1`] = `
             class="css-4vv12s"
             style="margin: 0px; width: 100%; padding: 8px 10px; text-transform: none; font-size: 12px; line-height: 14px;"
             title="Toggle form state panel"
+            type="button"
           >
             <span
               style="transition: 0.5s all; color: rgb(236, 89, 144);"
