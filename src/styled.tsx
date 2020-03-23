@@ -7,8 +7,8 @@ export const paraGraphDefaultStyle = {
     lineHeight: '22px',
 };
 
-const Button = styled((props: any) => {
-    return <button {...props} type="button" />
+const Button = styled.button.attrs(() => ({
+  type: 'button',
 })`
   appearance: none;
   margin: 0;
