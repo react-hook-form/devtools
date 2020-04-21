@@ -43,7 +43,7 @@ const App = () => {
 
   return (
     <>
-      <DevTool control={control} />
+      {process.env.NODE_ENV !== 'production' && <DevTool control={control} />}
 
       <form onSubmit={handleSubmit(d => console.log(d))}>
         <h1>React Hook Form DevTools</h1>
