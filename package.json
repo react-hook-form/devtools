@@ -11,7 +11,7 @@
     "clean": "rm -rf dist",
     "build": "rollup -c",
     "prepublishOnly": "yarn lint && yarn test && yarn run clean && yarn build",
-    "test": "jest --runInBand",
+    "test": "jest",
     "lint": "yarn lint:check --fix && yarn prettier",
     "prettier": "prettier --write './src/**/*.ts' './src/**/*.tsx' --config ./.prettierrc",
     "lint:check": "eslint ./src --ext .jsx,.ts --ignore-pattern *.test.ts --report-unused-disable-directives",
