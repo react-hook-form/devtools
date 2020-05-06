@@ -1,6 +1,6 @@
 {
   "name": "react-hook-form-devtools",
-  "version": "2.0.0",
+  "version": "1.2.0",
   "description": "React Hook Form dev tool to help debugging forms",
   "main": "index.js",
   "types": "dist/index.d.ts",
