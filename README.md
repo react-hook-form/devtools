@@ -12,7 +12,7 @@
 
 [![npm downloads](https://img.shields.io/npm/dm/react-hook-form-devtools.svg?style=for-the-badge)](https://www.npmjs.com/package/react-hook-form-devtools)
 [![npm](https://img.shields.io/npm/dt/react-hook-form-devtools.svg?style=for-the-badge)](https://www.npmjs.com/package/react-hook-form-devtools)
-[![npm](https://img.shields.io/bundlephobia/minzip/react-hook-form-devtools?style=for-the-badge)](https://bundlephobia.com/result?p=react-hook-form)
+[![npm](https://img.shields.io/bundlephobia/minzip/react-hook-form-devtools?style=for-the-badge)](https://bundlephobia.com/result?p=react-hook-form-devtools)
 
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=React+hooks+for+form+validation+without+the+hassle&url=https://github.com/bluebill1049/react-hook-form-devtools)&nbsp;[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/react-hook-form)
 
