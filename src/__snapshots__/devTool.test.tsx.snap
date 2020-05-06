@@ -30,7 +30,7 @@ exports[`DevTool render correctly  1`] = `
         </button>
       </header>
       <div
-        style="display: grid; grid-template-rows: 56px auto;"
+        style="display: grid; grid-template-rows: 56px auto; height: 100vh;"
       >
         <div
           style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 28px 28px;"
