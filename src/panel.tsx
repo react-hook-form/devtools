@@ -25,7 +25,6 @@ export default ({
     setData({});
   }, []);
 
-
   return (
     <div
       style={{
