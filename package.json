@@ -26,7 +26,7 @@
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
     "@types/lodash": "^4.14.149",
-    "little-state-machine": "^2.11.3",
+    "little-state-machine": "^3.0.0",
     "lodash": "^4.17.15",
     "react-simple-animate": "^3.3.6"
   },
