@@ -7,7 +7,7 @@ jest.mock('lodash/get', () => ({
 }));
 
 describe('DevTool', () => {
-  it.skip('render correctly ', () => {
+  it('render correctly ', () => {
     // @ts-ignore
     const { asFragment } = render(
       <DevTool
