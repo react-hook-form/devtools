@@ -30,7 +30,8 @@ export default ({
       style={{
         display: 'grid',
         gridTemplateRows: '56px auto',
-        height: process.env.NODE_ENV === 'test' ? '100vh' : 'calc(100vh - 40px)',
+        height:
+          process.env.NODE_ENV === 'test' ? '100vh' : 'calc(100vh - 40px)',
       }}
     >
       <div
