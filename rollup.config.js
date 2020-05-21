@@ -5,12 +5,12 @@ export function getConfig({
   tsconfig = './tsconfig.json',
   output = [
     {
-      file: `dist/${pkg.name}.js`,
+      file: `dist/devtools.js`,
       format: 'cjs',
       exports: 'named',
     },
     {
-      file: `dist/${pkg.name}.es.js`,
+      file: `dist/devtools.es.js`,
       format: 'esm',
     },
   ],
