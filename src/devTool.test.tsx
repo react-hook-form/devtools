@@ -35,7 +35,7 @@ describe('DevTool', () => {
               current: {},
             },
             formState: {
-              dirtyFields: new Set(),
+              dirtyFields: {},
             },
             readFormStateRef: { current: {} },
           } as any
