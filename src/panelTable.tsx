@@ -46,17 +46,21 @@ const PanelTable = ({
 
   let value = fieldsValues ? fieldsValues[name] : '';
 
-  if (fieldsValues && isObject(fieldsValues[name])) {
-    try {
-      value = (
-        <pre style={{ margin: 0 }}>
-          <code style={{ fontSize: 12 }}>
-            {JSON.stringify(fieldsValues[name], null, 2)}
-          </code>
-        </pre>
-      );
-    } catch {
-      value = <span>[Nested Object]</span>;
+  if (fieldsValues) {
+    if (isObject(fieldsValues[name])) {
+      try {
+        value = (
+          <pre style={{ margin: 0 }}>
+            <code style={{ fontSize: 12 }}>
+              {JSON.stringify(fieldsValues[name], null, 2)}
+            </code>
+          </pre>
+        );
+      } catch {
+        value = <span>[Nested Object]</span>;
+      }
+    } else if (typeof fieldsValues[name] !== 'string') {
+      value = String(fieldsValues[name]);
     }
   }
 
@@ -228,6 +232,7 @@ const PanelTable = ({
                   Value:
                 </td>
                 <td
+                  data-testid={`${name}-field-value`}
                   style={{
                     display: 'block',
                     maxWidth: 100,
