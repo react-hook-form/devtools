@@ -3,5 +3,5 @@ if (process.env.NODE_ENV === 'production') {
     DevTool: () => null,
   }
 } else {
-  module.exports = require('./dist/react-hook-form-devtools.js')
+  module.exports = require('./dist/devtools.js')
 }
