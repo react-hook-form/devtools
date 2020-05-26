@@ -254,7 +254,6 @@ const PanelTable = ({
                 <td>
                   <code
                     style={{
-                      fontSize: 12,
                       color: isTouched ? colors.green : colors.lightPink,
                       ...paraGraphDefaultStyle,
                     }}
@@ -280,7 +279,6 @@ const PanelTable = ({
                 <td>
                   <code
                     style={{
-                      fontSize: 12,
                       color: isDirty ? colors.green : colors.lightPink,
                       ...paraGraphDefaultStyle,
                     }}
