@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/react-hook-form/react-hook-form-devtools.git"
+    "url": "git+ssh://git@github.com/react-hook-form/devtools.git"
   },
   "author": "bluebill1049 <bluebill1049@hotmail.com>",
   "license": "MIT",
@@ -53,7 +53,7 @@
     "typescript": "^3.7.5"
   },
   "bugs": {
-    "url": "https://github.com/react-hook-form/react-hook-form-devtools/issues"
+    "url": "https://github.com/react-hook-form/devtools/issues"
   },
-  "homepage": "https://github.com/react-hook-form/react-hook-form-devtools#readme"
+  "homepage": "https://github.com/react-hook-form/devtools#readme"
 }
