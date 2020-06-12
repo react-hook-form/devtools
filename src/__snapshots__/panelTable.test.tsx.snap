@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PanelTable should render correctly 1`] = `
+exports[`PanelTable should render collapsed 1`] = `
 <DocumentFragment>
   <div
     style="opacity: 1; transition: all 0.3s ease-in 0s;"
