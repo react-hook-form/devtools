@@ -45,7 +45,9 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
+    "husky": "^4.2.5",
     "jest": "^26.0.1",
+    "lint-staged": "^10.2.10",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -58,5 +60,19 @@
   "bugs": {
     "url": "https://github.com/react-hook-form/devtools/issues"
   },
-  "homepage": "https://github.com/react-hook-form/devtools#readme"
+  "homepage": "https://github.com/react-hook-form/devtools#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:types && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "npm run lint:fix"
+    ],
+    "*.{md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
