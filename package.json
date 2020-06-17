@@ -4,12 +4,10 @@
   "description": "React Hook Form dev tool to help debugging forms",
   "main": "index.js",
   "types": "dist/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/react-hook-form/devtools.git"
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
   },
-  "author": "bluebill1049 <bluebill1049@hotmail.com>",
-  "license": "MIT",
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && rollup -c",
@@ -18,13 +16,32 @@
     "lint:types": "tsc --noEmit",
     "test": "jest --runInBand",
     "test:watch": "yarn test -- --watchAll --coverage",
+    "postversion": "git push && git push origin v$npm_package_version",
     "prepublishOnly": "npm run lint && npm run lint:types && npm test && npm run build"
   },
-  "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
-    "react-hook-form": ">=6.0.0"
+  "keywords": [
+    "react",
+    "react-component",
+    "devtool",
+    "devtools",
+    "form",
+    "forms",
+    "form-validation",
+    "validation",
+    "hookform",
+    "react-hook-form",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/react-hook-form/devtools.git"
   },
+  "author": "bluebill1049 <bluebill1049@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/react-hook-form/devtools/issues"
+  },
+  "homepage": "https://react-hook-form.com",
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
@@ -57,10 +74,11 @@
     "ts-jest": "^26.0.0",
     "typescript": "^3.9.3"
   },
-  "bugs": {
-    "url": "https://github.com/react-hook-form/devtools/issues"
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-hook-form": ">=6.0.0"
   },
-  "homepage": "https://github.com/react-hook-form/devtools#readme",
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint:types && lint-staged"
