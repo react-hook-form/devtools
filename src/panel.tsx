@@ -62,8 +62,7 @@ export default ({
           }}
           title="Toggle entire fields"
           onClick={() => {
-            // @ts-ignore
-            action(!state.isCollapse);
+            action(!state.isCollapse as any);
           }}
         >
           {state.isCollapse ? '[-] COLLAPSE' : '[+] EXPAND'}

@@ -1,10 +1,10 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import * as React from 'react';
 import { DevTool } from './devTool';
 import { render } from '@testing-library/react';
 
 describe('DevTool', () => {
   it('render correctly ', () => {
-    // @ts-ignore
     const { asFragment } = render(
       <DevTool
         control={
