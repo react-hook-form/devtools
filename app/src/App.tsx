@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { DevTool } from './devTool';
+import { DevTool } from '@hookform/devtools';
 import './App.css';
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
   });
 
   React.useEffect(() => {
-    register('customInput');
+    register('custom');
   }, [register]);
 
   console.log('app', formState.touched);
