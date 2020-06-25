@@ -8,7 +8,7 @@ type Props = {
   control: Control;
 };
 
-export default ({ setVisible, control }: Props) => {
+const Header = ({ setVisible, control }: Props) => {
   return (
     <header
       style={{
@@ -45,3 +45,5 @@ export default ({ setVisible, control }: Props) => {
     </header>
   );
 };
+
+export default Header;

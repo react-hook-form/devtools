@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import * as React from 'react';
 import Header from './header';
 import { render } from '@testing-library/react';
@@ -7,12 +8,12 @@ describe('header', () => {
     const methods = render(
       <Header
         setVisible={() => {}}
-        control={{
-          // @ts-ignore
-          formState: { isValid: true },
-          // @ts-ignore
-          readFormStateRef: { current: {} },
-        }}
+        control={
+          {
+            formState: { isValid: true },
+            readFormStateRef: { current: {} },
+          } as any
+        }
       />,
     );
     expect(methods.asFragment()).toMatchSnapshot();
@@ -22,12 +23,12 @@ describe('header', () => {
     const methods = render(
       <Header
         setVisible={() => {}}
-        control={{
-          // @ts-ignore
-          formState: { isValid: false },
-          // @ts-ignore
-          readFormStateRef: { current: {} },
-        }}
+        control={
+          {
+            formState: { isValid: false },
+            readFormStateRef: { current: {} },
+          } as any
+        }
       />,
     );
     expect(methods.asFragment()).toMatchSnapshot();
