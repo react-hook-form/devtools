@@ -1,6 +1,6 @@
 {
   "name": "@hookform/devtools",
-  "version": "2.0.0-beta.2",
+  "version": "2.0.0",
   "description": "React Hook Form dev tool to help debugging forms",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
