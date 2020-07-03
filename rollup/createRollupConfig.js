@@ -14,7 +14,7 @@ import pkg from '../package.json';
 
 export function createRollupConfig(options) {
   const name = options.name || safePackageName(pkg.name);
-  const umdName = options.undName || pascalcase(safePackageName(pkg.name));
+  const umdName = options.umdName || pascalcase(safePackageName(pkg.name));
   const shouldMinify = options.minify || options.env === 'production';
   const tsconfigPath = options.tsconfig || 'tsconfig.json';
   const tsconfigJSON = ts.readConfigFile(tsconfigPath, ts.sys.readFile).config;
