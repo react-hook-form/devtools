@@ -1,10 +1,9 @@
 import colors from './colors';
 import * as React from 'react';
-import { FormStateProxy } from 'react-hook-form';
 import { Button, paraGraphDefaultStyle } from './styled';
 
 type Props = {
-  formState: FormStateProxy<Record<string, any>>;
+  formState: any;
   showFormState: boolean;
   setShowFormState: (payload: boolean) => void;
 };
