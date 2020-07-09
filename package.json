@@ -27,7 +27,9 @@
     "test": "jest --runInBand",
     "test:watch": "npm run test -- --watchAll --coverage",
     "postversion": "git push && git push origin v$npm_package_version",
-    "prepublishOnly": "npm run lint && npm run lint:types && npm test && npm run build"
+    "prepublishOnly": "npm run lint && npm run lint:types && npm test && npm run build",
+    "changeset": "changeset",
+    "release": "changeset publish"
   },
   "keywords": [
     "react",
@@ -61,6 +63,8 @@
     "react-simple-animate": "^3.3.8"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.2.6",
+    "@changesets/cli": "^2.9.2",
     "@rollup/plugin-commonjs": "^13.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^8.1.0",
