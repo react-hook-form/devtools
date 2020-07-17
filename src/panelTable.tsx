@@ -47,7 +47,7 @@ const PanelTable = ({
 
   let value = fieldsValues ? get(fieldsValues, name) : '';
 
-  if (fieldsValues) {
+  if (!isUndefined(value)) {
     if (isObject(value)) {
       try {
         value = (
@@ -223,7 +223,7 @@ const PanelTable = ({
                 </td>
               </tr>
             )}
-            {fieldsValues && !isUndefined(value) && (
+            {!isUndefined(value) && (
               <tr>
                 <td
                   align="right"
