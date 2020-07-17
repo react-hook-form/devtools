@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Animate } from 'react-simple-animate';
 import isUndefined from 'lodash/isUndefined';
 import isObject from 'lodash/isObject';
+import get from 'lodash/get';
 import colors from './colors';
 import { Button, Table, paraGraphDefaultStyle } from './styled';
 
@@ -44,23 +45,23 @@ const PanelTable = ({
     setCollapse(!collapseAll);
   }, [collapseAll]);
 
-  let value = fieldsValues ? fieldsValues[name] : '';
+  let value = fieldsValues ? get(fieldsValues, name) : '';
 
   if (fieldsValues) {
-    if (isObject(fieldsValues[name])) {
+    if (isObject(value)) {
       try {
         value = (
           <pre style={{ margin: 0 }}>
             <code style={{ fontSize: 12 }}>
-              {JSON.stringify(fieldsValues[name], null, 2)}
+              {JSON.stringify(value, null, 2)}
             </code>
           </pre>
         );
       } catch {
         value = <span>[Nested Object]</span>;
       }
-    } else if (typeof fieldsValues[name] !== 'string') {
-      value = String(fieldsValues[name]);
+    } else if (typeof value !== 'string') {
+      value = String(value);
     }
   }
 
@@ -136,8 +137,12 @@ const PanelTable = ({
                 style={{
                   margin: 0,
                   padding: 0,
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
                   ...paraGraphDefaultStyle,
                 }}
+                title={name}
               >
                 {name}
               </p>
@@ -218,7 +223,7 @@ const PanelTable = ({
                 </td>
               </tr>
             )}
-            {fieldsValues && !isUndefined(fieldsValues[name]) && (
+            {fieldsValues && !isUndefined(value) && (
               <tr>
                 <td
                   align="right"
