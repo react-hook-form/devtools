@@ -60,6 +60,7 @@ export const DevToolUI = ({ control }: { control: Control }) => {
       {!state.visible && (
         <Button
           title="Show dev panel"
+          hideBackground
           style={{
             position: 'fixed',
             zIndex: 99999,
