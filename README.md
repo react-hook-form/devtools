@@ -6,8 +6,6 @@
     </p>
 </div>
 
-<img src="https://react-hook-form.com/static/dev-tool-4a61171024c1e1985abfac2bebc7dbee.png" />
-
 <p align="center">Performant, flexible and extensible forms with easy to use validation.</p>
 
 <div align="center">
@@ -17,6 +15,8 @@
 [![npm](https://img.shields.io/bundlephobia/minzip/@hookform/devtools?style=for-the-badge)](https://bundlephobia.com/result?p=@hookform/devtools)
 
 </div>
+
+<img src="https://react-hook-form.com/static/dev-tool-4a61171024c1e1985abfac2bebc7dbee.png" />
 
 ## Goal
 
