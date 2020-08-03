@@ -4,6 +4,9 @@ import { Button, paraGraphDefaultStyle } from './styled';
 
 type Props = {
   formState: any;
+  readFormStateRef: React.MutableRefObject<{
+    isValid: boolean;
+  }>;
   showFormState: boolean;
   setShowFormState: (payload: boolean) => void;
 };
@@ -12,6 +15,7 @@ const FormStateTable = ({
   formState,
   showFormState,
   setShowFormState,
+  readFormStateRef,
 }: Props) => (
   <div
     style={{
@@ -34,11 +38,16 @@ const FormStateTable = ({
             </td>
             <td
               style={{
-                color: formState.isValid ? colors.green : colors.lightPink,
+                color:
+                  readFormStateRef.current.isValid && formState.isValid
+                    ? colors.green
+                    : colors.lightPink,
                 ...paraGraphDefaultStyle,
               }}
             >
-              {formState.isValid ? 'true' : 'false'}
+              {readFormStateRef.current.isValid && formState.isValid
+                ? 'true'
+                : 'false'}
             </td>
           </tr>
           <tr>
@@ -105,7 +114,10 @@ const FormStateTable = ({
       <span
         style={{
           transition: '0.5s all',
-          color: formState.isValid ? colors.green : colors.lightPink,
+          color:
+            readFormStateRef.current.isValid && formState.isValid
+              ? colors.green
+              : colors.lightPink,
         }}
       >
         ■

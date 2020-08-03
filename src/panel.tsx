@@ -146,6 +146,7 @@ export default ({
       </div>
 
       <FormStateTable
+        readFormStateRef={readFormStateRef}
         formState={formState}
         showFormState={showFormState}
         setShowFormState={setShowFormState}
