@@ -27,9 +27,6 @@ describe('DevTool', () => {
               },
             },
             fieldsValues: {},
-            errorsRef: {
-              current: {},
-            },
             formState: {
               dirtyFields: {},
             },

@@ -10,7 +10,7 @@ import { Button, Input } from './styled';
 import { setCollapse } from './settingAction';
 
 export default ({
-  control: { fieldsRef, getValues, formState, errorsRef, readFormStateRef },
+  control: { fieldsRef, getValues, formState, readFormStateRef },
 }: {
   control: Control;
 }) => {
@@ -107,7 +107,7 @@ export default ({
               name,
           )
           .map(([name, value], index) => {
-            const error = get(errorsRef.current, name);
+            const error = get(formState.errors, name);
             const errorMessage = get(error, 'message', undefined);
             const errorType = get(error, 'type', undefined);
             const type = get(value, 'ref.type', undefined);
