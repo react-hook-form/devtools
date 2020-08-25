@@ -10,7 +10,7 @@ import { Button, Input } from './styled';
 import { setCollapse } from './settingAction';
 
 export default ({
-  control: { fieldsRef, getValues, formState, errorsRef, readFormStateRef },
+  control: { fieldsRef, getValues, readFormStateRef, formStateRef },
 }: {
   control: Control;
 }) => {
@@ -107,13 +107,14 @@ export default ({
               name,
           )
           .map(([name, value], index) => {
-            const error = get(errorsRef.current, name);
+            const error = get(formStateRef.current.errors, name);
             const errorMessage = get(error, 'message', undefined);
             const errorType = get(error, 'type', undefined);
             const type = get(value, 'ref.type', undefined);
-            const isTouched = !!get(formState.touched, name);
+            const isTouched = !!get(formStateRef.current.touched, name);
             const isNative = (value as any).ref.type;
-            const isDirty = !!Object.keys(formState.dirtyFields).length;
+            const isDirty = !!Object.keys(formStateRef.current.dirtyFields)
+              .length;
             const hasError = !!error;
             const ref = get(value, 'ref');
 
@@ -147,7 +148,7 @@ export default ({
 
       <FormStateTable
         readFormStateRef={readFormStateRef}
-        formState={formState}
+        formState={formStateRef.current}
         showFormState={showFormState}
         setShowFormState={setShowFormState}
       />

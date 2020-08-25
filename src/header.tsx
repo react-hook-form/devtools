@@ -30,7 +30,7 @@ const Header = ({ setVisible, control }: Props) => {
             transition: '0.5s all',
             color:
               control.readFormStateRef.current.isValid &&
-              control.formState.isValid
+              control.formStateRef.current.isValid
                 ? colors.green
                 : colors.lightPink,
           }}
