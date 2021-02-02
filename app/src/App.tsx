@@ -34,7 +34,7 @@ const App = () => {
         </p>
         <label>First Name</label>
         <input
-          name="brothisnameisjustveryverylongbrothisnameisjustveryverylongbrothisnameisjustveryverylong"
+          name="thisNameHasBeenMadeLongForThePurposesOfDemonstration"
           ref={register({ required: true })}
         />
 
