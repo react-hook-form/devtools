@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Control, useForm, useWatch, get } from 'react-hook-form';
+import { Control, useForm, useWatch, useFormState, get } from 'react-hook-form';
 import { useStateMachine } from 'little-state-machine';
 import { useEffect } from 'react';
 import colors from './colors';
@@ -8,12 +8,9 @@ import FormStateTable from './formStateTable';
 import { Button, Input } from './styled';
 import { setCollapse } from './settingAction';
 
-export default ({
-  control,
-  control: { fieldsRef, formStateRef },
-}: {
-  control: Control;
-}) => {
+export default ({ control, control: { fieldsRef } }: { control: Control }) => {
+  const formState = useFormState();
+  const { dirtyFields, touchedFields, errors } = formState;
   const { state, actions } = useStateMachine({
     setCollapse,
   });
@@ -110,15 +107,15 @@ export default ({
               name,
           )
           .map(([name, value], index) => {
-            const error = get(formStateRef.current.errors, name);
+            const error = get(errors, name);
             const errorMessage = get(error, 'message', undefined);
             const errorType = get(error, 'type', undefined);
             const type = get(value, 'ref.type', undefined);
-            const isTouched = !!get(formStateRef.current.touchedFields, name);
+            const isTouched = !!get(touchedFields, name);
             const isNative = !!(value && value._f.ref.type);
-            const isDirty = !!get(formStateRef.current.dirtyFields, name);
+            const isDirty = !!get(dirtyFields, name);
             const hasError = !!error;
-            const ref = get(value, 'ref');
+            const ref = get(value, '_f.ref');
 
             return (
               <section
@@ -148,7 +145,7 @@ export default ({
       </div>
 
       <FormStateTable
-        formState={formStateRef.current}
+        formState={formState}
         showFormState={showFormState}
         setShowFormState={setShowFormState}
       />
