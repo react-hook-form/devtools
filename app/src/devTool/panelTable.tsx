@@ -91,7 +91,7 @@ const PanelTable = ({
                   borderRadius: 2,
                   padding: '3px 5px',
                   display: 'inline-block',
-                  fontSize: 10,
+                  fontSize: 9,
                   lineHeight: '13px',
                   width: 20,
                   textAlign: 'center',
@@ -112,7 +112,7 @@ const PanelTable = ({
                   borderRadius: 2,
                   padding: '3px 5px',
                   display: 'inline-block',
-                  fontSize: 10,
+                  fontSize: 9,
                   lineHeight: '13px',
                   textAlign: 'center',
                   width: 'calc(100% - 30px)',
@@ -140,6 +140,7 @@ const PanelTable = ({
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                   ...paraGraphDefaultStyle,
+                  lineHeight: '24px',
                 }}
                 title={name}
               >
