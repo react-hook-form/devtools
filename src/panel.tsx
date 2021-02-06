@@ -1,6 +1,5 @@
 import * as React from 'react';
-import get from 'lodash/get';
-import { Control, useForm } from 'react-hook-form';
+import { Control, useForm, useWatch, get } from 'react-hook-form';
 import { useStateMachine } from 'little-state-machine';
 import { useEffect } from 'react';
 import colors from './colors';
@@ -10,14 +9,19 @@ import { Button, Input } from './styled';
 import { setCollapse } from './settingAction';
 
 export default ({
-  control: { fieldsRef, getValues, readFormStateRef, formStateRef },
+  control,
+  control: { fieldsRef, formStateRef },
 }: {
   control: Control;
 }) => {
-  const { state, action } = useStateMachine(setCollapse);
+  const { state, actions } = useStateMachine({
+    setCollapse,
+  });
   const [, setData] = React.useState({});
   const [showFormState, setShowFormState] = React.useState(false);
-  const fieldsValues = getValues();
+  const fieldsValues = useWatch({
+    control,
+  });
   const { register, watch } = useForm();
   const searchTerm = watch('search', '');
 
@@ -62,7 +66,7 @@ export default ({
           }}
           title="Toggle entire fields"
           onClick={() => {
-            action(!state.isCollapse as any);
+            actions.setCollapse(!state.isCollapse);
           }}
         >
           {state.isCollapse ? '[-] COLLAPSE' : '[+] EXPAND'}
@@ -84,8 +88,7 @@ export default ({
             gridColumnEnd: 4,
             background: 'black',
           }}
-          name="search"
-          ref={register}
+          {...register('search')}
           placeholder="Filter name..."
           type="search"
         />
@@ -111,7 +114,7 @@ export default ({
             const errorMessage = get(error, 'message', undefined);
             const errorType = get(error, 'type', undefined);
             const type = get(value, 'ref.type', undefined);
-            const isTouched = !!get(formStateRef.current.touched, name);
+            const isTouched = !!get(formStateRef.current.touchedFields, name);
             const isNative = (value as any).ref.type;
             const isDirty = !!get(formStateRef.current.dirtyFields, name);
             const hasError = !!error;
@@ -136,7 +139,6 @@ export default ({
                   isNative={isNative}
                   errorMessage={errorMessage}
                   errorType={errorType}
-                  readFormStateRef={readFormStateRef}
                   isDirty={isDirty}
                   fieldsValues={fieldsValues}
                 />
@@ -146,7 +148,6 @@ export default ({
       </div>
 
       <FormStateTable
-        readFormStateRef={readFormStateRef}
         formState={formStateRef.current}
         showFormState={showFormState}
         setShowFormState={setShowFormState}

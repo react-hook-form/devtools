@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Animate } from 'react-simple-animate';
+import { get } from 'react-hook-form';
 import isUndefined from 'lodash/isUndefined';
 import isObject from 'lodash/isObject';
-import get from 'lodash/get';
 import colors from './colors';
 import { Button, Table, paraGraphDefaultStyle } from './styled';
 
@@ -14,9 +14,6 @@ type Props = {
   type: string | undefined;
   isTouched: boolean;
   isDirty: boolean;
-  readFormStateRef: React.MutableRefObject<{
-    touched: boolean;
-  }>;
   index: number;
   fieldsValues: any;
   name: string;
@@ -29,7 +26,6 @@ const PanelTable = ({
   hasError,
   isDirty,
   fieldsValues,
-  readFormStateRef,
   isNative,
   errorMessage,
   errorType,
@@ -248,7 +244,7 @@ const PanelTable = ({
                 </td>
               </tr>
             )}
-            {readFormStateRef.current.touched && (
+            {
               <tr>
                 <td
                   align="right"
@@ -273,8 +269,8 @@ const PanelTable = ({
                   </code>
                 </td>
               </tr>
-            )}
-            {(readFormStateRef.current as any).dirtyFields && (
+            }
+            {
               <tr>
                 <td
                   align="right"
@@ -299,7 +295,7 @@ const PanelTable = ({
                   </code>
                 </td>
               </tr>
-            )}
+            }
           </tbody>
         )}
       </Table>

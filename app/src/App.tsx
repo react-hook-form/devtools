@@ -4,9 +4,9 @@ import { DevTool } from '@hookform/devtools';
 import './App.css';
 
 const App = () => {
-  const { register, control, handleSubmit, formState } = useForm<{
-    test: string;
-    test1: string;
+  const { register, control, handleSubmit } = useForm<{
+    firstName: string;
+    lastName: string;
     custom: string;
   }>({
     mode: 'onChange',
@@ -15,10 +15,6 @@ const App = () => {
   React.useEffect(() => {
     register('custom');
   }, [register]);
-
-  console.log('app', formState.touched);
-  console.log('app', formState.dirtyFields);
-  console.log('app', formState.isValid);
 
   return (
     <div className="App">
@@ -33,10 +29,10 @@ const App = () => {
           React Hook Form DevTools to help debug forms.
         </p>
         <label>First Name</label>
-        <input name="firstName" ref={register({ required: true })} />
+        <input {...register('firstName', { required: true })} />
 
         <label>Last Name</label>
-        <input name="lastName" ref={register({ required: true })} />
+        <input {...register('lastName', { required: true })} />
 
         <input style={{ fontWeight: 400 }} type="submit" />
       </form>

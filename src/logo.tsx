@@ -3,10 +3,12 @@ import * as React from 'react';
 
 const Logo = ({
   style,
-  setVisible,
+  actions,
 }: {
   style?: Record<string, any>;
-  setVisible: any;
+  actions: {
+    setVisible: (arg: boolean) => void;
+  };
 }) => {
   return (
     <svg
@@ -20,7 +22,7 @@ const Logo = ({
         ...style,
       }}
       onClick={() => {
-        setVisible(true);
+        actions.setVisible(true);
       }}
       aria-label="React Hook Form Logo"
     >

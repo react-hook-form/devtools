@@ -1,6 +1,6 @@
 import colors from './colors';
 import * as React from 'react';
-import { Control } from 'react-hook-form';
+import { Control, useFormState } from 'react-hook-form';
 import { CircleButton, paraGraphDefaultStyle } from './styled';
 
 type Props = {
@@ -9,6 +9,10 @@ type Props = {
 };
 
 const Header = ({ setVisible, control }: Props) => {
+  const { isValid } = useFormState({
+    control,
+  });
+
   return (
     <header
       style={{
@@ -28,11 +32,7 @@ const Header = ({ setVisible, control }: Props) => {
         <span
           style={{
             transition: '0.5s all',
-            color:
-              control.readFormStateRef.current.isValid &&
-              control.formStateRef.current.isValid
-                ? colors.green
-                : colors.lightPink,
+            color: isValid ? colors.green : colors.lightPink,
           }}
         >
           ■

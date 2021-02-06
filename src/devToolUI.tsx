@@ -11,7 +11,9 @@ import { useStateMachine } from 'little-state-machine';
 import { setVisible } from './settingAction';
 
 export const DevToolUI = ({ control }: { control: Control }) => {
-  const { state, action } = useStateMachine(setVisible);
+  const { state, actions } = useStateMachine({
+    setVisible,
+  });
 
   return (
     <>
@@ -51,7 +53,7 @@ export const DevToolUI = ({ control }: { control: Control }) => {
               "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
           }}
         >
-          <Header setVisible={action} control={control} />
+          <Header setVisible={actions.setVisible} control={control} />
           <Panel control={control} />
         </div>
         <PanelShadow visible={state.visible} />
@@ -71,7 +73,7 @@ export const DevToolUI = ({ control }: { control: Control }) => {
             background: 'none',
           }}
         >
-          <Logo setVisible={action} />
+          <Logo actions={actions} />
         </Button>
       )}
     </>

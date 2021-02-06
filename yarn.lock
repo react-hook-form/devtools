@@ -3910,10 +3910,10 @@ listr2@^2.1.0:
     rxjs "^6.5.5"
     through "^2.3.8"
 
-little-state-machine@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/little-state-machine/-/little-state-machine-3.0.1.tgz#08ab1e1d6ac1d68a72d4a11e0f13df30c988064a"
-  integrity sha512-/0mabJirUiD4sYdj8oI5mtJ/zRGUIfYxq7em2PiaUE5+DO9r9CRlcMgD5KYJx0sahe8V+5VMtW5PQnGsf229jA==
+little-state-machine@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/little-state-machine/-/little-state-machine-4.0.0.tgz#884dca86a74d70243ea55da74182a06aeb84c213"
+  integrity sha512-IsG03r81UpHzU/bFZu+F/KX2WTIpvKGyMxo1QBSym0wEsphp3JKJrMqxvIRvwPyscCxzt0nP40VROSby9VQf0w==
 
 load-json-file@^4.0.0:
   version "4.0.0"
@@ -4774,10 +4774,10 @@ react-dom@^16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
-react-hook-form@^6.5.0:
-  version "6.5.1"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-6.5.1.tgz#504389d09970f2e7fc8c5ec8db2c551c863bcde9"
-  integrity sha512-MakeW3CRj4n1FW4HuliM8vlWup+5keUWDduf5lPlori6OWQ616xGzxrUOKoDUIGh0ERgCebObrLb5UiFDlSxAQ==
+react-hook-form@7.0.0-beta.0:
+  version "7.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.0.0-beta.0.tgz#df438a08bdb66f0df728af6d93c7adfee5ff72d6"
+  integrity sha512-jrhYle90Z3jo2LwOAmyOdcrRA5ojcxuq49m6MLaN0PTbNXi4JBZ1vxaznFvj0FroN/N69GE1d8vtCkDDqB8b4A==
 
 react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.12.0"
@@ -5861,10 +5861,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^3.9.3:
-  version "3.9.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.3.tgz#d3ac8883a97c26139e42df5e93eeece33d610b8a"
-  integrity sha512-D/wqnB2xzNFIcoBG9FG8cXRDjiqSTbG2wd8DMZeQyJlP1vfTkIxH4GKveWaEBYySKIg+USu+E+EDIR47SqnaMQ==
+typescript@^4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.3.tgz#519d582bd94cba0cf8934c7d8e8467e473f53bb7"
+  integrity sha512-B3ZIOf1IKeH2ixgHhj6la6xdwR9QrLC5d1VKeCSY4tvkqhF2eqd9O7txNlS0PO3GrBAFIdr3L1ndNwteUbZLYg==
 
 union-value@^1.0.0:
   version "1.0.1"
