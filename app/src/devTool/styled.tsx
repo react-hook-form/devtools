@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import colors from './colors';
 
 export const paraGraphDefaultStyle = {
-  fontSize: 14,
-  lineHeight: '22px',
+  fontSize: 13,
+  lineHeight: '20px',
 };
 
 const Button = styled.button<{ hideBackground?: boolean }>`

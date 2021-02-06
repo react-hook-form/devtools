@@ -10,6 +10,10 @@ const App = () => {
     custom: string;
   }>({
     mode: 'onChange',
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+    },
   });
 
   React.useEffect(() => {

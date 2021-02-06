@@ -71,7 +71,7 @@ const PanelTable = ({
     >
       <Table
         style={{
-          padding: '10px 10px 10px',
+          padding: '5px 8px',
           width: '100%',
           transition: '.3s all',
           borderLeft: `2px solid ${
@@ -82,7 +82,7 @@ const PanelTable = ({
       >
         <thead>
           <tr>
-            <td valign="top" style={{ width: 100, lineHeight: '22px' }}>
+            <td valign="top" style={{ width: 85, lineHeight: '22px' }}>
               <Button
                 onClick={() => setCollapse(!collapse)}
                 title="Toggle field table"
@@ -92,10 +92,10 @@ const PanelTable = ({
                   padding: '3px 5px',
                   display: 'inline-block',
                   fontSize: 10,
-                  lineHeight: '12px',
+                  lineHeight: '13px',
                   width: 20,
                   textAlign: 'center',
-                  marginRight: 10,
+                  marginRight: 8,
                 }}
               >
                 {collapse ? '+' : '-'}
@@ -113,9 +113,9 @@ const PanelTable = ({
                   padding: '3px 5px',
                   display: 'inline-block',
                   fontSize: 10,
-                  lineHeight: '12px',
+                  lineHeight: '13px',
                   textAlign: 'center',
-                  marginRight: 10,
+                  width: 'calc(100% - 30px)',
                   ...(isNative
                     ? {}
                     : { cursor: 'not-allowed', background: colors.lightBlue }),
@@ -127,13 +127,15 @@ const PanelTable = ({
             <td
               style={{
                 display: 'block',
-                maxWidth: 100,
+                maxWidth: 140,
               }}
             >
               <p
                 style={{
                   margin: 0,
                   padding: 0,
+                  top: 0,
+                  position: 'relative',
                   whiteSpace: 'nowrap',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
