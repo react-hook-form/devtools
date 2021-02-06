@@ -1041,10 +1041,10 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@hookform/devtools@3.0.0-alpha.1":
-  version "3.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@hookform/devtools/-/devtools-3.0.0-alpha.1.tgz#4e746fefd8df391011445dba95148045fac11ee3"
-  integrity sha512-6CfowqwdQW1Tp6TuWkWOMeDTjGXB/UtYchPlMKBesM9+VK6yZwiFx6aPb0b+4NFGp+CdgrxJBUUqcDjjNYrqmQ==
+"@hookform/devtools@3.0.0-alpha.3":
+  version "3.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@hookform/devtools/-/devtools-3.0.0-alpha.3.tgz#9150aaf1eb3a9250db3d913ab4c6c33cd8933f92"
+  integrity sha512-pDdN8idI7cjaGVK+8NmThPSUmHHh6GVGDXh6fgmZAZdFvfzJ629HMU7OwjeJwFzsKLMQzIiCIz7+gXfes2VljQ==
   dependencies:
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
