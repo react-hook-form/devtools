@@ -115,7 +115,7 @@ export default ({
             const errorType = get(error, 'type', undefined);
             const type = get(value, 'ref.type', undefined);
             const isTouched = !!get(formStateRef.current.touchedFields, name);
-            const isNative = (value as any).ref.type;
+            const isNative = !!(value && value._f.ref.type);
             const isDirty = !!get(formStateRef.current.dirtyFields, name);
             const hasError = !!error;
             const ref = get(value, 'ref');

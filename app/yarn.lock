@@ -1041,15 +1041,15 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@hookform/devtools@^2.0.0-beta.2":
-  version "2.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@hookform/devtools/-/devtools-2.0.0-beta.2.tgz#581534e4fee7c0b3a9ef3c184ab0db18b876b912"
-  integrity sha512-pLsBk5OOywWCtrbEqaI09daIn7jJGUdxs+xLxnvFtmjgURxwbUhg7TzkkjYnliZ63Z4OxVXbPUIXxoPO13A1Gg==
+"@hookform/devtools@3.0.0-alpha.0":
+  version "3.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@hookform/devtools/-/devtools-3.0.0-alpha.0.tgz#d2728e22e23ec4af105c78e4cb9dd15265d9bada"
+  integrity sha512-qmsrBhn4YvlZ/ubFiQx+S89Vbb2QoO7XmPHywOI6VC6tKsjIxZttlYwNDI06iDdB2aU4uigtLk9lGE9sm7iz8w==
   dependencies:
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
     "@types/lodash" "^4.14.152"
-    little-state-machine "^3.0.1"
+    little-state-machine "^4.0.0"
     lodash "^4.17.15"
     react-simple-animate "^3.3.8"
 
@@ -6266,10 +6266,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-little-state-machine@^3.0.1:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/little-state-machine/-/little-state-machine-3.0.2.tgz#7ea94c2c1867b5792dd4eaa710a79d13990980c0"
-  integrity sha512-Y7fa32N1NCCEfNynsri+v4igwf0Mu9fNWJuJkgHKrII3DX25SVMXU7tsspTmzzhwjHndnlZGIoELNaclyTjFjw==
+little-state-machine@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/little-state-machine/-/little-state-machine-4.0.0.tgz#884dca86a74d70243ea55da74182a06aeb84c213"
+  integrity sha512-IsG03r81UpHzU/bFZu+F/KX2WTIpvKGyMxo1QBSym0wEsphp3JKJrMqxvIRvwPyscCxzt0nP40VROSby9VQf0w==
 
 load-json-file@^2.0.0:
   version "2.0.0"
