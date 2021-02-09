@@ -244,7 +244,16 @@ const PanelTable = ({
                     ...paraGraphDefaultStyle,
                   }}
                 >
-                  {value}
+                  <p
+                    title={value}
+                    style={{
+                      ...paraGraphDefaultStyle,
+                      margin: 0,
+                      padding: 0,
+                    }}
+                  >
+                    {value}
+                  </p>
                 </td>
               </tr>
             )}

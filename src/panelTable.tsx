@@ -240,7 +240,7 @@ const PanelTable = ({
                     ...paraGraphDefaultStyle,
                   }}
                 >
-                  {value}
+                  <p title={value}>{value}</p>
                 </td>
               </tr>
             )}
