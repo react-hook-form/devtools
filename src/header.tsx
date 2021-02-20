@@ -23,10 +23,11 @@ const Header = ({ setVisible, control }: Props) => {
     >
       <p
         style={{
+          ...paraGraphDefaultStyle,
           margin: 0,
           padding: 0,
-          fontWeight: 600,
-          ...paraGraphDefaultStyle,
+          fontWeight: 400,
+          fontSize: 12,
         }}
       >
         <span
@@ -37,7 +38,7 @@ const Header = ({ setVisible, control }: Props) => {
         >
           ■
         </span>{' '}
-        RHF DevTools
+        React Hook Form
       </p>
       <CircleButton title="Close dev panel" onClick={() => setVisible(false)}>
         ✕

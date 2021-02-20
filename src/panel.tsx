@@ -54,7 +54,7 @@ export default ({ control, control: { fieldsRef } }: { control: Control }) => {
           title="Update values and state the form"
           onClick={() => setData({})}
         >
-          ♺ UPDATE
+          ♺ REFRESH
         </Button>
         <Button
           style={{
