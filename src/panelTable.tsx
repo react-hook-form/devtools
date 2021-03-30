@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Animate } from 'react-simple-animate';
 import { get } from 'react-hook-form';
 import isUndefined from 'lodash/isUndefined';
 import isObject from 'lodash/isObject';
@@ -33,7 +32,6 @@ const PanelTable = ({
   isTouched,
   name,
   collapseAll,
-  index,
 }: Props) => {
   const [collapse, setCollapse] = React.useState(false);
 
@@ -62,257 +60,249 @@ const PanelTable = ({
   }
 
   return (
-    <Animate
-      play
-      start={{ opacity: 0, transform: 'translateY(10px)' }}
-      end={{ opacity: 1 }}
-      easeType="ease-in"
-      delay={index * 0.1}
+    <Table
+      style={{
+        padding: '5px 8px',
+        width: '100%',
+        transition: '.3s all',
+        borderLeft: `2px solid ${
+          hasError ? colors.secondary : colors.buttonBlue
+        }`,
+        background: 'none',
+      }}
     >
-      <Table
-        style={{
-          padding: '5px 8px',
-          width: '100%',
-          transition: '.3s all',
-          borderLeft: `2px solid ${
-            hasError ? colors.secondary : colors.buttonBlue
-          }`,
-          background: 'none',
-        }}
-      >
-        <thead>
-          <tr>
-            <td valign="top" style={{ width: 85, lineHeight: '22px' }}>
-              <Button
-                onClick={() => setCollapse(!collapse)}
-                title="Toggle field table"
-                style={{
-                  border: `1px solid ${colors.lightBlue}`,
-                  borderRadius: 2,
-                  padding: '3px 5px',
-                  display: 'inline-block',
-                  fontSize: 9,
-                  lineHeight: '13px',
-                  width: 20,
-                  textAlign: 'center',
-                  marginRight: 8,
-                }}
-              >
-                {collapse ? '+' : '-'}
-              </Button>
-              <Button
-                onClick={() => {
-                  if (refObject.scrollIntoView) {
-                    refObject.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                title="Scroll into view"
-                style={{
-                  border: `1px solid ${colors.lightBlue}`,
-                  borderRadius: 2,
-                  padding: '3px 5px',
-                  display: 'inline-block',
-                  fontSize: 9,
-                  lineHeight: '13px',
-                  textAlign: 'center',
-                  width: 'calc(100% - 30px)',
-                  ...(isNative
-                    ? {}
-                    : { cursor: 'not-allowed', background: colors.lightBlue }),
-                }}
-              >
-                {isNative ? 'Native' : 'Custom'}
-              </Button>
-            </td>
-            <td
+      <thead>
+        <tr>
+          <td valign="top" style={{ width: 85, lineHeight: '22px' }}>
+            <Button
+              onClick={() => setCollapse(!collapse)}
+              title="Toggle field table"
               style={{
-                display: 'block',
-                maxWidth: 140,
+                border: `1px solid ${colors.lightBlue}`,
+                borderRadius: 2,
+                padding: '3px 5px',
+                display: 'inline-block',
+                fontSize: 9,
+                lineHeight: '13px',
+                width: 20,
+                textAlign: 'center',
+                marginRight: 8,
               }}
             >
-              <p
+              {collapse ? '+' : '-'}
+            </Button>
+            <Button
+              onClick={() => {
+                if (refObject.scrollIntoView) {
+                  refObject.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              title="Scroll into view"
+              style={{
+                border: `1px solid ${colors.lightBlue}`,
+                borderRadius: 2,
+                padding: '3px 5px',
+                display: 'inline-block',
+                fontSize: 9,
+                lineHeight: '13px',
+                textAlign: 'center',
+                width: 'calc(100% - 30px)',
+                ...(isNative
+                  ? {}
+                  : { cursor: 'not-allowed', background: colors.lightBlue }),
+              }}
+            >
+              {isNative ? 'Native' : 'Custom'}
+            </Button>
+          </td>
+          <td
+            style={{
+              display: 'block',
+              maxWidth: 140,
+            }}
+          >
+            <p
+              style={{
+                margin: 0,
+                padding: 0,
+                top: 0,
+                position: 'relative',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                ...paraGraphDefaultStyle,
+                lineHeight: '24px',
+              }}
+              title={name}
+            >
+              {name}
+            </p>
+          </td>
+        </tr>
+      </thead>
+      {!collapse && (
+        <tbody>
+          {type && (
+            <tr>
+              <td
+                align="right"
                 style={{
-                  margin: 0,
-                  padding: 0,
-                  top: 0,
-                  position: 'relative',
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
+                  paddingRight: 5,
+                  fontWeight: 500,
+                  verticalAlign: 'top',
                   ...paraGraphDefaultStyle,
-                  lineHeight: '24px',
                 }}
-                title={name}
               >
-                {name}
-              </p>
-            </td>
-          </tr>
-        </thead>
-        {!collapse && (
-          <tbody>
-            {type && (
-              <tr>
-                <td
-                  align="right"
+                Type:
+              </td>
+              <td
+                style={{
+                  display: 'block',
+                  maxWidth: 100,
+                  ...paraGraphDefaultStyle,
+                }}
+              >
+                {type}
+              </td>
+            </tr>
+          )}
+          {errorType && (
+            <tr>
+              <td
+                align="right"
+                style={{
+                  paddingRight: 5,
+                  fontWeight: 500,
+                  verticalAlign: 'top',
+                  ...paraGraphDefaultStyle,
+                }}
+              >
+                ERROR Type:
+              </td>
+              <td
+                style={{
+                  display: 'block',
+                  maxWidth: 100,
+                  ...paraGraphDefaultStyle,
+                }}
+              >
+                {errorType}
+              </td>
+            </tr>
+          )}
+          {errorMessage && (
+            <tr>
+              <td
+                align="right"
+                style={{
+                  paddingRight: 5,
+                  fontWeight: 500,
+                  verticalAlign: 'top',
+                  ...paraGraphDefaultStyle,
+                }}
+              >
+                MESSAGE:
+              </td>
+              <td
+                style={{
+                  display: 'block',
+                  maxWidth: 100,
+                  ...paraGraphDefaultStyle,
+                }}
+              >
+                {errorMessage.trim()}
+              </td>
+            </tr>
+          )}
+          {!isUndefined(value) && (
+            <tr>
+              <td
+                align="right"
+                style={{
+                  paddingRight: 5,
+                  fontWeight: 500,
+                  verticalAlign: 'top',
+                  ...paraGraphDefaultStyle,
+                }}
+              >
+                Value:
+              </td>
+              <td
+                data-testid={`${name}-field-value`}
+                style={{
+                  display: 'block',
+                  maxWidth: 100,
+                  ...paraGraphDefaultStyle,
+                }}
+              >
+                <p
+                  title={value}
                   style={{
-                    paddingRight: 5,
-                    fontWeight: 500,
-                    verticalAlign: 'top',
                     ...paraGraphDefaultStyle,
+                    margin: 0,
+                    padding: 0,
                   }}
                 >
-                  Type:
-                </td>
-                <td
+                  {value}
+                </p>
+              </td>
+            </tr>
+          )}
+          {
+            <tr>
+              <td
+                align="right"
+                style={{
+                  paddingRight: 5,
+                  fontWeight: 500,
+                  verticalAlign: 'top',
+                  ...paraGraphDefaultStyle,
+                }}
+              >
+                Touched:
+              </td>
+              <td>
+                <code
                   style={{
-                    display: 'block',
-                    maxWidth: 100,
+                    color: isTouched ? colors.green : colors.lightPink,
                     ...paraGraphDefaultStyle,
+                    fontSize: 12,
                   }}
                 >
-                  {type}
-                </td>
-              </tr>
-            )}
-            {errorType && (
-              <tr>
-                <td
-                  align="right"
+                  {isTouched ? 'true' : 'false'}
+                </code>
+              </td>
+            </tr>
+          }
+          {
+            <tr>
+              <td
+                align="right"
+                style={{
+                  paddingRight: 5,
+                  fontWeight: 500,
+                  verticalAlign: 'top',
+                  ...paraGraphDefaultStyle,
+                }}
+              >
+                Dirty:
+              </td>
+              <td>
+                <code
                   style={{
-                    paddingRight: 5,
-                    fontWeight: 500,
-                    verticalAlign: 'top',
+                    color: isDirty ? colors.green : colors.lightPink,
                     ...paraGraphDefaultStyle,
+                    fontSize: 12,
                   }}
                 >
-                  ERROR Type:
-                </td>
-                <td
-                  style={{
-                    display: 'block',
-                    maxWidth: 100,
-                    ...paraGraphDefaultStyle,
-                  }}
-                >
-                  {errorType}
-                </td>
-              </tr>
-            )}
-            {errorMessage && (
-              <tr>
-                <td
-                  align="right"
-                  style={{
-                    paddingRight: 5,
-                    fontWeight: 500,
-                    verticalAlign: 'top',
-                    ...paraGraphDefaultStyle,
-                  }}
-                >
-                  MESSAGE:
-                </td>
-                <td
-                  style={{
-                    display: 'block',
-                    maxWidth: 100,
-                    ...paraGraphDefaultStyle,
-                  }}
-                >
-                  {errorMessage.trim()}
-                </td>
-              </tr>
-            )}
-            {!isUndefined(value) && (
-              <tr>
-                <td
-                  align="right"
-                  style={{
-                    paddingRight: 5,
-                    fontWeight: 500,
-                    verticalAlign: 'top',
-                    ...paraGraphDefaultStyle,
-                  }}
-                >
-                  Value:
-                </td>
-                <td
-                  data-testid={`${name}-field-value`}
-                  style={{
-                    display: 'block',
-                    maxWidth: 100,
-                    ...paraGraphDefaultStyle,
-                  }}
-                >
-                  <p
-                    title={value}
-                    style={{
-                      ...paraGraphDefaultStyle,
-                      margin: 0,
-                      padding: 0,
-                    }}
-                  >
-                    {value}
-                  </p>
-                </td>
-              </tr>
-            )}
-            {
-              <tr>
-                <td
-                  align="right"
-                  style={{
-                    paddingRight: 5,
-                    fontWeight: 500,
-                    verticalAlign: 'top',
-                    ...paraGraphDefaultStyle,
-                  }}
-                >
-                  Touched:
-                </td>
-                <td>
-                  <code
-                    style={{
-                      color: isTouched ? colors.green : colors.lightPink,
-                      ...paraGraphDefaultStyle,
-                      fontSize: 12,
-                    }}
-                  >
-                    {isTouched ? 'true' : 'false'}
-                  </code>
-                </td>
-              </tr>
-            }
-            {
-              <tr>
-                <td
-                  align="right"
-                  style={{
-                    paddingRight: 5,
-                    fontWeight: 500,
-                    verticalAlign: 'top',
-                    ...paraGraphDefaultStyle,
-                  }}
-                >
-                  Dirty:
-                </td>
-                <td>
-                  <code
-                    style={{
-                      color: isDirty ? colors.green : colors.lightPink,
-                      ...paraGraphDefaultStyle,
-                      fontSize: 12,
-                    }}
-                  >
-                    {isDirty ? 'true' : 'false'}
-                  </code>
-                </td>
-              </tr>
-            }
-          </tbody>
-        )}
-      </Table>
-    </Animate>
+                  {isDirty ? 'true' : 'false'}
+                </code>
+              </td>
+            </tr>
+          }
+        </tbody>
+      )}
+    </Table>
   );
 };
 
