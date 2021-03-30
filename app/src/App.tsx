@@ -8,11 +8,17 @@ const App = () => {
     firstName: string;
     lastName: string;
     custom: string;
+    ha: {
+      test: string;
+    };
   }>({
     mode: 'onChange',
     defaultValues: {
       firstName: '',
       lastName: '',
+      ha: {
+        test: '',
+      },
     },
   });
 
@@ -34,6 +40,7 @@ const App = () => {
         </p>
         <label>First Name</label>
         <input {...register('firstName', { required: true })} />
+        <input {...register('ha.test', { required: true })} />
 
         <label>Last Name</label>
         <input {...register('lastName', { required: true })} />

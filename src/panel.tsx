@@ -8,7 +8,99 @@ import FormStateTable from './formStateTable';
 import { Button, Input } from './styled';
 import { setCollapse } from './settingAction';
 
-export default ({ control, control: { fieldsRef } }: { control: Control }) => {
+let childIndex = 0;
+
+function PanelChildren<T, K, L, M, G>({
+  fields,
+  searchTerm,
+  touchedFields,
+  errors,
+  dirtyFields,
+  state,
+  fieldsValues,
+}: {
+  fields: T;
+  fieldsValues: K;
+  state: {
+    isCollapse: boolean;
+  };
+  searchTerm: string;
+  touchedFields: M;
+  errors: L;
+  dirtyFields: G;
+}) {
+  return (
+    <>
+      {Object.entries(fields)
+        .filter(
+          ([name]) =>
+            ((name &&
+              name.toLowerCase &&
+              name.toLowerCase().includes(searchTerm)) ||
+              (!name && !searchTerm) ||
+              searchTerm === '') &&
+            name,
+        )
+        .map(([name, value], index) => {
+          childIndex++;
+
+          if (!value._f) {
+            return (
+              <PanelChildren
+                key={name + childIndex}
+                {...{
+                  fields: value,
+                  searchTerm,
+                  touchedFields,
+                  errors,
+                  dirtyFields,
+                  state,
+                  fieldsValues,
+                }}
+              />
+            );
+          } else {
+            const error = get(errors, value._f.name);
+            const errorMessage = get(error, 'message', undefined);
+            const errorType = get(error, 'type', undefined);
+            const type = get(value, 'ref.type', undefined);
+            const isTouched = !!get(touchedFields, name);
+            const isNative = !!(value && value._f.ref.type);
+            const isDirty = !!get(dirtyFields, name);
+            const hasError = !!error;
+            const ref = get(value, '_f.ref');
+
+            return (
+              <section
+                key={value?._f.name + childIndex}
+                style={{
+                  borderBottom: `1px dashed ${colors.secondary}`,
+                  margin: 0,
+                }}
+              >
+                <PanelTable
+                  refObject={ref}
+                  index={index}
+                  collapseAll={state.isCollapse}
+                  name={value?._f.name}
+                  isTouched={isTouched}
+                  type={type}
+                  hasError={hasError}
+                  isNative={isNative}
+                  errorMessage={errorMessage}
+                  errorType={errorType}
+                  isDirty={isDirty}
+                  fieldsValues={fieldsValues}
+                />
+              </section>
+            );
+          }
+        })}
+    </>
+  );
+}
+
+const Panel = ({ control, control: { fieldsRef } }: { control: Control }) => {
   const formState = useFormState({
     control,
   });
@@ -98,52 +190,15 @@ export default ({ control, control: { fieldsRef } }: { control: Control }) => {
           overflow: 'auto',
         }}
       >
-        {Object.entries(fieldsRef.current)
-          .filter(
-            ([name]) =>
-              ((name &&
-                name.toLowerCase &&
-                name.toLowerCase().includes(searchTerm)) ||
-                (!name && !searchTerm) ||
-                searchTerm === '') &&
-              name,
-          )
-          .map(([name, value], index) => {
-            const error = get(errors, name);
-            const errorMessage = get(error, 'message', undefined);
-            const errorType = get(error, 'type', undefined);
-            const type = get(value, 'ref.type', undefined);
-            const isTouched = !!get(touchedFields, name);
-            const isNative = !!(value && value._f.ref.type);
-            const isDirty = !!get(dirtyFields, name);
-            const hasError = !!error;
-            const ref = get(value, '_f.ref');
-
-            return (
-              <section
-                key={`${name}${index}`}
-                style={{
-                  borderBottom: `1px dashed ${colors.secondary}`,
-                  margin: 0,
-                }}
-              >
-                <PanelTable
-                  refObject={ref}
-                  index={index}
-                  collapseAll={state.isCollapse}
-                  name={name}
-                  isTouched={isTouched}
-                  type={type}
-                  hasError={hasError}
-                  isNative={isNative}
-                  errorMessage={errorMessage}
-                  errorType={errorType}
-                  isDirty={isDirty}
-                  fieldsValues={fieldsValues}
-                />
-              </section>
-            );
-          })}
+        <PanelChildren
+          fields={fieldsRef.current}
+          searchTerm={searchTerm}
+          errors={errors}
+          touchedFields={touchedFields}
+          dirtyFields={dirtyFields}
+          fieldsValues={fieldsValues}
+          state={state}
+        />
       </div>
 
       <FormStateTable
@@ -154,3 +209,5 @@ export default ({ control, control: { fieldsRef } }: { control: Control }) => {
     </div>
   );
 };
+
+export default Panel;
