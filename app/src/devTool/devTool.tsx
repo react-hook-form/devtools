@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StateMachineProvider, createStore } from 'little-state-machine';
-import { Control, useFormContext } from 'react-hook-form';
+import { Control } from 'react-hook-form';
 import { DevToolUI } from './devToolUI';
 
 if (typeof window !== 'undefined') {
@@ -18,12 +18,10 @@ if (typeof window !== 'undefined') {
   );
 }
 
-export const DevTool = (props?: { control: Control<any> }) => {
-  const methods = useFormContext();
-
+export const DevTool = ({ control }: { control: Control<any> }) => {
   return (
     <StateMachineProvider>
-      <DevToolUI control={methods.control || (props && props.control)} />
+      <DevToolUI control={control} />
     </StateMachineProvider>
   );
 };

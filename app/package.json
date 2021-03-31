@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@hookform/devtools": "^2.0.0-beta.2",
+    "@hookform/devtools": "3.0.0-alpha.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -13,9 +13,9 @@
     "@types/react-dom": "^16.9.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-hook-form": "^6.0.0-rc.4",
+    "react-hook-form": "^7.0.0-beta.2",
     "react-scripts": "3.3.1",
-    "typescript": "~3.7.2"
+    "typescript": "^4.1.3"
   },
   "scripts": {
     "start": "react-scripts start",
