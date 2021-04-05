@@ -23,7 +23,7 @@ export const DevTool = (props?: { control: Control<any> }) => {
 
   return (
     <StateMachineProvider>
-      <DevToolUI control={methods.control || (props && props.control)} />
+      <DevToolUI control={(props && props.control) || methods.control} />
     </StateMachineProvider>
   );
 };
