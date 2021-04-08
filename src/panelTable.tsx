@@ -41,7 +41,7 @@ const PanelTable = ({
 
   let value = fieldsValues ? get(fieldsValues, name) : '';
   let isValueWrappedInPre = false;
-  
+
   if (!isUndefined(value)) {
     if (isObject(value)) {
       try {
