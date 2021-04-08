@@ -40,7 +40,8 @@ const PanelTable = ({
   }, [collapseAll]);
 
   let value = fieldsValues ? get(fieldsValues, name) : '';
-
+  let isValueWrappedInPre = false;
+  
   if (!isUndefined(value)) {
     if (isObject(value)) {
       try {
@@ -51,6 +52,7 @@ const PanelTable = ({
             </code>
           </pre>
         );
+        isValueWrappedInPre = true;
       } catch {
         value = <span>[Nested Object]</span>;
       }
@@ -235,16 +237,29 @@ const PanelTable = ({
                   ...paraGraphDefaultStyle,
                 }}
               >
-                <p
-                  title={value}
-                  style={{
-                    ...paraGraphDefaultStyle,
-                    margin: 0,
-                    padding: 0,
-                  }}
-                >
-                  {value}
-                </p>
+                {!isValueWrappedInPre && (
+                  <p
+                    title={value}
+                    style={{
+                      ...paraGraphDefaultStyle,
+                      margin: 0,
+                      padding: 0,
+                    }}
+                  >
+                    {value}
+                  </p>
+                )}
+                {isValueWrappedInPre && (
+                  <div
+                    style={{
+                      ...paraGraphDefaultStyle,
+                      margin: 0,
+                      padding: 0,
+                    }}
+                  >
+                    {value}
+                  </div>
+                )}
               </td>
             </tr>
           )}
