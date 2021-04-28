@@ -17,7 +17,7 @@ export type Props = {
   placement?: PLACEMENT;
 };
 
-export const DevToolUI = ({ control, placement = 'top-left' }: Props) => {
+export const DevToolUI = ({ control, placement = 'top-right' }: Props) => {
   const { state, actions } = useStateMachine({
     setVisible,
   });
