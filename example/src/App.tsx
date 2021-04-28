@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { DevTool } from './devTool';
+import { DevTool } from '@hookform/devtools';
+import logger from 'loglevel';
 import './App.css';
 
 const App = () => {
@@ -28,7 +29,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit(d => console.log(d))}>
+      <form onSubmit={handleSubmit(logger.warn)}>
         <h1>
           <span role="img" aria-label="devTool">
             🔧
