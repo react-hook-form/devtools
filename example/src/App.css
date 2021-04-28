@@ -102,6 +102,17 @@ input[type='submit'] {
 .App {
   max-width: 600px;
   margin: 0 auto;
+  height: 100vh;
+}
+
+nav > a {
+  appearance: none;
+  margin-top: 40px;
+  border: 1px solid #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
 }
 
 button[type='button'] {

@@ -1,10 +1,16 @@
 import React from 'react';
+import { Router, Link, RouteComponentProps } from '@reach/router';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
+import type { PLACEMENT } from '@hookform/devtools';
 import logger from 'loglevel';
 import './App.css';
 
-const App = () => {
+const Form = ({
+  placement = 'top-right',
+}: RouteComponentProps<{
+  placement: PLACEMENT;
+}>) => {
   const { register, control, handleSubmit } = useForm<{
     firstName: string;
     lastName: string;
@@ -27,8 +33,9 @@ const App = () => {
     register('custom');
   }, [register]);
 
+  logger.warn({ placement });
   return (
-    <div className="App">
+    <>
       <form onSubmit={handleSubmit(logger.warn)}>
         <h1>
           <span role="img" aria-label="devTool">
@@ -49,7 +56,24 @@ const App = () => {
         <input style={{ fontWeight: 400 }} type="submit" />
       </form>
 
-      <DevTool control={control} />
+      <DevTool control={control} placement={placement as PLACEMENT} />
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <div className="App">
+      <nav>
+        <Link to="/">Default</Link>
+        <Link to="placement/top-left">Top Left</Link>
+        <Link to="placement/bottom-left">Bottom Left</Link>
+        <Link to="placement/bottom-right">Bottom Right</Link>
+      </nav>
+      <Router>
+        <Form path="/" />
+        <Form path="placement/:placement" />
+      </Router>
     </div>
   );
 };
