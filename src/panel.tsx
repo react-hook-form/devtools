@@ -1,7 +1,8 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 import { Control, useForm, useWatch, useFormState, get } from 'react-hook-form';
 import { useStateMachine } from 'little-state-machine';
-import { useEffect } from 'react';
+
 import colors from './colors';
 import PanelTable from './panelTable';
 import FormStateTable from './formStateTable';

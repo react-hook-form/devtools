@@ -1,6 +1,7 @@
-import colors from './colors';
 import * as React from 'react';
 import { Control, useFormState } from 'react-hook-form';
+
+import colors from './colors';
 import { CircleButton, paraGraphDefaultStyle } from './styled';
 
 type Props = {

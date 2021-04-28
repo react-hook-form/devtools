@@ -1,11 +1,11 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'react-hooks'],
+  plugins: ['@typescript-eslint', 'react-hooks', '@emotion'],
   extends: [
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {

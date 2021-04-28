@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StateMachineProvider, createStore } from 'little-state-machine';
 import { Control, useFormContext } from 'react-hook-form';
 import { DevToolUI } from './devToolUI';
+import type { PLACEMENT } from './position';
 
 if (typeof window !== 'undefined') {
   createStore(
@@ -18,12 +19,20 @@ if (typeof window !== 'undefined') {
   );
 }
 
-export const DevTool = (props?: { control: Control<any> }) => {
+export const DevTool = (props?: {
+  control: Control<any>;
+  placement: PLACEMENT;
+}) => {
   const methods = useFormContext();
 
   return (
     <StateMachineProvider>
-      <DevToolUI control={(props && props.control) || methods.control} />
+      <DevToolUI
+        control={(props && props.control) || methods.control}
+        placement={props?.placement ?? 'top-left'}
+      />
     </StateMachineProvider>
   );
 };
+
+export type { PLACEMENT };

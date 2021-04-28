@@ -1,5 +1,6 @@
-import colors from './colors';
 import * as React from 'react';
+
+import colors from './colors';
 
 const Logo = ({
   style,
