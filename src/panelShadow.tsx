@@ -1,12 +1,15 @@
-import { Animate } from 'react-simple-animate';
-import colors from './colors';
 import * as React from 'react';
+import { Animate } from 'react-simple-animate';
+
+import { PLACEMENT, getPositionByPlacement } from './position';
+import colors from './colors';
 
 type Props = {
   visible: boolean;
+  placement: PLACEMENT;
 };
 
-export const PanelShadow = ({ visible }: Props) => (
+export const PanelShadow = ({ visible, placement }: Props) => (
   <Animate
     play={visible}
     duration={0.1}
@@ -25,13 +28,12 @@ export const PanelShadow = ({ visible }: Props) => (
     >
       <div
         style={{
+          ...getPositionByPlacement(placement, 7, 7),
           position: 'fixed',
           height: '100vh',
           width: 250,
           zIndex: 99998,
           background: 'black',
-          top: 7,
-          right: 7,
           boxShadow: 'rgba(15, 15, 29, 0.4) -3px 3px 6px 0px',
         }}
       />
@@ -44,8 +46,7 @@ export const PanelShadow = ({ visible }: Props) => (
           borderTop: '10px solid transparent',
           borderBottom: '10px solid transparent',
           borderRight: `10px solid black`,
-          right: 247,
-          top: -3,
+          ...getPositionByPlacement(placement, 247, -3),
         }}
       />
 
@@ -58,8 +59,7 @@ export const PanelShadow = ({ visible }: Props) => (
           borderTop: '10px solid transparent',
           borderBottom: '10px solid transparent',
           borderRight: `10px solid ${colors.buttonBlue}`,
-          right: 247,
-          top: 37,
+          ...getPositionByPlacement(placement, 247, 37),
         }}
       />
       <span
@@ -68,8 +68,7 @@ export const PanelShadow = ({ visible }: Props) => (
           height: 21,
           position: 'fixed',
           zIndex: 99998,
-          right: 247,
-          top: 47,
+          ...getPositionByPlacement(placement, 247, 47),
           background: colors.buttonBlue,
         }}
       />
@@ -82,8 +81,7 @@ export const PanelShadow = ({ visible }: Props) => (
           borderTop: '10px solid transparent',
           borderBottom: '10px solid transparent',
           borderLeft: `10px solid ${colors.buttonBlue}`,
-          right: 247,
-          top: 55,
+          ...getPositionByPlacement(placement, 247, 55),
         }}
       />
     </div>

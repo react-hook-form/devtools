@@ -1,6 +1,7 @@
-import colors from './colors';
 import * as React from 'react';
 import { Animate } from 'react-simple-animate';
+
+import colors from './colors';
 import { Button, paraGraphDefaultStyle } from './styled';
 
 type Props = {

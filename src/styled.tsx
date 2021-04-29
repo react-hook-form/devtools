@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import colors from './colors';
 
 export const paraGraphDefaultStyle = {

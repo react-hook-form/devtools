@@ -2,6 +2,7 @@ import * as React from 'react';
 import { get } from 'react-hook-form';
 import isUndefined from 'lodash/isUndefined';
 import isObject from 'lodash/isObject';
+
 import colors from './colors';
 import { Button, Table, paraGraphDefaultStyle } from './styled';
 

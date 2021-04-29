@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Control } from 'react-hook-form';
 import { Animate } from 'react-simple-animate';
+
 import Header from './header';
 import Panel from './panel';
 import colors from './colors';
@@ -9,11 +10,19 @@ import { PanelShadow } from './panelShadow';
 import { Button } from './styled';
 import { useStateMachine } from 'little-state-machine';
 import { setVisible } from './settingAction';
+import { PLACEMENT, getPositionByPlacement } from './position';
 
-export const DevToolUI = ({ control }: { control: Control }) => {
+export type Props = {
+  control: Control;
+  placement?: PLACEMENT;
+};
+
+export const DevToolUI = ({ control, placement = 'top-right' }: Props) => {
   const { state, actions } = useStateMachine({
     setVisible,
   });
+
+  const position = getPositionByPlacement(placement, 0, 0);
 
   return (
     <>
@@ -21,29 +30,28 @@ export const DevToolUI = ({ control }: { control: Control }) => {
         play={!state.visible}
         duration={0.2}
         start={{
+          ...position,
           position: 'fixed',
-          top: 0,
-          right: 0,
           transform: 'translateX(0)',
           zIndex: 99999,
         }}
         end={{
-          top: 0,
-          right: 0,
+          ...position,
           position: 'fixed',
-          transform: 'translateX(280px)',
+          transform: placement.includes('right')
+            ? 'translateX(280px)'
+            : 'translateX(-280px)',
           zIndex: 99999,
         }}
       >
         <div
           style={{
+            ...position,
             position: 'fixed',
             height: '100vh',
             width: 250,
             zIndex: 99999,
             background: colors.buttonBlue,
-            top: 0,
-            right: 0,
             display: 'grid',
             textAlign: 'left',
             color: 'white',
@@ -56,7 +64,7 @@ export const DevToolUI = ({ control }: { control: Control }) => {
           <Header setVisible={actions.setVisible} control={control} />
           <Panel control={control} />
         </div>
-        <PanelShadow visible={state.visible} />
+        <PanelShadow visible={state.visible} placement={placement} />
       </Animate>
 
       {!state.visible && (
@@ -66,8 +74,7 @@ export const DevToolUI = ({ control }: { control: Control }) => {
           style={{
             position: 'fixed',
             zIndex: 99999,
-            top: 3,
-            right: 3,
+            ...getPositionByPlacement(placement, 3, 3),
             padding: 3,
             margin: 0,
             background: 'none',
