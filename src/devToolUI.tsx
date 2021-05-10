@@ -12,7 +12,7 @@ import { setVisible } from './settingAction';
 import { PLACEMENT, getPositionByPlacement } from './position';
 
 export type Props = {
-  control: Control;
+  control: Control<any>;
   placement?: PLACEMENT;
 };
 
