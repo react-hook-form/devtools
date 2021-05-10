@@ -41,7 +41,7 @@ const App = () => {
 
   return (
     <>
-      <DevTool control={control} />
+      <DevTool control={control} placement={"top-left"} />
 
       <form onSubmit={handleSubmit(d => console.log(d))}>
         <h1>React Hook Form DevTools</h1>
