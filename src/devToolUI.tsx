@@ -6,7 +6,6 @@ import Header from './header';
 import Panel from './panel';
 import colors from './colors';
 import Logo from './logo';
-import { PanelShadow } from './panelShadow';
 import { Button } from './styled';
 import { useStateMachine } from 'little-state-machine';
 import { setVisible } from './settingAction';
@@ -64,7 +63,6 @@ export const DevToolUI = ({ control, placement = 'top-right' }: Props) => {
           <Header setVisible={actions.setVisible} control={control} />
           <Panel control={control} />
         </div>
-        <PanelShadow visible={state.visible} placement={placement} />
       </Animate>
 
       {!state.visible && (
