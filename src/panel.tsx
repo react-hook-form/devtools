@@ -65,9 +65,9 @@ function PanelChildren<T, K, L, M, G>({
             const errorMessage = get(error, 'message', undefined);
             const errorType = get(error, 'type', undefined);
             const type = get(value, 'ref.type', undefined);
-            const isTouched = !!get(touchedFields, name);
+            const isTouched = !!get(touchedFields, value._f.name);
             const isNative = !!(value && value._f.ref.type);
-            const isDirty = !!get(dirtyFields, name);
+            const isDirty = !!get(dirtyFields, value._f.name);
             const hasError = !!error;
             const ref = get(value, '_f.ref');
 
