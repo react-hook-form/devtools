@@ -20,8 +20,8 @@ if (typeof window !== 'undefined') {
 }
 
 export const DevTool = (props?: {
-  control: Control<any>;
-  placement: PLACEMENT;
+  control?: Control<any>;
+  placement?: PLACEMENT;
 }) => {
   const methods = useFormContext();
 
