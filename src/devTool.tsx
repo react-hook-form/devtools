@@ -20,8 +20,8 @@ if (typeof window !== 'undefined') {
 }
 
 export const DevTool = (props?: {
-  control: Control<any>;
-  placement: PLACEMENT;
+  control?: Control<any>;
+  placement?: PLACEMENT;
 }) => {
   const methods = useFormContext();
 
@@ -29,7 +29,7 @@ export const DevTool = (props?: {
     <StateMachineProvider>
       <DevToolUI
         control={(props && props.control) || methods.control}
-        placement={props?.placement ?? 'top-left'}
+        placement={props?.placement}
       />
     </StateMachineProvider>
   );
