@@ -105,8 +105,8 @@ const Panel = ({ control, control: { _fields } }: { control: Control }) => {
   const formState = useFormState({
     control,
   });
-  // @ts-ignore
-  const { dirtyFields, touchedFields, errors, dirty } = formState;
+  const { dirtyFields, touchedFields, errors } = formState;
+  formState.isDirty;
   const { state, actions } = useStateMachine({
     setCollapse,
   });
