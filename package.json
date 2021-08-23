@@ -1,6 +1,6 @@
 {
   "name": "@hookform/devtools",
-  "version": "3.3.0-0",
+  "version": "4.0.0-0",
   "description": "React Hook Form dev tool to help debugging forms",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.development.js",
