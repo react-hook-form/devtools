@@ -101,11 +101,12 @@ function PanelChildren<T, K, L, M, G>({
   );
 }
 
-const Panel = ({ control, control: { fieldsRef } }: { control: Control }) => {
+const Panel = ({ control, control: { _fields } }: { control: Control }) => {
   const formState = useFormState({
     control,
   });
-  const { dirtyFields, touchedFields, errors } = formState;
+  // @ts-ignore
+  const { dirtyFields, touchedFields, errors, dirty } = formState;
   const { state, actions } = useStateMachine({
     setCollapse,
   });
@@ -192,7 +193,7 @@ const Panel = ({ control, control: { fieldsRef } }: { control: Control }) => {
         }}
       >
         <PanelChildren
-          fields={fieldsRef.current}
+          fields={_fields}
           searchTerm={searchTerm}
           errors={errors}
           touchedFields={touchedFields}
