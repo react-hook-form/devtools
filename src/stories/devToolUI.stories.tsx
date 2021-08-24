@@ -35,8 +35,8 @@ const Template: Story<Props> = (args) => {
   const { register, control, reset, handleSubmit } = useForm<{
     firstName: string;
     test: {
-      nested: string
-    }
+      nested: string;
+    };
   }>({
     mode: 'onChange',
     defaultValues: {
@@ -59,9 +59,14 @@ const Template: Story<Props> = (args) => {
         <label>First Name</label>
         <input {...register('firstName', { required: true })} />
         <input {...register('test.nested', { required: true })} />
-        <button type={"button"} onClick={() => {
-          reset({})
-        }}>reset</button>
+        <button
+          type={'button'}
+          onClick={() => {
+            reset({});
+          }}
+        >
+          reset
+        </button>
         <input style={{ fontWeight: 400 }} type="submit" />
       </form>
 
