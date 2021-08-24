@@ -32,8 +32,11 @@ export default {
 } as Meta;
 
 const Template: Story<Props> = (args) => {
-  const { register, control, handleSubmit } = useForm<{
+  const { register, control, reset, handleSubmit } = useForm<{
     firstName: string;
+    test: {
+      nested: string
+    }
   }>({
     mode: 'onChange',
     defaultValues: {
@@ -55,6 +58,10 @@ const Template: Story<Props> = (args) => {
         </p>
         <label>First Name</label>
         <input {...register('firstName', { required: true })} />
+        <input {...register('test.nested', { required: true })} />
+        <button type={"button"} onClick={() => {
+          reset({})
+        }}>reset</button>
         <input style={{ fontWeight: 400 }} type="submit" />
       </form>
 
