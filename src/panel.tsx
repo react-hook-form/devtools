@@ -32,71 +32,72 @@ function PanelChildren<T, K, L, M, G>({
 }) {
   return (
     <>
-      {Object.entries(fields)
-        .filter(
-          ([name]) =>
-            ((name &&
-              name.toLowerCase &&
-              name.toLowerCase().includes(searchTerm)) ||
-              (!name && !searchTerm) ||
-              searchTerm === '') &&
-            name,
-        )
-        .map(([name, value], index) => {
-          childIndex++;
+      {fields &&
+        Object.entries(fields)
+          .filter(
+            ([name]) =>
+              ((name &&
+                name.toLowerCase &&
+                name.toLowerCase().includes(searchTerm)) ||
+                (!name && !searchTerm) ||
+                searchTerm === '') &&
+              name,
+          )
+          .map(([name, value], index) => {
+            childIndex++;
 
-          if (!value._f) {
-            return (
-              <PanelChildren
-                key={name + childIndex}
-                {...{
-                  fields: value,
-                  searchTerm,
-                  touchedFields,
-                  errors,
-                  dirtyFields,
-                  state,
-                  fieldsValues,
-                }}
-              />
-            );
-          } else {
-            const error = get(errors, value._f.name);
-            const errorMessage = get(error, 'message', undefined);
-            const errorType = get(error, 'type', undefined);
-            const type = get(value, 'ref.type', undefined);
-            const isTouched = !!get(touchedFields, value._f.name);
-            const isNative = !!(value && value._f.ref.type);
-            const isDirty = !!get(dirtyFields, value._f.name);
-            const hasError = !!error;
-            const ref = get(value, '_f.ref');
-
-            return (
-              <section
-                key={value?._f.name + childIndex}
-                style={{
-                  borderBottom: `1px dashed ${colors.secondary}`,
-                  margin: 0,
-                }}
-              >
-                <PanelTable
-                  refObject={ref}
-                  index={index}
-                  collapseAll={state.isCollapse}
-                  name={value?._f.name}
-                  isTouched={isTouched}
-                  type={type}
-                  hasError={hasError}
-                  isNative={isNative}
-                  errorMessage={errorMessage}
-                  errorType={errorType}
-                  isDirty={isDirty}
-                  fieldsValues={fieldsValues}
+            if (!value?._f) {
+              return (
+                <PanelChildren
+                  key={name + childIndex}
+                  {...{
+                    fields: value,
+                    searchTerm,
+                    touchedFields,
+                    errors,
+                    dirtyFields,
+                    state,
+                    fieldsValues,
+                  }}
                 />
-              </section>
-            );
-          }
-        })}
+              );
+            } else {
+              const error = get(errors, value._f.name);
+              const errorMessage = get(error, 'message', undefined);
+              const errorType = get(error, 'type', undefined);
+              const type = get(value, 'ref.type', undefined);
+              const isTouched = !!get(touchedFields, value._f.name);
+              const isNative = !!(value && value._f.ref.type);
+              const isDirty = !!get(dirtyFields, value._f.name);
+              const hasError = !!error;
+              const ref = get(value, '_f.ref');
+
+              return (
+                <section
+                  key={value?._f.name + childIndex}
+                  style={{
+                    borderBottom: `1px dashed ${colors.secondary}`,
+                    margin: 0,
+                  }}
+                >
+                  <PanelTable
+                    refObject={ref}
+                    index={index}
+                    collapseAll={state.isCollapse}
+                    name={value?._f.name}
+                    isTouched={isTouched}
+                    type={type}
+                    hasError={hasError}
+                    isNative={isNative}
+                    errorMessage={errorMessage}
+                    errorType={errorType}
+                    isDirty={isDirty}
+                    fieldsValues={fieldsValues}
+                  />
+                </section>
+              );
+            }
+          })}
     </>
   );
 }
