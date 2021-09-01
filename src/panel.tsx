@@ -32,7 +32,7 @@ function PanelChildren<T, K, L, M, G>({
 }) {
   return (
     <>
-      {Object.entries(fields)
+      {fields && Object.entries(fields)
         .filter(
           ([name]) =>
             ((name &&
@@ -45,7 +45,7 @@ function PanelChildren<T, K, L, M, G>({
         .map(([name, value], index) => {
           childIndex++;
 
-          if (!value._f) {
+          if (!value?._f) {
             return (
               <PanelChildren
                 key={name + childIndex}
