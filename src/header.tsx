@@ -20,6 +20,7 @@ const Header = ({ setVisible, control }: Props) => {
         display: 'flex',
         alignItems: 'center',
         paddingLeft: 10,
+        backgroundColor: 'transparent',
       }}
     >
       <p
