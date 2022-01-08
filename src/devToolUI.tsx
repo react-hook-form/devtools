@@ -26,20 +26,20 @@ export const DevToolUI = ({ control, placement = 'top-right' }: Props) => {
   return (
     <>
       <Animate
-        play={!state.visible}
+        play={state.visible}
         duration={0.2}
         start={{
-          ...position,
-          position: 'fixed',
-          transform: 'translateX(0)',
-          zIndex: 99999,
-        }}
-        end={{
           ...position,
           position: 'fixed',
           transform: placement.includes('right')
             ? 'translateX(280px)'
             : 'translateX(-280px)',
+          zIndex: 99999,
+        }}
+        end={{
+          ...position,
+          position: 'fixed',
+          transform: 'translateX(0)',
           zIndex: 99999,
         }}
       >
