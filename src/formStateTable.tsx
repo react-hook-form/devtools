@@ -51,6 +51,19 @@ const FormStateTable = ({
             </tr>
             <tr>
               <td align="right" style={{ ...paraGraphDefaultStyle }}>
+                Dirty:
+              </td>
+              <td
+                style={{
+                  color: formState.isDirty ? colors.green : colors.lightPink,
+                  ...paraGraphDefaultStyle,
+                }}
+              >
+                {formState.isDirty ? 'true' : 'false'}
+              </td>
+            </tr>
+            <tr>
+              <td align="right" style={{ ...paraGraphDefaultStyle }}>
                 Submitted:
               </td>
               <td
