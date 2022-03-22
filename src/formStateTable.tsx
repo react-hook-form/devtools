@@ -124,6 +124,7 @@ const FormStateTable = ({
         textTransform: 'none',
         fontSize: 12,
         lineHeight: '14px',
+        cursor: 'pointer',
       }}
       title="Toggle form state panel"
       onClick={() => {
