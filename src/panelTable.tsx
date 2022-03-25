@@ -213,7 +213,9 @@ const PanelTable = ({
                   ...paraGraphDefaultStyle,
                 }}
               >
-                {errorMessage.trim()}
+                {typeof errorMessage === 'string'
+                  ? errorMessage.trim()
+                  : JSON.stringify(errorMessage)}
               </td>
             </tr>
           )}
