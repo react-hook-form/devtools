@@ -32,10 +32,9 @@ const Form = ({
     register('custom');
   }, [register]);
 
-  console.warn({ placement });
   return (
     <>
-      <form onSubmit={handleSubmit(console.warn)}>
+      <form onSubmit={handleSubmit(data => data)}>
         <h1>
           <span role="img" aria-label="devTool">
             🔧
