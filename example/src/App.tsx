@@ -3,7 +3,6 @@ import { Router, Link, RouteComponentProps } from '@reach/router';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
 import type { PLACEMENT } from '@hookform/devtools';
-import logger from 'loglevel';
 import './App.css';
 
 const Form = ({
@@ -33,10 +32,10 @@ const Form = ({
     register('custom');
   }, [register]);
 
-  logger.warn({ placement });
+  console.warn({ placement });
   return (
     <>
-      <form onSubmit={handleSubmit(logger.warn)}>
+      <form onSubmit={handleSubmit(console.warn)}>
         <h1>
           <span role="img" aria-label="devTool">
             🔧
