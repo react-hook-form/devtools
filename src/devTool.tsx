@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StateMachineProvider, createStore } from 'little-state-machine';
-import { Control, useFormContext } from 'react-hook-form';
+import { Control, FieldValues, useFormContext } from 'react-hook-form';
 import { DevToolUI } from './devToolUI';
 import type { PLACEMENT } from './position';
 
@@ -19,8 +19,8 @@ if (typeof window !== 'undefined') {
   );
 }
 
-export const DevTool = (props?: {
-  control?: Control<any>;
+export const DevTool = <T extends FieldValues>(props?: {
+  control?: Control<T>;
   placement?: PLACEMENT;
 }) => {
   const methods = useFormContext();
