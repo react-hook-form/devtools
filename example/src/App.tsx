@@ -34,7 +34,7 @@ const Form = ({
 
   return (
     <>
-      <form onSubmit={handleSubmit(data => data)}>
+      <form onSubmit={handleSubmit((data) => data)}>
         <h1>
           <span role="img" aria-label="devTool">
             🔧
