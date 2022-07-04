@@ -2,7 +2,6 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { StateMachineProvider, createStore } from 'little-state-machine';
 import { useForm } from 'react-hook-form';
-import logger from 'loglevel';
 
 if (typeof window !== 'undefined') {
   createStore(
@@ -46,7 +45,7 @@ const Template: Story<Props> = (args) => {
 
   return (
     <StateMachineProvider>
-      <form onSubmit={handleSubmit(logger.warn)}>
+      <form onSubmit={handleSubmit((data) => data)}>
         <h1>
           <span role="img" aria-label="devTool">
             🔧
