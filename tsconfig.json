@@ -2,7 +2,7 @@
   "compilerOptions": {
     "sourceMap": true,
     "module": "esnext",
-    "target": "es5",
+    "target": "es6",
     "moduleResolution": "node",
     "outDir": "./dist",
     "jsx": "react",
