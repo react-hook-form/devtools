@@ -27,7 +27,7 @@ export const DevTool = <T extends FieldValues>(props?: {
   const methods = useFormContext();
 
   const { isExtensionEnabled } = useExportControlToExtension(
-    (props && props.control) || methods.control,
+    props?.control ?? methods.control,
   );
   if (isExtensionEnabled) {
     return null;
@@ -36,7 +36,7 @@ export const DevTool = <T extends FieldValues>(props?: {
   return (
     <StateMachineProvider>
       <DevToolUI
-        control={(props && props.control) || methods.control}
+        control={props?.control ?? methods.control}
         placement={props?.placement}
       />
     </StateMachineProvider>
