@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Control, useFormState, useWatch } from 'react-hook-form';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import { MessageData, UpdatePayload } from './types';
-import { proxyToObject } from './utils';
+import { nestToFlat, proxyToObject } from './utils';
 
 const id = nanoid();
 
@@ -33,14 +33,6 @@ export function useExportControlToExtension(control: Control<any>) {
     return () => window.removeEventListener('message', handleInitMessage);
   }, []);
 
-  const toFlat = <V>(obj: object, defaultValue?: V) => {
-    return [...control._names.mount].reduce((perv, name) => {
-      // nested field may be `undefined`
-      perv[name] = _.get(obj, name) || defaultValue;
-      return perv;
-    }, {} as Record<string, V>);
-  };
-
   useDeepCompareEffect(() => {
     if (!isExtensionEnabled) {
       return;
@@ -53,13 +45,21 @@ export function useExportControlToExtension(control: Control<any>) {
       ...formStatus
     } = proxyToObject(formState);
 
-    const formValues = toFlat(nestedFormValues, '');
-    const dirtyFields = toFlat(nestedDirtyFields, false);
-    const touchedFields = toFlat(nestedTouchedFields, false);
+    const flatFieldNames = [...control._names.mount];
 
-    const errors = Object.entries(
-      toFlat<{ type: string; message: string }>(nestedErrors),
-    ).reduce((perv, [key, value]) => {
+    const formValues = nestToFlat(flatFieldNames, nestedFormValues, '');
+    const dirtyFields = nestToFlat(flatFieldNames, nestedDirtyFields, false);
+    const touchedFields = nestToFlat(
+      flatFieldNames,
+      nestedTouchedFields,
+      false,
+    );
+    const flatErrors = nestToFlat<{ type?: string; message?: string }>(
+      flatFieldNames,
+      nestedErrors,
+    );
+
+    const errors = Object.entries(flatErrors).reduce((perv, [key, value]) => {
       perv[key] = {
         type: value?.type as string,
         message: value?.message as string,
@@ -67,7 +67,7 @@ export function useExportControlToExtension(control: Control<any>) {
       return perv;
     }, {} as Record<string, { type?: string; message?: string }>);
 
-    const nativeFields = [...control._names.mount].reduce((perv, name) => {
+    const nativeFields = flatFieldNames.reduce((perv, name) => {
       perv[name] = !!_.get(control._fields, name)?._f?.ref?.type;
       return perv;
     }, {} as Record<string, boolean>);
