@@ -63,9 +63,7 @@
     "@types/lodash": "^4.14.168",
     "little-state-machine": "^4.1.0",
     "lodash": "^4.17.21",
-    "nanoid": "^4.0.0",
-    "react-simple-animate": "^3.3.12",
-    "use-deep-compare-effect": "^1.8.1"
+    "react-simple-animate": "^3.3.12"
   },
   "devDependencies": {
     "@babel/core": "^7.13.16",
