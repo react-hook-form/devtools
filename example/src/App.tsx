@@ -1,15 +1,13 @@
-import React from 'react';
-import { Router, Link, RouteComponentProps } from '@reach/router';
-import { useForm } from 'react-hook-form';
-import { DevTool } from '@hookform/devtools';
 import type { PLACEMENT } from '@hookform/devtools';
+import { DevTool } from '@hookform/devtools';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { Link, Route, Routes, useParams } from 'react-router-dom';
 import './App.css';
 
-const Form = ({
-  placement = 'top-right',
-}: RouteComponentProps<{
-  placement: PLACEMENT;
-}>) => {
+const Form: React.FC = () => {
+  const params = useParams();
+
   const { register, control, handleSubmit } = useForm<{
     firstName: string;
     lastName: string;
@@ -54,7 +52,10 @@ const Form = ({
         <input style={{ fontWeight: 400 }} type="submit" />
       </form>
 
-      <DevTool control={control} placement={placement as PLACEMENT} />
+      <DevTool
+        control={control}
+        placement={(params?.placement as PLACEMENT) ?? 'top-right'}
+      />
     </>
   );
 };
@@ -68,10 +69,10 @@ const App = () => {
         <Link to="placement/bottom-left">Bottom Left</Link>
         <Link to="placement/bottom-right">Bottom Right</Link>
       </nav>
-      <Router>
-        <Form path="/" />
-        <Form path="placement/:placement" />
-      </Router>
+      <Routes>
+        <Route path="/" element={<Form />} />
+        <Route path="placement/:placement" element={<Form />} />
+      </Routes>
     </div>
   );
 };
