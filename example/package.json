@@ -7,7 +7,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@hookform/devtools": "file:..",
     "loglevel": "^1.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

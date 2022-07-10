@@ -1,5 +1,5 @@
-import type { PLACEMENT } from '@hookform/devtools';
-import { DevTool } from '@hookform/devtools';
+import type { PLACEMENT } from '../../src/devTool';
+import { DevTool } from '../../src/devTool';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, Route, Routes, useParams } from 'react-router-dom';
