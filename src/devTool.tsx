@@ -8,7 +8,7 @@ import type { PLACEMENT } from './position';
 if (typeof window !== 'undefined') {
   createStore(
     {
-      visible: true,
+      visible: false,
       isCollapse: false,
       filterName: '',
     },

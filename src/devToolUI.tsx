@@ -11,12 +11,15 @@ import { useStateMachine } from 'little-state-machine';
 import { setVisible } from './settingAction';
 import { PLACEMENT, getPositionByPlacement } from './position';
 
-export type Props = {
+interface DevtoolUIProps {
   control: Control<any>;
   placement?: PLACEMENT;
-};
+}
 
-export const DevToolUI = ({ control, placement = 'top-right' }: Props) => {
+export const DevToolUI: React.FC<DevtoolUIProps> = ({
+  control,
+  placement = 'top-right',
+}) => {
   const { state, actions } = useStateMachine({
     setVisible,
   });
