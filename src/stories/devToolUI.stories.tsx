@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { StateMachineProvider, createStore } from 'little-state-machine';
-import { useForm } from 'react-hook-form';
+import { Control, useForm } from 'react-hook-form';
 
 if (typeof window !== 'undefined') {
   createStore(
@@ -69,7 +69,7 @@ const Template: Story<Props> = (args) => {
         <input style={{ fontWeight: 400 }} type="submit" />
       </form>
 
-      <DevToolUI {...args} control={control} />
+      <DevToolUI {...args} control={control as Control<any>} />
     </StateMachineProvider>
   );
 };
