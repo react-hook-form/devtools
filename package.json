@@ -97,7 +97,7 @@
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-hook-form": "7.13.0",
+    "react-hook-form": "^7.33.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.45.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -109,8 +109,7 @@
   },
   "peerDependencies": {
     "react": ">=17.0.2",
-    "react-dom": ">=17.0.2",
-    "react-hook-form": "^7.33.1"
+    "react-dom": ">=17.0.2"
   },
   "husky": {
     "hooks": {
