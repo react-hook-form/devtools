@@ -2,13 +2,16 @@ import _ from 'lodash';
 import { useEffect, useState } from 'react';
 import { Control, useFormState, useWatch } from 'react-hook-form';
 import useDeepCompareEffect from 'use-deep-compare-effect';
-import { v4 as uuid } from 'uuid';
 import { MessageData, UpdatePayload } from './types';
 import { nestToFlat, proxyToObject } from './utils';
 
-const id = uuid();
-
-export function useExportControlToExtension(control: Control<any>) {
+export function useExportControlToExtension({
+  id,
+  control,
+}: {
+  id: string;
+  control: Control<any>;
+}) {
   const nestedFormValues = useWatch({ control });
   const formState = useFormState({ control });
 

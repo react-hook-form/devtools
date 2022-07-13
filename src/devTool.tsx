@@ -1,6 +1,7 @@
 import { createStore, StateMachineProvider } from 'little-state-machine';
 import * as React from 'react';
 import { Control, FieldValues, useFormContext } from 'react-hook-form';
+import { v4 as generateUUID } from 'uuid';
 import { DevToolUI } from './devToolUI';
 import { useExportControlToExtension } from './extension/useExportControlToExtension';
 import type { PLACEMENT } from './position';
@@ -21,14 +22,18 @@ if (typeof window !== 'undefined') {
 }
 
 export const DevTool = <T extends FieldValues>(props?: {
+  id?: string;
   control?: Control<T>;
   placement?: PLACEMENT;
 }) => {
   const methods = useFormContext();
 
-  const { isExtensionEnabled } = useExportControlToExtension(
-    props?.control ?? methods.control,
-  );
+  const uuid = React.useMemo(() => generateUUID(), []);
+
+  const { isExtensionEnabled } = useExportControlToExtension({
+    id: props?.id ?? uuid,
+    control: props?.control ?? methods.control,
+  });
   if (isExtensionEnabled) {
     return null;
   }
