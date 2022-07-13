@@ -6,6 +6,8 @@ import { v4 as uuid } from 'uuid';
 import { MessageData, UpdatePayload } from './types';
 import { nestToFlat, proxyToObject } from './utils';
 
+const autoId = uuid();
+
 export function useExportControlToExtension({
   id,
   control,
@@ -13,7 +15,7 @@ export function useExportControlToExtension({
   id?: string;
   control: Control<any>;
 }) {
-  const formId = id ?? uuid();
+  const formId = id ?? autoId;
   const nestedFormValues = useWatch({ control });
   const formState = useFormState({ control });
 
