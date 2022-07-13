@@ -1,12 +1,12 @@
 import _ from 'lodash';
-import { nanoid } from 'nanoid';
 import { useEffect, useState } from 'react';
 import { Control, useFormState, useWatch } from 'react-hook-form';
 import useDeepCompareEffect from 'use-deep-compare-effect';
+import { v4 as uuid } from 'uuid';
 import { MessageData, UpdatePayload } from './types';
 import { nestToFlat, proxyToObject } from './utils';
 
-const id = nanoid();
+const id = uuid();
 
 export function useExportControlToExtension(control: Control<any>) {
   const nestedFormValues = useWatch({ control });
