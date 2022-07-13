@@ -100,19 +100,24 @@ input[type='submit'] {
 }
 
 .App {
-  max-width: 600px;
+  max-width: 660px;
   margin: 0 auto;
   height: 100vh;
 }
 
+nav {
+  margin-top: 20px;
+}
+
 nav > a {
   appearance: none;
-  margin-top: 40px;
-  border: 1px solid #333;
-  margin-bottom: 20px;
+  text-decoration: inherit;
   text-transform: uppercase;
-  padding: 10px 20px;
+  color: white;
+  border: 1px solid white;
   border-radius: 4px;
+  padding: 10px 20px;
+  margin-inline: 4px;
 }
 
 button[type='button'] {
