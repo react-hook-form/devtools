@@ -63,9 +63,9 @@
     "@types/lodash": "^4.14.168",
     "little-state-machine": "^4.1.0",
     "lodash": "^4.17.21",
-    "nanoid": "^4.0.0",
     "react-simple-animate": "^3.3.12",
-    "use-deep-compare-effect": "^1.8.1"
+    "use-deep-compare-effect": "^1.8.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.13.16",
@@ -83,6 +83,7 @@
     "@testing-library/react": "^11.2.6",
     "@types/jest": "^26.0.23",
     "@types/react": "^17.0.4",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "babel-loader": "^8.2.2",
