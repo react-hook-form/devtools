@@ -21,14 +21,16 @@ if (typeof window !== 'undefined') {
 }
 
 export const DevTool = <T extends FieldValues>(props?: {
+  id?: string;
   control?: Control<T>;
   placement?: PLACEMENT;
 }) => {
   const methods = useFormContext();
 
-  const { isExtensionEnabled } = useExportControlToExtension(
-    props?.control ?? methods.control,
-  );
+  const { isExtensionEnabled } = useExportControlToExtension({
+    id: props?.id,
+    control: props?.control ?? methods.control,
+  });
   if (isExtensionEnabled) {
     return null;
   }
