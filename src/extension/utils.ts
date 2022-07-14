@@ -1,9 +1,9 @@
 import _ from 'lodash';
 
 export function proxyToObject<T extends Record<string, any>>(proxy: T) {
-  return Reflect.ownKeys(proxy).reduce((perv, key) => {
-    perv[key as keyof T] = proxy[key as keyof T];
-    return perv;
+  return Reflect.ownKeys(proxy).reduce((prev, key) => {
+    prev[key as keyof T] = proxy[key as keyof T];
+    return prev;
   }, {} as T);
 }
 
@@ -12,9 +12,9 @@ export function nestToFlat<V>(
   obj: object,
   defaultValue?: V,
 ) {
-  return flatKeys.reduce((perv, name) => {
+  return flatKeys.reduce((prev, name) => {
     // nested field may be `undefined`
-    perv[name] = _.get(obj, name) || defaultValue;
-    return perv;
+    prev[name] = _.get(obj, name) || defaultValue;
+    return prev;
   }, {} as Record<string, V>);
 }

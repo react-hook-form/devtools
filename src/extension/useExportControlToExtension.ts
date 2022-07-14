@@ -62,17 +62,17 @@ export function useExportControlToExtension({
       nestedErrors,
     );
 
-    const errors = Object.entries(flatErrors).reduce((perv, [key, value]) => {
-      perv[key] = {
+    const errors = Object.entries(flatErrors).reduce((prev, [key, value]) => {
+      prev[key] = {
         type: value?.type as string,
         message: value?.message as string,
       };
-      return perv;
+      return prev;
     }, {} as Record<string, { type?: string; message?: string }>);
 
-    const nativeFields = flatFieldNames.reduce((perv, name) => {
-      perv[name] = !!_.get(control._fields, name)?._f?.ref?.type;
-      return perv;
+    const nativeFields = flatFieldNames.reduce((prev, name) => {
+      prev[name] = !!_.get(control._fields, name)?._f?.ref?.type;
+      return prev;
     }, {} as Record<string, boolean>);
 
     const updateMessagePayload: UpdatePayload = {
