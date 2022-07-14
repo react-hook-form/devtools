@@ -28,10 +28,14 @@ export const DevTool = <T extends FieldValues>(props?: {
 }) => {
   const methods = useFormContext();
 
-  const uuid = React.useMemo(() => generateUUID(), []);
+  const uuid = React.useRef('');
+
+  React.useEffect(() => {
+    uuid.current = generateUUID();
+  }, []);
 
   const { isExtensionEnabled } = useExportControlToExtension({
-    id: props?.id ?? uuid,
+    id: props?.id ?? uuid.current,
     control: props?.control ?? methods.control,
   });
   if (isExtensionEnabled) {
