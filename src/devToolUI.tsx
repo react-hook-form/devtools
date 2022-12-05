@@ -11,14 +11,19 @@ import { useStateMachine } from 'little-state-machine';
 import { setVisible } from './settingAction';
 import { PLACEMENT, getPositionByPlacement } from './position';
 
-interface DevtoolUIProps {
+export interface DevtoolUIProps {
   control: Control<any>;
   placement?: PLACEMENT;
+  style?: {
+    button?: React.HTMLAttributes<HTMLButtonElement>['style'];
+    panel?: React.HTMLAttributes<HTMLDivElement>['style'];
+  };
 }
 
 export const DevToolUI: React.FC<DevtoolUIProps> = ({
   control,
   placement = 'top-right',
+  style,
 }) => {
   const { state, actions } = useStateMachine({
     setVisible,
@@ -61,6 +66,7 @@ export const DevToolUI: React.FC<DevtoolUIProps> = ({
             gridTemplateRows: '40px auto',
             fontFamily:
               "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+            ...style?.panel,
           }}
         >
           <Header setVisible={actions.setVisible} control={control} />
@@ -79,6 +85,7 @@ export const DevToolUI: React.FC<DevtoolUIProps> = ({
             padding: 3,
             margin: 0,
             background: 'none',
+            ...style?.button,
           }}
         >
           <Logo actions={actions} />
