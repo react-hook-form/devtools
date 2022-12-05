@@ -14,8 +14,11 @@ import { PLACEMENT, getPositionByPlacement } from './position';
 export interface DevtoolUIProps {
   control: Control<any>;
   placement?: PLACEMENT;
+  /** Custom styles for the "show/hide panel" button and for the panel div */
   style?: {
+    /** Custom styles for the "show/hide panel" button */
     button?: React.HTMLAttributes<HTMLButtonElement>['style'];
+    /** Custom styles for the panel div */
     panel?: React.HTMLAttributes<HTMLDivElement>['style'];
   };
 }
