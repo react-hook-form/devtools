@@ -15,7 +15,7 @@ export interface DevtoolUIProps {
   control: Control<any>;
   placement?: PLACEMENT;
   /** Custom styles for the "show/hide panel" button and for the panel div */
-  style?: {
+  styles?: {
     /** Custom styles for the "show/hide panel" button */
     button?: React.HTMLAttributes<HTMLButtonElement>['style'];
     /** Custom styles for the panel div */
@@ -26,7 +26,7 @@ export interface DevtoolUIProps {
 export const DevToolUI: React.FC<DevtoolUIProps> = ({
   control,
   placement = 'top-right',
-  style,
+  styles,
 }) => {
   const { state, actions } = useStateMachine({
     setVisible,
@@ -69,7 +69,7 @@ export const DevToolUI: React.FC<DevtoolUIProps> = ({
             gridTemplateRows: '40px auto',
             fontFamily:
               "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-            ...style?.panel,
+            ...styles?.panel,
           }}
         >
           <Header setVisible={actions.setVisible} control={control} />
@@ -88,7 +88,7 @@ export const DevToolUI: React.FC<DevtoolUIProps> = ({
             padding: 3,
             margin: 0,
             background: 'none',
-            ...style?.button,
+            ...styles?.button,
           }}
         >
           <Logo actions={actions} />

@@ -25,7 +25,7 @@ export const DevTool = <T extends FieldValues>(
   props?: {
     id?: string;
     control?: Control<T>;
-  } & Pick<DevtoolUIProps, 'placement' | 'style'>,
+  } & Pick<DevtoolUIProps, 'placement' | 'styles'>,
 ) => {
   const methods = useFormContext();
 
@@ -48,7 +48,7 @@ export const DevTool = <T extends FieldValues>(
       <DevToolUI
         control={props?.control ?? methods.control}
         placement={props?.placement}
-        style={props?.style}
+        styles={props?.styles}
       />
     </StateMachineProvider>
   );
