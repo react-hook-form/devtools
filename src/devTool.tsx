@@ -2,7 +2,7 @@ import { createStore, StateMachineProvider } from 'little-state-machine';
 import * as React from 'react';
 import { Control, FieldValues, useFormContext } from 'react-hook-form';
 import { v4 as generateUUID } from 'uuid';
-import { DevToolUI } from './devToolUI';
+import { DevToolUI, DevtoolUIProps } from './devToolUI';
 import { useExportControlToExtension } from './extension/useExportControlToExtension';
 import type { PLACEMENT } from './position';
 
@@ -21,11 +21,12 @@ if (typeof window !== 'undefined') {
   );
 }
 
-export const DevTool = <T extends FieldValues>(props?: {
-  id?: string;
-  control?: Control<T>;
-  placement?: PLACEMENT;
-}) => {
+export const DevTool = <T extends FieldValues>(
+  props?: {
+    id?: string;
+    control?: Control<T>;
+  } & Pick<DevtoolUIProps, 'placement' | 'styles'>,
+) => {
   const methods = useFormContext();
 
   const uuid = React.useRef('');
@@ -47,6 +48,7 @@ export const DevTool = <T extends FieldValues>(props?: {
       <DevToolUI
         control={props?.control ?? methods.control}
         placement={props?.placement}
+        styles={props?.styles}
       />
     </StateMachineProvider>
   );
