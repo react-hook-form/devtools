@@ -112,7 +112,6 @@ nav {
 nav > a {
   appearance: none;
   text-decoration: inherit;
-  text-transform: uppercase;
   color: white;
   border: 1px solid white;
   border-radius: 4px;
