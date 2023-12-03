@@ -28,13 +28,15 @@ const Form1: React.FC<{ placement: PLACEMENT }> = ({ placement }) => {
   return (
     <>
       <form onSubmit={handleSubmit((data) => data)}>
-        <label>First Name</label>
-        <input {...register('firstName', { required: true })} />
-        <input {...register('ha.test', { required: true })} />
+        <label>
+          First Name
+          <input {...register('firstName', { required: true })} />
+        </label>
 
-        <label>Last Name</label>
-        <input {...register('lastName', { required: true })} />
-
+        <label>
+          Last Name
+          <input {...register('lastName', { required: true })} />
+        </label>
         <input style={{ fontWeight: 400 }} type="submit" />
       </form>
 
