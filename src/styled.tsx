@@ -10,7 +10,7 @@ export const paraGraphDefaultStyle = {
 
 interface ButtonBaseProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  type: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
+  type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
 }
 
 const ButtonBase = ({ type = 'button', ...props }: ButtonBaseProps) => {
