@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 
 import colors from './colors';
@@ -7,7 +8,16 @@ export const paraGraphDefaultStyle = {
   lineHeight: '20px',
 };
 
-const Button = styled.button<{ hideBackground?: boolean }>`
+interface ButtonBaseProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  type: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
+}
+
+const ButtonBase = ({ type = 'button', ...props }: ButtonBaseProps) => {
+  return <ButtonBase type={type} {...props} />;
+};
+
+const Button = styled(ButtonBase)<{ hideBackground?: boolean }>`
   appearance: none;
   margin: 0;
   border: 0;
@@ -22,8 +32,6 @@ const Button = styled.button<{ hideBackground?: boolean }>`
     background: ${colors.lightBlue};
   }
 `;
-
-Button.defaultProps = { type: 'button' };
 
 const CircleButton = styled(Button)`
   font-size: 14px;
