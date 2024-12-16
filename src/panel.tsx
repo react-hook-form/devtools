@@ -148,6 +148,7 @@ const Panel = ({ control, control: { _fields } }: { control: Control }) => {
           }}
           title="Update values and state the form"
           onClick={() => setData({})}
+          type="button"
         >
           ♺ REFRESH
         </Button>
@@ -162,6 +163,7 @@ const Panel = ({ control, control: { _fields } }: { control: Control }) => {
           onClick={() => {
             actions.setCollapse(!state.isCollapse);
           }}
+          type="button"
         >
           {state.isCollapse ? '[-] COLLAPSE' : '[+] EXPAND'}
         </Button>

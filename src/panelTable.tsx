@@ -91,6 +91,7 @@ const PanelTable = ({
                 textAlign: 'center',
                 marginRight: 8,
               }}
+              type="button"
             >
               {collapse ? '+' : '-'}
             </Button>
@@ -114,6 +115,7 @@ const PanelTable = ({
                   ? {}
                   : { cursor: 'not-allowed', background: colors.lightBlue }),
               }}
+              type="button"
             >
               {isNative ? 'Native' : 'Custom'}
             </Button>

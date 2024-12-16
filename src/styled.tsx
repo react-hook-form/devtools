@@ -23,8 +23,6 @@ const Button = styled.button<{ hideBackground?: boolean }>`
   }
 `;
 
-Button.defaultProps = { type: 'button' };
-
 const CircleButton = styled(Button)`
   font-size: 14px;
   font-weight: bold;
