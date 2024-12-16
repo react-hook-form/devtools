@@ -90,6 +90,7 @@ export const DevToolUI: React.FC<DevtoolUIProps> = ({
             background: 'none',
             ...styles?.button,
           }}
+          type="button"
         >
           <Logo actions={actions} />
         </Button>

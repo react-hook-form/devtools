@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 
 import colors from './colors';
@@ -8,16 +7,7 @@ export const paraGraphDefaultStyle = {
   lineHeight: '20px',
 };
 
-interface ButtonBaseProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
-}
-
-const ButtonBase = ({ type = 'button', ...props }: ButtonBaseProps) => {
-  return <ButtonBase type={type} {...props} />;
-};
-
-const Button = styled(ButtonBase)<{ hideBackground?: boolean }>`
+const Button = styled.button<{ hideBackground?: boolean }>`
   appearance: none;
   margin: 0;
   border: 0;

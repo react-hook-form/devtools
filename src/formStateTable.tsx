@@ -130,6 +130,7 @@ const FormStateTable = ({
       onClick={() => {
         setShowFormState(!showFormState);
       }}
+      type="button"
     >
       <span
         style={{
