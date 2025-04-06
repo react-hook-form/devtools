@@ -71,7 +71,8 @@ export function useExportControlToExtension({
     }, {} as Record<string, { type?: string; message?: string }>);
 
     const nativeFields = flatFieldNames.reduce((prev, name) => {
-      prev[name] = !!get(control._fields, name)?._f?.ref?.type;
+      const field = get(control._fields, name)?._f;
+      prev[name] = get(field, 'ref')?.type;
       return prev;
     }, {} as Record<string, boolean>);
 
