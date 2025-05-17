@@ -16,7 +16,7 @@
 
 </div>
 
-<img src="https://react-hook-form.com/static/dev-tool-5b2a4d10769a292c6f1ca78a6170e4db.png" />
+<img src="https://react-hook-form.com/images/dev-tool.png" />
 
 ## Goal
 
