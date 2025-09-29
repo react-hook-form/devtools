@@ -19,6 +19,8 @@ function PanelChildren<T, K, L, M, G>({
   dirtyFields,
   state,
   fieldsValues,
+  fieldCollapseStates,
+  toggleFieldCollapse,
 }: {
   fields: T;
   fieldsValues: K;
@@ -29,6 +31,8 @@ function PanelChildren<T, K, L, M, G>({
   touchedFields: M;
   errors: L;
   dirtyFields: G;
+  fieldCollapseStates: Record<string, boolean>;
+  toggleFieldCollapse: (fieldName: string) => void;
 }) {
   return (
     <>
@@ -58,6 +62,8 @@ function PanelChildren<T, K, L, M, G>({
                     dirtyFields,
                     state,
                     fieldsValues,
+                    fieldCollapseStates,
+                    toggleFieldCollapse,
                   }}
                 />
               );
@@ -93,6 +99,10 @@ function PanelChildren<T, K, L, M, G>({
                     errorType={errorType}
                     isDirty={isDirty}
                     fieldsValues={fieldsValues}
+                    isFieldCollapsed={
+                      fieldCollapseStates[value?._f.name] ?? state.isCollapse
+                    }
+                    onToggleCollapse={() => toggleFieldCollapse(value?._f.name)}
                   />
                 </section>
               );
@@ -113,6 +123,33 @@ const Panel = ({ control, control: { _fields } }: { control: Control }) => {
   });
   const [, setData] = React.useState({});
   const [showFormState, setShowFormState] = React.useState(false);
+  const [fieldCollapseStates, setFieldCollapseStates] = React.useState<
+    Record<string, boolean>
+  >({});
+
+  const toggleFieldCollapse = React.useCallback(
+    (fieldName: string) => {
+      setFieldCollapseStates((prev) => {
+        const currentState = prev[fieldName] ?? state.isCollapse;
+        const newState = !currentState;
+        const updatedStates = {
+          ...prev,
+          [fieldName]: newState,
+        };
+
+        return updatedStates;
+      });
+    },
+    [state.isCollapse],
+  );
+
+  const setAllFieldsCollapse = React.useCallback((isCollapsed: boolean) => {
+    setFieldCollapseStates((prev) =>
+      Object.fromEntries(
+        Object.keys(prev).map((fieldName) => [fieldName, isCollapsed]),
+      ),
+    );
+  }, []);
   const fieldsValues = useWatch({
     control,
   });
@@ -161,11 +198,13 @@ const Panel = ({ control, control: { _fields } }: { control: Control }) => {
           }}
           title="Toggle entire fields"
           onClick={() => {
-            actions.setCollapse(!state.isCollapse);
+            const newCollapseState = !state.isCollapse;
+            actions.setCollapse(newCollapseState);
+            setAllFieldsCollapse(newCollapseState);
           }}
           type="button"
         >
-          {state.isCollapse ? '[-] COLLAPSE' : '[+] EXPAND'}
+          {state.isCollapse ? '[+] EXPAND' : '[-] COLLAPSE'}
         </Button>
 
         <Input
@@ -203,6 +242,8 @@ const Panel = ({ control, control: { _fields } }: { control: Control }) => {
           dirtyFields={dirtyFields}
           fieldsValues={fieldsValues}
           state={state}
+          fieldCollapseStates={fieldCollapseStates}
+          toggleFieldCollapse={toggleFieldCollapse}
         />
       </div>
 
