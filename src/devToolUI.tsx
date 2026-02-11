@@ -33,6 +33,7 @@ export const DevToolUI: React.FC<DevtoolUIProps> = ({
   });
 
   const position = getPositionByPlacement(placement, 0, 0);
+  const visibility = state.visible ? 'visible' : 'hidden';
 
   return (
     <>
@@ -61,6 +62,7 @@ export const DevToolUI: React.FC<DevtoolUIProps> = ({
             height: '100vh',
             width: 250,
             zIndex: 99999,
+            visibility,
             background: colors.buttonBlue,
             display: 'grid',
             textAlign: 'left',
