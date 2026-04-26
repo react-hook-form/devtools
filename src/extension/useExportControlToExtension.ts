@@ -1,4 +1,4 @@
-import get from 'lodash/get';
+import get from 'es-toolkit/compat/get';
 import { useEffect, useState } from 'react';
 import { Control, useFormState, useWatch } from 'react-hook-form';
 import useDeepCompareEffect from 'use-deep-compare-effect';
@@ -72,7 +72,7 @@ export function useExportControlToExtension({
 
     const nativeFields = flatFieldNames.reduce((prev, name) => {
       const field = get(control._fields, name)?._f;
-      prev[name] = get(field, 'ref')?.type;
+      prev[name] = (get(field, 'ref') as any)?.type;
       return prev;
     }, {} as Record<string, boolean>);
 
