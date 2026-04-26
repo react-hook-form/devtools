@@ -10,7 +10,7 @@ if (typeof window !== 'undefined') {
   createStore(
     {
       visible: false,
-      isCollapse: false,
+      isCollapse: true,
       filterName: '',
     },
     {
