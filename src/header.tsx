@@ -42,7 +42,7 @@ const Header = ({ setVisible, control }: Props) => {
         </span>{' '}
         React Hook Form
       </p>
-      <CircleButton title="Close dev panel" onClick={() => setVisible(false)}>
+      <CircleButton type="button" title="Close dev panel" onClick={() => setVisible(false)}>
         ✕
       </CircleButton>
     </header>
