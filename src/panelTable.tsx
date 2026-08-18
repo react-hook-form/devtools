@@ -19,6 +19,8 @@ type Props = {
   name: string;
   collapseAll: boolean;
   refObject: any;
+  isFieldCollapsed: boolean;
+  onToggleCollapse: () => void;
 };
 
 const PanelTable = ({
@@ -32,14 +34,9 @@ const PanelTable = ({
   type,
   isTouched,
   name,
-  collapseAll,
+  isFieldCollapsed,
+  onToggleCollapse,
 }: Props) => {
-  const [collapse, setCollapse] = React.useState(false);
-
-  React.useEffect(() => {
-    setCollapse(!collapseAll);
-  }, [collapseAll]);
-
   let value = fieldsValues ? get(fieldsValues, name) : '';
   let isValueWrappedInPre = false;
 
@@ -78,7 +75,7 @@ const PanelTable = ({
         <tr>
           <td valign="top" style={{ width: 85, lineHeight: '22px' }}>
             <Button
-              onClick={() => setCollapse(!collapse)}
+              onClick={onToggleCollapse}
               title="Toggle field table"
               style={{
                 border: `1px solid ${colors.lightBlue}`,
@@ -93,7 +90,7 @@ const PanelTable = ({
               }}
               type="button"
             >
-              {collapse ? '+' : '-'}
+              {isFieldCollapsed ? '+' : '-'}
             </Button>
             <Button
               onClick={() => {
@@ -145,7 +142,7 @@ const PanelTable = ({
           </td>
         </tr>
       </thead>
-      {!collapse && (
+      {!isFieldCollapsed && (
         <tbody>
           {type && (
             <tr>
