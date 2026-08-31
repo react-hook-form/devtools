@@ -21,10 +21,13 @@ if (typeof window !== 'undefined') {
   );
 }
 
-export const DevTool = <T extends FieldValues>(
+export const DevTool = <
+  TFieldValues extends FieldValues,
+  TTransformedValues = FieldValues,
+>(
   props?: {
     id?: string;
-    control?: Control<T>;
+    control?: Control<TFieldValues, any, TTransformedValues>;
   } & Pick<DevtoolUIProps, 'placement' | 'styles'>,
 ) => {
   const methods = useFormContext();
