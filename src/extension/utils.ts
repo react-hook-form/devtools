@@ -1,4 +1,4 @@
-import get from 'lodash/get';
+import get from 'es-toolkit/compat/get';
 
 export function proxyToObject<T extends Record<string, any>>(proxy: T) {
   return Reflect.ownKeys(proxy).reduce((prev, key) => {

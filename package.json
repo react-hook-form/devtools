@@ -60,9 +60,8 @@
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.3.0",
-    "@types/lodash": "^4.14.168",
+    "es-toolkit": "^1.39.5",
     "little-state-machine": "^4.1.0",
-    "lodash": "^4.17.21",
     "react-simple-animate": "^3.3.12",
     "use-deep-compare-effect": "^1.8.1",
     "uuid": "^14.0.0"

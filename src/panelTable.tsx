@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { get } from 'react-hook-form';
-import isUndefined from 'lodash/isUndefined';
-import isObject from 'lodash/isObject';
+import isObject from 'es-toolkit/compat/isObject';
 
 import colors from './colors';
 import { Button, Table, paraGraphDefaultStyle } from './styled';
@@ -43,7 +42,7 @@ const PanelTable = ({
   let value = fieldsValues ? get(fieldsValues, name) : '';
   let isValueWrappedInPre = false;
 
-  if (!isUndefined(value)) {
+  if (value !== undefined) {
     if (isObject(value)) {
       try {
         value = (
@@ -221,7 +220,7 @@ const PanelTable = ({
               </td>
             </tr>
           )}
-          {!isUndefined(value) && (
+          {value !== undefined && (
             <tr>
               <td
                 align="right"
